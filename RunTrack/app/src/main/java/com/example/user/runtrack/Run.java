@@ -9,7 +9,7 @@ import java.util.Date;
 public class Run {
     private int id;
     private String title;
-    private Date date;
+
     private int distance;
     private Time time;
     private int pace;
@@ -17,9 +17,9 @@ public class Run {
     private RunType type;
 
     //Full Run Constructor
-    public Run(String title, Date date, int distance, Time time, int pace, String route, RunType type){
+    public Run(String title, int distance, Time time, int pace, String route, RunType type){
         this.title = title;
-        this.date = date;
+
         this.distance = distance;
         this.time = time;
         this.pace = pace;
@@ -28,9 +28,8 @@ public class Run {
     }
 
     //Simple Run Constructor
-    public Run (String title, Date date, int distance){
+    public Run (String title, int distance){
         this.title = title;
-        this.date = date;
         this.distance = distance;
     }
 
@@ -38,10 +37,6 @@ public class Run {
     //Getters
     public String getRunTitle(){
         return this.title;
-    }
-
-    public Date getDate(){
-        return this.date;
     }
 
     public int getDistance(){
