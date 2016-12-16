@@ -4,12 +4,12 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>130</x>
-      <y>70</y>
+      <x>60</x>
+      <y>30</y>
       <w>210</w>
-      <h>310</h>
+      <h>280</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Run&gt;&gt;
+    <panel_attributes>&lt;&lt;Class Diagram Run&gt;&gt;
 --
 -id: Long
 -title: String
@@ -32,8 +32,36 @@ getType()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>70</y>
+      <x>60</x>
+      <y>380</y>
+      <w>210</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Database Diagram - runs&gt;&gt;
+--
+-id: integer
+-title: text
+-distance: integer
+-time: integer
+-pace: integer
+-route: text
+-type: text
+
+--
+Methods
+-addRun()
+-getRun()
+-getAllRuns()
+-deleteRun()
+-deleteAllRuns()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>50</y>
       <w>210</w>
       <h>190</h>
     </coordinates>

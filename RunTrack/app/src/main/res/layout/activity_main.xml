@@ -10,10 +10,34 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"/>
 
-    <Button
-        android:id="@+id/button_newRun"
-        android:text="@string/new_run"
+    <!--<Button-->
+        <!--android:id="@+id/button_newRun"-->
+        <!--android:text="@string/new_run"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+    <EditText
+        android:id="@+id/run_title"
+        android:layout_marginTop="60dp"
+        android:textSize="30dp"
+        android:hint="title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+
+    <EditText
+        android:id="@+id/distance"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp"
+        android:hint="distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button_add_run"
+        android:text="@string/add_run"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>

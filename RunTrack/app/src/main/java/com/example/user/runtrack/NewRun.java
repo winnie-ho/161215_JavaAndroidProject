@@ -3,6 +3,7 @@ package com.example.user.runtrack;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,8 +16,6 @@ public class NewRun extends AppCompatActivity {
     EditText distanceEditText;
     Button addRunButton;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final DBHandler db = ((MainApplication)getApplication()).db;
@@ -27,7 +26,6 @@ public class NewRun extends AppCompatActivity {
         distanceEditText = (EditText)findViewById(R.id.distance);
         addRunButton = (Button)findViewById(R.id.button_add_run);
 
-
         addRunButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,6 +34,7 @@ public class NewRun extends AppCompatActivity {
 
                 Run newRun = new Run(title, distance);
                 db.addRun(newRun);
+                Log.d("Add:", "Adding new run.." + title + " " + distance + "k");
                 backToMainScreen();
             }
         });

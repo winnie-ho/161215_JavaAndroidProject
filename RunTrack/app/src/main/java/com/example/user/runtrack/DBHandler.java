@@ -73,7 +73,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
             String sql = "INSERT INTO " + TABLE_RUNS + " ('" + KEY_TITLE + "', " + KEY_DISTANCE + ", "
                     + KEY_TIME + ", "+ KEY_PACE + ", '" + KEY_ROUTE + "', '" + KEY_TYPE + "') VALUES ('" +
-                    title + "', "+ Integer.toString(distance) + ", " + Integer.toString(time) + ", " + Integer.toString(pace) + ",'"+ route + "', '" + type + "')";
+                    title + "', "+ Integer.toString(distance) + ", " + Integer.toString(time) + ", " +
+                    Integer.toString(pace) + ",'"+ route + "', '" + type + "')";
             runSQL(sql);
         }
 

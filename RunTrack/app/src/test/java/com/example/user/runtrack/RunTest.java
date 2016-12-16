@@ -22,4 +22,5 @@ public class RunTest {
     @Test public void getRunDistanceTest(){
         assertEquals(5,run2.getDistance());
     }
+
 }
