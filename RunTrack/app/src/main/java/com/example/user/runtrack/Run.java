@@ -9,17 +9,26 @@ import java.util.Date;
 public class Run {
     private int id;
     private String title;
-
     private int distance;
-    private Time time;
+    private int time;
     private int pace;
     private String route;
-    private RunType type;
+    private String type;
+
+    //Full Run Constructor for DB
+    public Run(int id, String title, int distance, int time, int pace, String route, String type){
+        this.id = id;
+        this.title = title;
+        this.distance = distance;
+        this.time = time;
+        this.pace = pace;
+        this.route = route;
+        this.type = type;
+    }
 
     //Full Run Constructor
-    public Run(String title, int distance, Time time, int pace, String route, RunType type){
+    public Run(String title, int distance, int time, int pace, String route, String type){
         this.title = title;
-
         this.distance = distance;
         this.time = time;
         this.pace = pace;
@@ -35,6 +44,10 @@ public class Run {
 
 
     //Getters
+    public int getId(){
+        return this.id;
+    }
+
     public String getRunTitle(){
         return this.title;
     }
@@ -43,7 +56,7 @@ public class Run {
         return this.distance;
     }
 
-    public Time getTime(){
+    public int getTime(){
         return this.time;
     }
 
@@ -55,7 +68,7 @@ public class Run {
         return this.route;
     }
 
-    public RunType getType(){
+    public String getType(){
         return this.type;
     }
 
