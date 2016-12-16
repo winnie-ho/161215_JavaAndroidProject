@@ -37,7 +37,7 @@ public class Run {
     }
 
     //Simple Run Constructor
-    public Run (String title, int distance){
+    public Run(String title, int distance){
         this.title = title;
         this.distance = distance;
     }

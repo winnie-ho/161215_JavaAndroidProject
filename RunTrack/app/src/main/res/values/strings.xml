@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RunTrack</string>
+    <string name="new_run">Add Run</string>
+    <string name="add_run">Add Run</string>
 </resources>

@@ -5,8 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
-import java.sql.Time;
 import java.util.ArrayList;
 
 /**
@@ -18,7 +16,7 @@ public class DBHandler extends SQLiteOpenHelper {
     //Database Name
     private static final String DATABASE_NAME = "runTrack";
     //Table name
-    private static final String TABLE_RUNS = "RUNS";
+    private static final String TABLE_RUNS = "runs";
     //Runs table column names
     private static final String KEY_ID = "id";
     private static final String KEY_TITLE = "title";
@@ -44,9 +42,9 @@ public class DBHandler extends SQLiteOpenHelper {
           type TEXT
     )
 */
-        String CREATE_TABLE = "CREATE TABLE" + TABLE_RUNS + "(" + KEY_ID + " INTEGER PRIMARY KEY,"
-                + KEY_TITLE + "TEXT, " + KEY_DISTANCE + "INTEGER, " + KEY_TIME + "INTEGER, " + KEY_PACE +
-                "INTEGER, " + KEY_ROUTE + "TEXT, " + KEY_TYPE + "TEXT )";
+        String CREATE_TABLE = "CREATE TABLE " + TABLE_RUNS + "(" + KEY_ID + " INTEGER PRIMARY KEY,"
+                + KEY_TITLE + " TEXT," + KEY_DISTANCE + " INTEGER," + KEY_TIME + " INTEGER," + KEY_PACE +
+                " INTEGER," + KEY_ROUTE + " TEXT," + KEY_TYPE + " TEXT )";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -54,7 +52,7 @@ public class DBHandler extends SQLiteOpenHelper {
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
             //Drop older table if Runs table exists;
 
-            db.execSQL("DROP TABLE IF EXISTS" + TABLE_RUNS);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_RUNS);
             //Create the Runs table again
             onCreate(db);
         }
@@ -71,29 +69,29 @@ public class DBHandler extends SQLiteOpenHelper {
             int time = run.getTime();
             int pace = run.getPace();
             String route = run.getRoute();
-            RunType type = run.getType();
+            String type = run.getType();
 
-            String sql = "INSERT INTO " + TABLE_RUNS + "('" + KEY_TITLE + "'," + KEY_DISTANCE + ","
-                    + KEY_TIME + ","+ KEY_PACE + ",'" + KEY_ROUTE + "','" + KEY_TYPE+"') VALUES ('" +
-                    title + "', "+ Integer.toString(distance) + ", " + Integer.toString(time) + ", " + pace + ",'"+ route + "','" + type + "')";
+            String sql = "INSERT INTO " + TABLE_RUNS + " ('" + KEY_TITLE + "', " + KEY_DISTANCE + ", "
+                    + KEY_TIME + ", "+ KEY_PACE + ", '" + KEY_ROUTE + "', '" + KEY_TYPE + "') VALUES ('" +
+                    title + "', "+ Integer.toString(distance) + ", " + Integer.toString(time) + ", " + Integer.toString(pace) + ",'"+ route + "', '" + type + "')";
             runSQL(sql);
         }
 
-        public updateRun(Run run){
+        public void updateRun(Run run) {
             int id = run.getId();
             String title = run.getRunTitle();
             int distance = run.getDistance();
             int time = run.getTime();
             int pace = run.getPace();
             String route = run.getRoute();
-            RunType type = run.getType();
+            String type = run.getType();
 
-            String sql = "UPDATE " + TABLE_RUNS + "SET "
-                    + KEY_TITLE + " = '" + title + "',"
-                    + KEY_DISTANCE + " = '" + distance + "',"
-                    + KEY_TIME + " = " + time + ","
-                    + KEY_PACE + " = " + pace + ","
-                    + KEY_ROUTE + " = '" + route + "',"
+            String sql = "UPDATE " + TABLE_RUNS + " SET "
+                    + KEY_TITLE + " = '" + title + "', "
+                    + KEY_DISTANCE + " = '" + distance + "', "
+                    + KEY_TIME + " = " + time + ", "
+                    + KEY_PACE + " = " + pace + ", "
+                    + KEY_ROUTE + " = '" + route + "', "
                     + KEY_TYPE + " = '" + type + "' WHERE " + KEY_ID + " = " + id;
             Log.d("Running SQL: ",sql);
             runSQL(sql);
