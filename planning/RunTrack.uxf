@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>70</y>
+      <w>210</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Run&gt;&gt;
+--
+-id: Long
+-title: String
+-date: Date
+-distance: int
+-time: time
+-pace: time
+-map: String
+-type: Enum
+--
+getRunTitle()
+getDate()
+getDistance()
+getTime()
+getPace()
+getMap()
+getType()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>70</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Log Book&gt;&gt;
+--
+-logBook: ArrayList&lt;Run&gt;
+
+--
+Methods
+-getRun()
+-addRun()
+-deleteRun()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

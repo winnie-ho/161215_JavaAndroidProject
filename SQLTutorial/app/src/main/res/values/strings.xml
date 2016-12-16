@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SQLTutorial</string>
+    <string name="db_text">DatabaseTest</string>
+</resources>
