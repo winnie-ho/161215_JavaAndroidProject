@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
 //        Log.d("Delete:", "Deleting..");
 //        db.deleteAllRuns();
 
+
 //        Code for Buttons
         viewRunButton.setOnClickListener(new View.OnClickListener() {
             @Override
