@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
@@ -28,6 +29,55 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginLeft="10dp" />
+
+    <EditText
+        android:id="@+id/time"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:hint="time"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp" />
+
+    <EditText
+        android:id="@+id/pace"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:hint="pace"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp" />
+
+    <EditText
+        android:id="@+id/route"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:hint="route"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp" />
+
+    <EditText
+        android:id="@+id/type"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:hint="type"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp" />
+
 
     <Button
         android:id="@+id/button_add_run"

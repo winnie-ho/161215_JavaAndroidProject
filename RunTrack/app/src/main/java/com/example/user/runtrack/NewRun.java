@@ -14,6 +14,10 @@ import android.widget.EditText;
 public class NewRun extends AppCompatActivity {
     EditText titleEditText;
     EditText distanceEditText;
+    EditText timeEditText;
+    EditText paceEditText;
+    EditText routeEditText;
+    EditText typeEditText;
     Button addRunButton;
 
     @Override
@@ -24,6 +28,10 @@ public class NewRun extends AppCompatActivity {
 
         titleEditText = (EditText)findViewById(R.id.run_title);
         distanceEditText = (EditText)findViewById(R.id.distance);
+        timeEditText = (EditText)findViewById(R.id.time);
+        paceEditText = (EditText)findViewById(R.id.pace);
+        routeEditText = (EditText)findViewById(R.id.route);
+        typeEditText = (EditText)findViewById(R.id.type);
         addRunButton = (Button)findViewById(R.id.button_add_run);
 
         addRunButton.setOnClickListener(new View.OnClickListener() {
@@ -31,8 +39,13 @@ public class NewRun extends AppCompatActivity {
             public void onClick(View v) {
                 String title = titleEditText.getText().toString();
                 int distance = Integer.parseInt(distanceEditText.getText().toString());
+                int time = Integer.parseInt(timeEditText.getText().toString());
+                int pace = Integer.parseInt(paceEditText.getText().toString());
+                String route = routeEditText.getText().toString();
+                String type = typeEditText.getText().toString();
 
-                Run newRun = new Run(title, distance);
+
+                Run newRun = new Run(title, distance, time, pace, route, type);
                 db.addRun(newRun);
                 Log.d("Add:", "Adding new run.." + title + " " + distance + "k");
                 backToMainScreen();

@@ -86,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Purge old logs
-        Log.d("Delete:", "Deleting..");
-        db.deleteAllRuns();
+//        Log.d("Delete:", "Deleting..");
+//        db.deleteAllRuns();
 
         //Code for Buttons
 //        addRunButton.setOnClickListener(new View.OnClickListener() {
@@ -107,10 +107,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Inserting test data
         Log.d("Insert: ", "Inserting..");
-        db.addRun(new Run("Hunters Bog",10,10,5,"Park Run","Long"));
-        db.addRun(new Run("Run Club Intervals",5,10,5,"Johnston Terrace Hills","Session"));
-        db.addRun(new Run("After work",7,30,5,"WoL","Long"));
-        db.addRun(new Run("Fox Trail 13k", 13, 65, 5,"Foxlake", "Race"));
 
         //Showing data as a List View through and Array Adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getAllRuns(db));
