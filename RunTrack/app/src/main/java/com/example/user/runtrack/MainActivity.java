@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     Button addRun;
     EditText titleEditText;
     EditText distanceEditText;
-    Button addRunButton;
+//    Button addRunButton;
 
 
     @Override
@@ -38,6 +38,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item){
+        if (item.getItemId() == R.id.add_run){
+            Intent intent = new Intent(MainActivity.this, NewRun.class);
+            this.startActivity(intent);
+            return true;
+        }
+        else if (item.getItemId() == R.id.all_runs){
+            Intent intent = new Intent(MainActivity.this, AllRuns.class);
+            this.startActivity(intent);
+            return true;
+        }
+        else if (item.getItemId() == R.id.random){
+            Intent intent = new Intent(MainActivity.this, Random.class);
+            this.startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -45,23 +66,23 @@ public class MainActivity extends AppCompatActivity {
 
         //Allocating Activity Items an ID from activity_main
         allRunList = (ListView) findViewById(R.id.run_list);
-//        addRun = (Button)findViewById(R.id.button_newRun);
+        addRun = (Button)findViewById(R.id.button_newRun);
         titleEditText = (EditText) findViewById(R.id.run_title);
         distanceEditText = (EditText) findViewById(R.id.distance);
-        addRunButton = (Button) findViewById(R.id.button_add_run);
+//        addRunButton = (Button) findViewById(R.id.button_add_run);
 
         //Creating database
         final DBHandler db = ((MainApplication) getApplication()).db;
 
         //Add New Run Button
-//        addRun.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.d ("Runs: ", "new run button clicked");
-//                Intent intent = new Intent(MainActivity.this, NewRun.class);
-//                startActivity(intent);
-//            }
-//        });
+        addRun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d ("Runs: ", "new run button clicked");
+                Intent intent = new Intent(MainActivity.this, NewRun.class);
+                startActivity(intent);
+            }
+        });
 
 
         //Purge old logs
@@ -69,19 +90,19 @@ public class MainActivity extends AppCompatActivity {
         db.deleteAllRuns();
 
         //Code for Buttons
-        addRunButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String title = titleEditText.getText().toString();
-                int distance = Integer.parseInt(distanceEditText.getText().toString());
-
-                Run newRun = new Run(title, distance);
-                db.addRun(newRun);
-                Log.d("Add:", "Adding new run.." + title + " " + distance + "k");
-
-                Toast.makeText(MainActivity.this, "Run Added!", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        addRunButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String title = titleEditText.getText().toString();
+//                int distance = Integer.parseInt(distanceEditText.getText().toString());
+//
+//                Run newRun = new Run(title, distance);
+//                db.addRun(newRun);
+//                Log.d("Add:", "Adding new run.." + title + " " + distance + "k");
+//
+//                Toast.makeText(MainActivity.this, "Run Added!", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
 
         //Inserting test data
@@ -97,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     //Accessing all Runs in DB and returning all runs in runLog to make available for Array List
     private ArrayList<String>getAllRuns(DBHandler db){
         ArrayList<String> runLog = new ArrayList<String>();
@@ -107,6 +129,5 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Showing:", "Showing" + run.getRunTitle());
         }
         return runLog;
-
     }
 }

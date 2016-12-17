@@ -26,6 +26,14 @@
             android:name=".NewRun">
         </activity>
 
+        <activity
+            android:name=".Random">
+        </activity>
+
+        <activity
+            android:name=".AllRuns">
+        </activity>
+
 
     </application>
 
