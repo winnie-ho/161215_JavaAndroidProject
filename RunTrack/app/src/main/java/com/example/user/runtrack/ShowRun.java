@@ -28,7 +28,7 @@ public class ShowRun extends AppCompatActivity{
     }
 
     private void backToMainScreen() {
-        Intent intent = new Intent(ShowRun.this, MainActivity.class);
+        Intent intent = new Intent(ShowRun.this, AllRuns.class);
         startActivity(intent);
     }
 

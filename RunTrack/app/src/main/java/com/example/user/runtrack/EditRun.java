@@ -57,7 +57,7 @@ public class EditRun extends AppCompatActivity{
     }
 
     private void backToMainScreen() {
-        Intent intent = new Intent(EditRun.this, MainActivity.class);
+        Intent intent = new Intent(EditRun.this, AllRuns.class);
         startActivity(intent);
     }
 

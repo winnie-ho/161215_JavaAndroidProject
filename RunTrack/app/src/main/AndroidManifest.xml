@@ -19,6 +19,12 @@
         </activity>
 
         <activity
+            android:name=".MainActivity"
+            android:label="RUN TRACK"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
             android:name=".NewRun"
             android:label="ADD RUN"
             android:parentActivityName=".MainActivity"
@@ -50,14 +56,6 @@
             android:name=".ShowRun"
             android:label="RUN DETAIL"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme">
-        </activity>
-
-
-        <activity
-            android:name=".MainActivity"
-            android:label="ALL RUNS"
-            android:parentActivityName=".EditRun"
             android:theme="@style/AppTheme">
         </activity>
 
