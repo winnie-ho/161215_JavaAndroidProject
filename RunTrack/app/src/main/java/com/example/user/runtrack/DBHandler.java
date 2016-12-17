@@ -57,7 +57,7 @@ public class DBHandler extends SQLiteOpenHelper {
             onCreate(db);
         }
     //SQLRunner
-        private void runSQL(String sql){
+        private void SQLrunner(String sql){
             SQLiteDatabase db = this.getWritableDatabase();
             db.execSQL(sql);
         }
@@ -75,7 +75,7 @@ public class DBHandler extends SQLiteOpenHelper {
                     + KEY_TIME + ", "+ KEY_PACE + ", '" + KEY_ROUTE + "', '" + KEY_TYPE + "') VALUES ('" +
                     title + "', "+ Integer.toString(distance) + ", " + Integer.toString(time) + ", " +
                     Integer.toString(pace) + ",'"+ route + "', '" + type + "')";
-            runSQL(sql);
+            SQLrunner(sql);
         }
 
         public void updateRun(Run run) {
@@ -95,7 +95,7 @@ public class DBHandler extends SQLiteOpenHelper {
                     + KEY_ROUTE + " = '" + route + "', "
                     + KEY_TYPE + " = '" + type + "' WHERE " + KEY_ID + " = " + id;
             Log.d("Running SQL: ",sql);
-            runSQL(sql);
+            SQLrunner(sql);
         }
 
         public Run getRun(int id){
@@ -148,17 +148,17 @@ public class DBHandler extends SQLiteOpenHelper {
             int id = run.getId();
 
             String sql = "DELETE FROM " + TABLE_RUNS + " WHERE" + KEY_ID + " = " + id;
-            runSQL(sql);
+            SQLrunner(sql);
         }
 
         public void deleteRun(int id) {
             String sql = "DELETE FROM " + TABLE_RUNS + " WHERE " + KEY_ID + " = " + id;
-            runSQL(sql);
+            SQLrunner(sql);
         }
 
         public void deleteAllRuns() {
             String sql = "DELETE FROM " + TABLE_RUNS;
-            runSQL(sql);
+            SQLrunner(sql);
         }
 
 
