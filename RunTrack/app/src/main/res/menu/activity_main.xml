@@ -2,10 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/all_runs"
-        android:title="All Runs"/>
+        android:title="ALL RUNS"/>
+
+    <item
+        android:id="@+id/add_run"
+        android:title="ADD RUN"/>
 
     <item
         android:id="@+id/random"
-        android:title="Random Run"/>
+        android:title="RANDOM RUN"/>
 
 </menu>
