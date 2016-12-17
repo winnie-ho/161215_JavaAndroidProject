@@ -39,23 +39,21 @@
     <ListView
         android:id="@+id/run_list"
         android:fontFamily="sans-serif-condensed"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"/>
 
 
 
-
-
-    <!--<Button-->
-        <!--android:id="@+id/button_add_run"-->
-        <!--android:text="@string/add_run"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--android:fontFamily="sans-serif-condensed"-->
-        <!--android:layout_width="80dp"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:layout_gravity="center_horizontal"-->
-        <!--android:layout_marginBottom="40dp" />-->
+    <Button
+        android:id="@+id/button_view_run"
+        android:text="@string/view_run"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="40dp" />
 
 
 

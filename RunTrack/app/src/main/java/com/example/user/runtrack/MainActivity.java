@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     Button addRun;
     EditText titleEditText;
     EditText distanceEditText;
-//    Button addRunButton;
+    Button viewRunButton;
 
 
     @Override
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         addRun = (Button)findViewById(R.id.button_newRun);
         titleEditText = (EditText) findViewById(R.id.run_title);
         distanceEditText = (EditText) findViewById(R.id.distance);
-//        addRunButton = (Button) findViewById(R.id.button_add_run);
+        viewRunButton = (Button) findViewById(R.id.button_view_run);
 
         //Creating database
         final DBHandler db = ((MainApplication) getApplication()).db;
@@ -89,20 +89,14 @@ public class MainActivity extends AppCompatActivity {
 //        Log.d("Delete:", "Deleting..");
 //        db.deleteAllRuns();
 
-        //Code for Buttons
-//        addRunButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String title = titleEditText.getText().toString();
-//                int distance = Integer.parseInt(distanceEditText.getText().toString());
-//
-//                Run newRun = new Run(title, distance);
-//                db.addRun(newRun);
-//                Log.d("Add:", "Adding new run.." + title + " " + distance + "k");
-//
-//                Toast.makeText(MainActivity.this, "Run Added!", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+//        Code for Buttons
+        viewRunButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Log.d("Add:", "Adding new run..");
+            }
+        });
 
 
         //Inserting test data
@@ -121,8 +115,9 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Run>runs = db.getAllRuns();
         for (Run run : runs){
-            runLog.add("- " + run.getRunTitle() + "  |  " + run.getDistance() +"km  |  " + run.getTime() + "mins  |  " + run.getType() );
-            Log.d("Showing:", "Showing" + run.getRunTitle());
+            runLog.add("- " + run.getRunTitle() + "  |  " + run.getDistance() +"km  |  " +
+                    run.getTime() + "mins  |  " + run.getType());
+            Log.d("Showing:", "Showing" + run.getRunTitle() );
         }
         return runLog;
     }
