@@ -14,21 +14,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ALL RUNS"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center_horizontal" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="ALL RUNS"-->
+        <!--android:textColor="@color/colorPrimaryDark"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textSize="20dp"-->
+        <!--android:fontFamily="sans-serif-condensed"-->
+        <!--android:layout_marginTop="2dp"-->
+        <!--android:layout_gravity="center_horizontal" />-->
 
     <ImageView
         android:src="@drawable/run_track_only"
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:layout_gravity="top" />
 
     <Button
@@ -41,6 +41,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:layout_gravity="right"
         android:textIsSelectable="true"/>
 
@@ -49,9 +50,8 @@
         android:fontFamily="sans-serif-condensed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"/>
-
-
+        android:textSize="10dp"
+        android:background="@color/colorOpposite"/>
 
     <Button
         android:id="@+id/button_view_run"
@@ -62,8 +62,6 @@
         android:layout_height="30dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="40dp" />
-
-
 
     </LinearLayout>
 </ScrollView>

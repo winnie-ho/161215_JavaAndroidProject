@@ -1,5 +1,6 @@
 package com.example.user.runtrack;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,9 @@ public class EditRun extends AppCompatActivity{
         final DBHandler db = ((MainApplication)getApplication()).db;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_run);
+
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.action_bar);
 
         titleEditText = (EditText)findViewById(R.id.run_title);
         distanceEditText = (EditText)findViewById(R.id.distance);
