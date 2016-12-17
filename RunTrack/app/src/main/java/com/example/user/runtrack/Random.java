@@ -25,7 +25,7 @@ public class Random extends AppCompatActivity {
             return true;
         }
         else if (item.getItemId() == R.id.all_runs){
-            Intent intent = new Intent(Random.this, MainActivity.class);
+            Intent intent = new Intent(Random.this, AllRuns.class);
             this.startActivity(intent);
             return true;
         }

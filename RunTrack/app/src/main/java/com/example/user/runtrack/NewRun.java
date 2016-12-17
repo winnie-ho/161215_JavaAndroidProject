@@ -39,7 +39,7 @@ public class NewRun extends AppCompatActivity {
             return true;
         }
         else if (item.getItemId() == R.id.all_runs){
-            Intent intent = new Intent(NewRun.this, MainActivity.class);
+            Intent intent = new Intent(NewRun.this, AllRuns.class);
             this.startActivity(intent);
             return true;
         }
@@ -58,8 +58,6 @@ public class NewRun extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_run);
 
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar);
 
         titleEditText = (EditText)findViewById(R.id.run_title);
         distanceEditText = (EditText)findViewById(R.id.distance);

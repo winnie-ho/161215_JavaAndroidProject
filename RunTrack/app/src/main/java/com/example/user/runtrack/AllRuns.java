@@ -42,7 +42,7 @@ public class AllRuns extends AppCompatActivity {
             return true;
         }
         else if (item.getItemId() == R.id.all_runs){
-            Intent intent = new Intent(AllRuns.this, MainActivity.class);
+            Intent intent = new Intent(AllRuns.this, AllRuns.class);
             this.startActivity(intent);
             return true;
         }
@@ -59,8 +59,7 @@ public class AllRuns extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_runs);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar);
+
 
 
         //Allocating Activity Items an ID from all_runs
