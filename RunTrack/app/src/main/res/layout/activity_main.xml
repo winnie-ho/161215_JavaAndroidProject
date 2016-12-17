@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorOpposite"
+    android:fontFamily="sans-serif-condensed"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
     <ListView
         android:id="@+id/run_list"
+        android:fontFamily="sans-serif-condensed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"/>
@@ -18,26 +22,33 @@
 
     <EditText
         android:id="@+id/run_title"
+        android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="60dp"
         android:textSize="30dp"
         android:hint="title"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
 
     <EditText
         android:id="@+id/distance"
+        android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="20dp"
         android:textSize="30dp"
         android:hint="distance"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/button_add_run"
         android:text="@string/add_run"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
 
 
 </LinearLayout>

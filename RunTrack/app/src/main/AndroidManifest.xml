@@ -2,6 +2,8 @@
     package="com.example.user.runtrack">
 
     <application
+
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:logo="@drawable/run_track"
