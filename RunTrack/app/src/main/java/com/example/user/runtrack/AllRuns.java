@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -107,7 +108,19 @@ public class AllRuns extends AppCompatActivity {
         //Showing data as a List View through and Array Adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getAllRuns(db));
         allRunList.setAdapter(adapter);
+
+        allRunList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selected = (String)allRunList.getItemAtPosition(position);
+                Log.d("ListView:", selected + " selected");
+
+                Intent intent = new Intent(AllRuns.this, ShowRun.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
 
 

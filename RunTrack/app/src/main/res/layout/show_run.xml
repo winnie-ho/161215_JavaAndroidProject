@@ -1,18 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
 
-    <ViewText
+    <TextView
         android:id="@+id/show_run"
+        android:text="@string/show_run"
+        android:textAlignment="center"
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="5dp"
         android:textSize="20dp"
-        android:hint="show_run"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="4dp"
+        android:src="@drawable/dc24"/>
+
+    <TextView
+        android:id="@+id/show_run_title"
+        android:text="RUN: "
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/show_run_distance"
+        android:text="DISTANCE: "
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/show_run_time"
+        android:text="TIME: "
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/show_run_pace"
+        android:text="PACE: "
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/show_run_type"
+        android:text="TYPE: "
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"/>
+
+
+
+
+
 
 </LinearLayout>
