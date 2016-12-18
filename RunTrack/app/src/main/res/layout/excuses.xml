@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/colorWhite"
     android:layout_height="match_parent">
 
     <EditText
@@ -22,8 +22,6 @@
         android:id="@+id/give_excuse"
         android:text="GOT NONE!"
         android:layout_margin="4dp"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold"
         android:background="@color/colorPrimary"
         android:fontFamily="sans-serif-condensed"
         android:layout_width="80dp"
@@ -40,7 +38,7 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:padding="5dp"
-        android:background="@color/colorAccent"
+        android:background="@color/colorWhite"
         android:layout_gravity="center_horizontal" />
 
 

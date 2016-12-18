@@ -16,7 +16,7 @@
         android:textSize="30dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:background="@color/colorAccent"
+        android:background="@color/colorWhite"
         android:padding="30dp"
         android:layout_gravity="center_horizontal" />
 
@@ -31,7 +31,7 @@
         android:textSize="30dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:background="@color/colorAccent"
+        android:background="@color/colorWhite"
         android:padding="30dp"
         android:layout_gravity="center_horizontal" />
 
