@@ -98,8 +98,19 @@ public class DBHandler extends SQLiteOpenHelper {
             SQLrunner(sql);
         }
 
+        public int getTotalRun(){
+            String sql = "SELECT count (" + KEY_TITLE + ") FROM " + TABLE_RUNS;
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(sql, null);
+            cursor.moveToFirst();
+            int totalRun = cursor.getInt(0);
+            cursor.close();
+            return totalRun;
+        }
+
         public int getTotalDistance(){
-            String sql = "SELECT sum (distance) FROM " + TABLE_RUNS;
+            String sql = "SELECT sum (" + KEY_DISTANCE + ") FROM " + TABLE_RUNS;
 
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(sql, null);
@@ -108,6 +119,18 @@ public class DBHandler extends SQLiteOpenHelper {
                 cursor.close();
             return totalDistance;
         }
+
+        public int getTotalTime(){
+            String sql = "SELECT sum (" + KEY_TIME + ") FROM " + TABLE_RUNS;
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(sql, null);
+            cursor.moveToFirst();
+            int totalTime = cursor.getInt(0);
+            cursor.close();
+            return totalTime;
+        }
+
 
 
         public Run getRun(int id){

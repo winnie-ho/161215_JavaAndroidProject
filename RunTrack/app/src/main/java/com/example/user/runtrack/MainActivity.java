@@ -64,7 +64,10 @@ public class MainActivity extends AppCompatActivity {
         allRunButton = (Button)findViewById(R.id.all_runs);
         randomButton = (Button)findViewById(R.id.run_roulette);
 
+        totalRunTextView.setText("RUNS \n" + db.getTotalRun());
         totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance()+ " km");
+        totalTimeTextView.setText("TIME \n" + db.getTotalTime()+ " mins");
+
 
 
 
