@@ -6,11 +6,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.Button;
 
 /**
  * Created by user on 17/12/2016.
  */
 public class MainActivity extends AppCompatActivity {
+    Button allRunButton;
+    Button randomButton;
+    Button getOutThereButton;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -42,6 +47,36 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        allRunButton = (Button)findViewById(R.id.all_runs);
+        randomButton = (Button)findViewById(R.id.random);
+        getOutThereButton = (Button)findViewById(R.id.get_out_there);
+
+        allRunButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, AllRuns.class);
+                startActivity(intent);
+            }
+        });
+
+        randomButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, Random.class);
+                startActivity(intent);
+            }
+        });
+
+        getOutThereButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, GetOutThere.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }
