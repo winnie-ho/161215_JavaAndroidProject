@@ -15,7 +15,7 @@ import org.w3c.dom.Text;
  * Created by user on 17/12/2016.
  */
 public class MainActivity extends AppCompatActivity {
-    TextView summaryTextView;
+    TextView progressMessageTextView;
     TextView totalRunTextView;
     TextView totalDistanceTextView;
     TextView totalTimeTextView;
@@ -56,14 +56,17 @@ public class MainActivity extends AppCompatActivity {
 
         //Creating database
         final DBHandler db = ((MainApplication) getApplication()).db;
+        //Creating messages array list
+        Message message = new Message();
 
-        summaryTextView = (TextView)findViewById(R.id.summary);
+        progressMessageTextView = (TextView)findViewById(R.id.progress_message);
         totalRunTextView = (TextView)findViewById(R.id.total_runs);
         totalDistanceTextView = (TextView)findViewById(R.id.total_distance);
         totalTimeTextView = (TextView)findViewById(R.id.total_time);
         allRunButton = (Button)findViewById(R.id.all_runs);
         randomButton = (Button)findViewById(R.id.run_roulette);
 
+        progressMessageTextView.setText(message.getMessage());
         totalRunTextView.setText("RUNS \n" + db.getTotalRun());
         totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance()+ " km");
         totalTimeTextView.setText("TIME \n" + db.getTotalTime()+ " mins");
