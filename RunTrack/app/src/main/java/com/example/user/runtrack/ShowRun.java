@@ -53,9 +53,7 @@ public class ShowRun extends AppCompatActivity{
         final DBHandler db = ((MainApplication)getApplication()).db;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_run);
-
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar);
+        
 
         showTitleTextView = (TextView)findViewById(R.id.show_run_title);
         showDistanceTextView = (TextView)findViewById(R.id.show_run_distance);
