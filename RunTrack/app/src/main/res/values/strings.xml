@@ -6,8 +6,9 @@
     <string name="all_runs">RUN LOG</string>
     <string name="edit_run">EDIT RUN</string>
     <string name="summary">SUMMARY</string>
-    <string name="total_distance">TOTAL DISTANCE</string>
-    <string name="total_time">TOTAL TIME</string>
-    <string name="total_runs">TOTAL RUNS</string>
+    <string name="totals">TOTALS</string>
+    <string name="total_distance">DISTANCE</string>
+    <string name="total_time">TIME</string>
+    <string name="total_runs">RUNS</string>
     <string name="progress_message">*YOU GOT THIS!</string>
 </resources>
