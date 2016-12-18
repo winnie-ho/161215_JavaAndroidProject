@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-
+import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
@@ -24,6 +24,7 @@ public class AllRuns extends AppCompatActivity {
     EditText titleEditText;
     EditText distanceEditText;
     Button viewRunButton;
+
 
 
     @Override
@@ -54,22 +55,25 @@ public class AllRuns extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_runs);
 
-
+        //Creating database
+        final DBHandler db = ((MainApplication) getApplication()).db;
 
         //Allocating Activity Items an ID from all_runs
+
         allRunList = (ListView) findViewById(R.id.run_list);
         addRun = (Button) findViewById(R.id.button_newRun);
         titleEditText = (EditText) findViewById(R.id.run_title);
         distanceEditText = (EditText) findViewById(R.id.distance);
         viewRunButton = (Button) findViewById(R.id.button_view_run);
 
-        //Creating database
-        final DBHandler db = ((MainApplication) getApplication()).db;
 
         //Add New Run Button
         addRun.setOnClickListener(new View.OnClickListener() {

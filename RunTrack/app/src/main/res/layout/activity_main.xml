@@ -87,7 +87,7 @@
             android:id="@+id/total_distance"
             android:layout_width="130dp"
             android:layout_height="90dp"
-            android:text="@string/total_distance"
+
             android:textSize="15dp"
             android:textColor="@color/colorOpposite"
             android:textStyle="bold"

@@ -98,6 +98,18 @@ public class DBHandler extends SQLiteOpenHelper {
             SQLrunner(sql);
         }
 
+        public int getTotalDistance(){
+            String sql = "SELECT sum (distance) FROM " + TABLE_RUNS;
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(sql, null);
+                cursor.moveToFirst();
+                int totalDistance = cursor.getInt(0);
+                cursor.close();
+            return totalDistance;
+        }
+
+
         public Run getRun(int id){
             String sql = "SELECT * FROM " + TABLE_RUNS + "WHERE " + KEY_ID + " = " + id;
 

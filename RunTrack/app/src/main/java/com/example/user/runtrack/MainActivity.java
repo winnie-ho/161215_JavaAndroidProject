@@ -9,12 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by user on 17/12/2016.
  */
 public class MainActivity extends AppCompatActivity {
     TextView summaryTextView;
+    TextView totalRunTextView;
     TextView totalDistanceTextView;
+    TextView totalTimeTextView;
     Button allRunButton;
     Button randomButton;
 
@@ -50,10 +54,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Creating database
+        final DBHandler db = ((MainApplication) getApplication()).db;
+
         summaryTextView = (TextView)findViewById(R.id.summary);
+        totalRunTextView = (TextView)findViewById(R.id.total_runs);
         totalDistanceTextView = (TextView)findViewById(R.id.total_distance);
+        totalTimeTextView = (TextView)findViewById(R.id.total_time);
         allRunButton = (Button)findViewById(R.id.all_runs);
         randomButton = (Button)findViewById(R.id.run_roulette);
+
+        totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance()+ " km");
+
 
 
         allRunButton.setOnClickListener(new View.OnClickListener(){
@@ -71,5 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 }
