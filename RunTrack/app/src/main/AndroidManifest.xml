@@ -62,14 +62,14 @@
         <activity
             android:name=".RandomRun"
             android:label="@string/up_for_it"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".RunRoulette"
             android:theme="@style/AppTheme">
         </activity>
 
         <activity
             android:name=".Excuses"
             android:label="@string/excuses"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".RunRoulette"
             android:theme="@style/AppTheme">
         </activity>
 
