@@ -7,13 +7,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
  * Created by user on 18/12/2016.
  */
 public class Excuses extends AppCompatActivity {
-    TextView getExcuseTextView;
+    EditText getExcuseEditText;
     Button giveExcuseButton;
 
     @Override
@@ -47,7 +48,7 @@ public class Excuses extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.excuses);
 
-        getExcuseTextView = (TextView)findViewById(R.id.excuse_text);
+        getExcuseEditText = (EditText)findViewById(R.id.excuse_text);
         giveExcuseButton = (Button)findViewById(R.id.give_excuse);
 
 //        giveExcuseButton.setOnClickListener(new View.OnClickListener() {

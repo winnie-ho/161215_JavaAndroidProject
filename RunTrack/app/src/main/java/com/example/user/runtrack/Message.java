@@ -25,6 +25,7 @@ public class Message {
         messages.add("IT'S MEANT TO HURT!");
         messages.add("YOUR COMPETITORS AIN'T RESTING!");
         messages.add("THAT'S NOT AN EXCUSE!");
+        messages.add("PUMP THOSE LEGS");
     }
 
     public int messagesSize(){

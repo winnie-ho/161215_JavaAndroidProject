@@ -2,17 +2,11 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/colorOpposite"
+    android:background="@color/colorAccent"
     android:fontFamily="sans-serif-condensed"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <ImageView
-        android:src="@drawable/run_track_only"
-        android:layout_width="fill_parent"
-        android:layout_height="35dp"
-        android:layout_gravity="top" />
 
     <Button
         android:id="@+id/button_newRun"
@@ -34,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="10dp"
-        android:background="@color/colorOpposite"/>
+        android:background="@color/colorAccent"/>
 
     <Button
         android:id="@+id/button_view_run"
