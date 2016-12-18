@@ -1,6 +1,5 @@
 package com.example.user.runtrack;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -43,8 +42,8 @@ public class NewRun extends AppCompatActivity {
             this.startActivity(intent);
             return true;
         }
-        else if (item.getItemId() == R.id.random){
-            Intent intent = new Intent(NewRun.this, Random.class);
+        else if (item.getItemId() == R.id.run_roulette){
+            Intent intent = new Intent(NewRun.this, RunRoulette.class);
             this.startActivity(intent);
             return true;
         }

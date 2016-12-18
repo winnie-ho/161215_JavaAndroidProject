@@ -55,7 +55,7 @@
 
     <Button
         android:id="@+id/button_view_run"
-        android:text="@string/view_run"
+        android:text="@string/show_run"
         android:background="@color/colorPrimary"
         android:fontFamily="sans-serif-condensed"
         android:layout_width="80dp"

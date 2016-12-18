@@ -1,6 +1,5 @@
 package com.example.user.runtrack;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -46,8 +45,8 @@ public class AllRuns extends AppCompatActivity {
             this.startActivity(intent);
             return true;
         }
-        else if (item.getItemId() == R.id.random){
-            Intent intent = new Intent(AllRuns.this, Random.class);
+        else if (item.getItemId() == R.id.run_roulette){
+            Intent intent = new Intent(AllRuns.this, RunRoulette.class);
             this.startActivity(intent);
             return true;
         }
@@ -64,7 +63,7 @@ public class AllRuns extends AppCompatActivity {
 
         //Allocating Activity Items an ID from all_runs
         allRunList = (ListView) findViewById(R.id.run_list);
-        addRun = (Button)findViewById(R.id.button_newRun);
+        addRun = (Button) findViewById(R.id.button_newRun);
         titleEditText = (EditText) findViewById(R.id.run_title);
         distanceEditText = (EditText) findViewById(R.id.distance);
         viewRunButton = (Button) findViewById(R.id.button_view_run);

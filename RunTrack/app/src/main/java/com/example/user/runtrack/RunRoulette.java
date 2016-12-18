@@ -8,7 +8,7 @@ import android.view.MenuInflater;
 /**
  * Created by user on 17/12/2016.
  */
-public class Random extends AppCompatActivity {
+public class RunRoulette extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -20,17 +20,17 @@ public class Random extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item){
         if (item.getItemId() == R.id.add_run){
-            Intent intent = new Intent(Random.this, NewRun.class);
+            Intent intent = new Intent(RunRoulette.this, NewRun.class);
             this.startActivity(intent);
             return true;
         }
         else if (item.getItemId() == R.id.all_runs){
-            Intent intent = new Intent(Random.this, AllRuns.class);
+            Intent intent = new Intent(RunRoulette.this, AllRuns.class);
             this.startActivity(intent);
             return true;
         }
-        else if (item.getItemId() == R.id.random){
-            Intent intent = new Intent(Random.this, Random.class);
+        else if (item.getItemId() == R.id.run_roulette){
+            Intent intent = new Intent(RunRoulette.this, RunRoulette.class);
             this.startActivity(intent);
             return true;
         }

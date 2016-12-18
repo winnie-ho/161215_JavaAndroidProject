@@ -1,6 +1,5 @@
 package com.example.user.runtrack;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,14 +7,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by user on 17/12/2016.
  */
 public class MainActivity extends AppCompatActivity {
+    TextView summaryTextView;
+    TextView totalDistanceTextView;
     Button allRunButton;
     Button randomButton;
-    Button getOutThereButton;
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -34,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, AllRuns.class);
             this.startActivity(intent);
             return true;
-        } else if (item.getItemId() == R.id.random) {
-            Intent intent = new Intent(MainActivity.this, Random.class);
+        } else if (item.getItemId() == R.id.run_roulette) {
+            Intent intent = new Intent(MainActivity.this, RunRoulette.class);
             this.startActivity(intent);
             return true;
         }
@@ -48,9 +50,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        summaryTextView = (TextView)findViewById(R.id.summary);
+        totalDistanceTextView = (TextView)findViewById(R.id.total_distance);
         allRunButton = (Button)findViewById(R.id.all_runs);
-        randomButton = (Button)findViewById(R.id.random);
-        getOutThereButton = (Button)findViewById(R.id.get_out_there);
+        randomButton = (Button)findViewById(R.id.run_roulette);
+
 
         allRunButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -63,20 +67,9 @@ public class MainActivity extends AppCompatActivity {
         randomButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, Random.class);
+                Intent intent = new Intent(MainActivity.this, RunRoulette.class);
                 startActivity(intent);
             }
         });
-
-        getOutThereButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, GetOutThere.class);
-                startActivity(intent);
-            }
-        });
-
-
-
     }
 }

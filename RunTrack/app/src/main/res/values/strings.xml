@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">RUN TRACK</string>
     <string name="add_run">ADD RUN</string>
-    <string name="view_run">VIEW RUN</string>
-
+    <string name="show_run">RUN DETAIL</string>
+    <string name="run_roulette">RUN ROULETTE</string>
+    <string name="all_runs">RUN LOG</string>
+    <string name="edit_run">EDIT RUN</string>
+    <string name="summary">SUMMARY</string>
+    <string name="total_distance">TOTAL DISTANCE</string>
+    <string name="total_time">TOTAL TIME</string>
+    <string name="total_runs">TOTAL RUNS</string>
+    <string name="progress_message">(*YOU GOT THIS!</string>
 </resources>

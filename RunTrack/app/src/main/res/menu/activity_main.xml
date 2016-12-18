@@ -9,7 +9,7 @@
         android:title="ADD RUN"/>
 
     <item
-        android:id="@+id/random"
-        android:title="RANDOM RUN"/>
+        android:id="@+id/run_roulette"
+        android:title="RUN ROULETTE"/>
 
 </menu>
