@@ -10,5 +10,6 @@
     <string name="total_distance">DISTANCE</string>
     <string name="total_time">TIME</string>
     <string name="total_runs">RUNS</string>
-    <string name="progress_message">*YOU GOT THIS!</string>
+    <string name="up_for_it">UP FOR IT!</string>
+    <string name="excuses">EXCUSES, EXCUSES, EXCUSES</string>
 </resources>

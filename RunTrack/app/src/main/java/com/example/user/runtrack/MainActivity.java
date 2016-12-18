@@ -71,9 +71,6 @@ public class MainActivity extends AppCompatActivity {
         totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance()+ " km");
         totalTimeTextView.setText("TIME \n" + db.getTotalTime()+ " mins");
 
-
-
-
         allRunButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
