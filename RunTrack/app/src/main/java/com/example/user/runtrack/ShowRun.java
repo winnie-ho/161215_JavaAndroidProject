@@ -73,36 +73,36 @@ public class ShowRun extends AppCompatActivity{
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
-        final int selectedRunId = extras.getInt("ID");
-        final String selectedRunTitle = extras.getString("Title");
-        final int selectedRunDistance = extras.getInt("Distance");
-        final int selectedRunTime = extras.getInt("Time");
-        final int selectedRunPace = extras.getInt("Pace");
-        final String selectedRunRoute = extras.getString("Route");
-        final String selectedRunType = extras.getString("Type");
+        final int Id = extras.getInt("ID");
+        final String Title = extras.getString("Title");
+        final int Distance = extras.getInt("Distance");
+        final int Time = extras.getInt("Time");
+        final int Pace = extras.getInt("Pace");
+        final String Route = extras.getString("Route");
+        final String Type = extras.getString("Type");
 
-        showTitleTextView.setText("Run: " + selectedRunTitle);
-        showDistanceTextView.setText("Distance: " + selectedRunDistance + " km");
-        showTimeTextView.setText("Time: " + selectedRunTime + " mins");
-        showPaceTextView.setText("Pace: " + selectedRunPace + " mins/km");
-        showRouteTextView.setText("Route: " + selectedRunRoute);
-        showTypeTextView.setText("Type: " + selectedRunType);
+        showTitleTextView.setText("Run: " + Title);
+        showDistanceTextView.setText("Distance: " + Distance + " km");
+        showTimeTextView.setText("Time: " + Time + " mins");
+        showPaceTextView.setText("Pace: " + Pace + " mins/km");
+        showRouteTextView.setText("Route: " + Route);
+        showTypeTextView.setText("Type: " + Type);
 
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("OriginalRunInfo", "RunToEdit: title: " + selectedRunTitle +
-                        ", "  + selectedRunDistance + ", " + selectedRunTime + ", " +
-                        selectedRunPace + ", " + selectedRunRoute + ", " + selectedRunType);
+                Log.d("OriginalRunInfo", "RunToEdit: title: " + Title +
+                        ", "  + Distance + ", " + Time + ", " +
+                        Pace + ", " + Route + ", " + Type);
 
                 Intent intent = new Intent(ShowRun.this, EditRun.class);
-                intent.putExtra("ID", selectedRunId);
-                intent.putExtra("Title", selectedRunTitle);
-                intent.putExtra("Distance",selectedRunDistance);
-                intent.putExtra("Time", selectedRunTime);
-                intent.putExtra("Pace", selectedRunPace);
-                intent.putExtra("Route", selectedRunRoute);
-                intent.putExtra("Type", selectedRunType);
+                intent.putExtra("ID", Id);
+                intent.putExtra("Title", Title);
+                intent.putExtra("Distance",Distance);
+                intent.putExtra("Time", Time);
+                intent.putExtra("Pace", Pace);
+                intent.putExtra("Route", Route);
+                intent.putExtra("Type", Type);
                 startActivity(intent);
             }
         });
@@ -110,8 +110,8 @@ public class ShowRun extends AppCompatActivity{
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v){
-                Log.d("Delete Run: ", "deleting run with ID:" + selectedRunId);
-                db.deleteRun(selectedRunId);
+                Log.d("Delete Run: ", "deleting run with ID:" + Id);
+                db.deleteRun(Id);
                 Intent intent = new Intent(ShowRun.this, AllRuns.class);
                 startActivity(intent);
                 Toast.makeText(ShowRun.this, "Run Deleted!", Toast.LENGTH_SHORT).show();

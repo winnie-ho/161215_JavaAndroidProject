@@ -68,14 +68,14 @@ public class EditRun extends AppCompatActivity{
                 db.updateRun(runToEdit);
                 Log.d("Edit:", "Editing run.." + title + ", " + distance + " k");
 
-                Intent intent = new Intent(EditRun.this, AllRuns.class);
+                Intent intent = new Intent(EditRun.this, ShowRun.class);
                 intent.putExtra("ID", selectedId);
-                intent.putExtra("Title", selectedTitle);
-                intent.putExtra("Distance",selectedDistance);
-                intent.putExtra("Time", selectedTime);
-                intent.putExtra("Pace", selectedPace);
-                intent.putExtra("Route", selectedRoute);
-                intent.putExtra("Type", selectedType);
+                intent.putExtra("Title", title);
+                intent.putExtra("Distance",distance);
+                intent.putExtra("Time", time);
+                intent.putExtra("Pace", pace);
+                intent.putExtra("Route", route);
+                intent.putExtra("Type", type);
                 startActivity(intent);
             }
         });
