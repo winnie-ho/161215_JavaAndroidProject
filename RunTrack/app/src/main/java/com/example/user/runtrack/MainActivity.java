@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 /**
  * Created by user on 17/12/2016.
  */
@@ -20,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView totalDistanceTextView;
     TextView totalTimeTextView;
     Button allRunButton;
-    Button randomButton;
+    Button challengesButton;
 
 
     @Override
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             this.startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.run_roulette) {
-            Intent intent = new Intent(MainActivity.this, RunRoulette.class);
+            Intent intent = new Intent(MainActivity.this, Challenges.class);
             this.startActivity(intent);
             return true;
         }
@@ -64,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         totalDistanceTextView = (TextView)findViewById(R.id.total_distance);
         totalTimeTextView = (TextView)findViewById(R.id.total_time);
         allRunButton = (Button)findViewById(R.id.all_runs);
-        randomButton = (Button)findViewById(R.id.run_roulette);
+        challengesButton = (Button)findViewById(R.id.challenges);
 
         progressMessageTextView.setText(message.getMessage());
         totalRunTextView.setText("RUNS \n" + db.getTotalRun());
@@ -79,10 +77,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        randomButton.setOnClickListener(new View.OnClickListener(){
+        challengesButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, RunRoulette.class);
+                Intent intent = new Intent(MainActivity.this, Challenges.class);
                 startActivity(intent);
             }
         });

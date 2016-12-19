@@ -31,7 +31,7 @@ public class RandomRun extends AppCompatActivity {
             this.startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.run_roulette) {
-            Intent intent = new Intent(RandomRun.this, RunRoulette.class);
+            Intent intent = new Intent(RandomRun.this, Challenges.class);
             this.startActivity(intent);
             return true;
         }

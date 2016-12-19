@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
+
 import java.util.ArrayList;
 
 /**
@@ -45,7 +45,7 @@ public class AllRuns extends AppCompatActivity {
             return true;
         }
         else if (item.getItemId() == R.id.run_roulette){
-            Intent intent = new Intent(AllRuns.this, RunRoulette.class);
+            Intent intent = new Intent(AllRuns.this, Challenges.class);
             this.startActivity(intent);
             return true;
         }

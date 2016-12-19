@@ -123,7 +123,7 @@
         android:layout_gravity="center_horizontal" />
 
     <Button
-        android:id="@+id/run_roulette"
+        android:id="@+id/challenges"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginLeft="4dp"

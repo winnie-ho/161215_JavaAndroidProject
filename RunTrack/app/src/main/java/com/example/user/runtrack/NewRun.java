@@ -43,7 +43,7 @@ public class NewRun extends AppCompatActivity {
             return true;
         }
         else if (item.getItemId() == R.id.run_roulette){
-            Intent intent = new Intent(NewRun.this, RunRoulette.class);
+            Intent intent = new Intent(NewRun.this, Challenges.class);
             this.startActivity(intent);
             return true;
         }

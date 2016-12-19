@@ -20,12 +20,12 @@ public class Message {
         messages.add("KEEP IT GOING!");
         messages.add("POWER ON!");
         messages.add("GET OFF YOUR BUTT!");
-        messages.add("SO MANY MILES TO RUN SO LITTLE TIME!");
+        messages.add("SO MANY MILES, SO LITTLE TIME!");
         messages.add("THOSE TRAINERS AIN'T GONNA RUN THEMSELVES!");
         messages.add("IT'S MEANT TO HURT!");
         messages.add("YOUR COMPETITORS AIN'T RESTING!");
         messages.add("THAT'S NOT AN EXCUSE!");
-        messages.add("PUMP THOSE LEGS");
+        messages.add("RUN LIKE YOU STOLE SOMETHING!");
     }
 
     public int messagesSize(){

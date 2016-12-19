@@ -20,19 +20,4 @@
         android:padding="30dp"
         android:layout_gravity="center_horizontal" />
 
-    <Button
-        android:id="@+id/excuses"
-        android:layout_width="match_parent"
-        android:layout_height="248dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="2dp"
-        android:text="@string/excuses"
-        android:textSize="30dp"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:background="@color/colorWhite"
-        android:padding="30dp"
-        android:layout_gravity="center_horizontal" />
-
 </LinearLayout>

@@ -7,12 +7,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 /**
  * Created by user on 17/12/2016.
  */
-public class RunRoulette extends AppCompatActivity {
+public class Challenges extends AppCompatActivity {
     Button upForItButton;
     Button excusesButton;
 
@@ -26,15 +25,15 @@ public class RunRoulette extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item) {
         if (item.getItemId() == R.id.add_run) {
-            Intent intent = new Intent(RunRoulette.this, NewRun.class);
+            Intent intent = new Intent(Challenges.this, NewRun.class);
             this.startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.all_runs) {
-            Intent intent = new Intent(RunRoulette.this, AllRuns.class);
+            Intent intent = new Intent(Challenges.this, AllRuns.class);
             this.startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.run_roulette) {
-            Intent intent = new Intent(RunRoulette.this, RunRoulette.class);
+            Intent intent = new Intent(Challenges.this, Challenges.class);
             this.startActivity(intent);
             return true;
         }
@@ -48,23 +47,15 @@ public class RunRoulette extends AppCompatActivity {
         setContentView(R.layout.run_roulette);
 
         upForItButton = (Button)findViewById(R.id.up_for_it);
-        excusesButton = (Button)findViewById(R.id.excuses);
 
         upForItButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RunRoulette.this, RandomRun.class);
+                Intent intent = new Intent(Challenges.this, RandomRun.class);
                 startActivity(intent);
             }
         });
 
-        excusesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RunRoulette.this, Excuses.class);
-                startActivity(intent);
-            }
-        });
 
     }
 }
