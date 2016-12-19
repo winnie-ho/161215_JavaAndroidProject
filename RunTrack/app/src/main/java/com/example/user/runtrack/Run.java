@@ -9,14 +9,14 @@ import java.util.Date;
 public class Run {
     private int id;
     private String title;
-    private int distance;
-    private int time;
-    private int pace;
+    private float distance;
+    private float time;
+    private float pace;
     private String route;
     private String type;
 
     //Full Run Constructor for DB
-    public Run(int id, String title, int distance, int time, int pace, String route, String type){
+    public Run(int id, String title, float distance, float time, float pace, String route, String type){
         this.id = id;
         this.title = title;
         this.distance = distance;
@@ -27,7 +27,7 @@ public class Run {
     }
 
     //Full Run Constructor
-    public Run(String title, int distance, int time, int pace, String route, String type){
+    public Run(String title, float distance, float time, float pace, String route, String type){
         this.title = title;
         this.distance = distance;
         this.time = time;
@@ -37,7 +37,7 @@ public class Run {
     }
 
     //Simple Run Constructor
-    public Run(String title, int distance){
+    public Run(String title, float distance){
         this.title = title;
         this.distance = distance;
     }
@@ -52,15 +52,15 @@ public class Run {
         return this.title;
     }
 
-    public int getDistance(){
+    public float getDistance(){
         return this.distance;
     }
 
-    public int getTime(){
+    public float getTime(){
         return this.time;
     }
 
-    public int getPace(){
+    public float getPace(){
         return this.pace;
     }
 

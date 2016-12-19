@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import java.sql.Time;
 import java.util.ArrayList;
 
 /**
@@ -35,16 +37,16 @@ public class DBHandler extends SQLiteOpenHelper {
     /*    CREATE TABLE runs(
           id INTEGER PRIMARY KEY,
           title TEXT,
-          distance INTEGER,
-          time INTEGER,
-          pace INTEGER,
+          distance FLOAT,
+          time FLOAT,
+          pace FLOAT,
           route TEXT,
           type TEXT
     )
 */
         String CREATE_TABLE = "CREATE TABLE " + TABLE_RUNS + "(" + KEY_ID + " INTEGER PRIMARY KEY,"
-                + KEY_TITLE + " TEXT," + KEY_DISTANCE + " INTEGER," + KEY_TIME + " INTEGER," + KEY_PACE +
-                " INTEGER," + KEY_ROUTE + " TEXT," + KEY_TYPE + " TEXT )";
+                + KEY_TITLE + " TEXT," + KEY_DISTANCE + " FLOAT," + KEY_TIME + " FLOAT," + KEY_PACE +
+                " FLOAT," + KEY_ROUTE + " TEXT," + KEY_TYPE + " TEXT )";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -65,25 +67,25 @@ public class DBHandler extends SQLiteOpenHelper {
     //CRUD METHODS
         public void addRun(Run run){
             String title = run.getRunTitle();
-            int distance = run.getDistance();
-            int time = run.getTime();
-            int pace = run.getPace();
+            float distance = run.getDistance();
+            float time = run.getTime();
+            float pace = run.getPace();
             String route = run.getRoute();
             String type = run.getType();
 
             String sql = "INSERT INTO " + TABLE_RUNS + " ('" + KEY_TITLE + "', " + KEY_DISTANCE + ", "
                     + KEY_TIME + ", "+ KEY_PACE + ", '" + KEY_ROUTE + "', '" + KEY_TYPE + "') VALUES ('" +
-                    title + "', "+ Integer.toString(distance) + ", " + Integer.toString(time) + ", " +
-                    Integer.toString(pace) + ",'"+ route + "', '" + type + "')";
+                    title + "', "+ Float.toString(distance) + ", " + Float.toString(time) + ", " +
+                    Float.toString(pace) + ",'"+ route + "', '" + type + "')";
             SQLrunner(sql);
         }
 
         public void updateRun(Run run) {
             int id = run.getId();
             String title = run.getRunTitle();
-            int distance = run.getDistance();
-            int time = run.getTime();
-            int pace = run.getPace();
+            float distance = run.getDistance();
+            float time = run.getTime();
+            float pace = run.getPace();
             String route = run.getRoute();
             String type = run.getType();
 
@@ -109,24 +111,24 @@ public class DBHandler extends SQLiteOpenHelper {
             return totalRun;
         }
 
-        public int getTotalDistance(){
+        public float getTotalDistance(){
             String sql = "SELECT sum (" + KEY_DISTANCE + ") FROM " + TABLE_RUNS;
 
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(sql, null);
                 cursor.moveToFirst();
-                int totalDistance = cursor.getInt(0);
+                float totalDistance = cursor.getFloat(0);
                 cursor.close();
             return totalDistance;
         }
 
-        public int getTotalTime(){
+        public Float getTotalTime(){
             String sql = "SELECT sum (" + KEY_TIME + ") FROM " + TABLE_RUNS;
 
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(sql, null);
             cursor.moveToFirst();
-            int totalTime = cursor.getInt(0);
+            float totalTime = cursor.getFloat(0);
             cursor.close();
             return totalTime;
         }
@@ -211,9 +213,9 @@ public class DBHandler extends SQLiteOpenHelper {
         // Retrieve data in the column field
         int id = Integer.parseInt(cursor.getString(idColumnNum));
         String title = cursor.getString(titleColumnNum);
-        int distance = Integer.parseInt(cursor.getString(distanceColumnNum));
-        int time = Integer.parseInt(cursor.getString(timeColumnNum));
-        int pace = Integer.parseInt(cursor.getString(paceColumnNum));
+        float distance = Float.parseFloat(cursor.getString(distanceColumnNum));
+        float time = Float.parseFloat(cursor.getString(timeColumnNum));
+        float pace = Integer.parseInt(cursor.getString(paceColumnNum));
         String route = cursor.getString(routeColumnNum);
         String type = cursor.getString(typeColumnNum);
 

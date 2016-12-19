@@ -40,9 +40,9 @@ public class EditRun extends AppCompatActivity{
 
         final int selectedId = extras.getInt("ID");
         final String selectedTitle = extras.getString("Title");
-        final int selectedDistance = extras.getInt("Distance");
-        final int selectedTime = extras.getInt("Time");
-        final int selectedPace = extras.getInt("Pace");
+        final float selectedDistance = extras.getFloat("Distance");
+        final float selectedTime = extras.getFloat("Time");
+        final float selectedPace = extras.getFloat("Pace");
         final String selectedRoute = extras.getString("Route");
         final String selectedType = extras.getString("Type");
 
@@ -58,9 +58,9 @@ public class EditRun extends AppCompatActivity{
             public void onClick(View v) {
 
                 String title = titleEditText.getText().toString();
-                int distance = Integer.parseInt(distanceEditText.getText().toString());
-                int time = Integer.parseInt(timeEditText.getText().toString());
-                int pace = Integer.parseInt(paceEditText.getText().toString());
+                float distance = Float.parseFloat(distanceEditText.getText().toString());
+                float time = Float.parseFloat(timeEditText.getText().toString());
+                float pace = Float.parseFloat(paceEditText.getText().toString());
                 String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
 

@@ -75,9 +75,9 @@ public class ShowRun extends AppCompatActivity{
 
         final int Id = extras.getInt("ID");
         final String Title = extras.getString("Title");
-        final int Distance = extras.getInt("Distance");
-        final int Time = extras.getInt("Time");
-        final int Pace = extras.getInt("Pace");
+        final float Distance = extras.getFloat("Distance");
+        final float Time = extras.getFloat("Time");
+        final float Pace = extras.getFloat("Pace");
         final String Route = extras.getString("Route");
         final String Type = extras.getString("Type");
 

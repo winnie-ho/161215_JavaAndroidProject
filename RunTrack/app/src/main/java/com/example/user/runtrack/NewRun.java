@@ -70,8 +70,8 @@ public class NewRun extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String title = titleEditText.getText().toString();
-                int distance = Integer.parseInt(distanceEditText.getText().toString());
-                int time = Integer.parseInt(timeEditText.getText().toString());
+                float distance = Float.parseFloat(distanceEditText.getText().toString());
+                float time = Float.parseFloat(timeEditText.getText().toString());
                 int pace = Integer.parseInt(paceEditText.getText().toString());
                 String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
