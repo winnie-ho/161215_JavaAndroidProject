@@ -7,7 +7,7 @@
     android:gravity="center_horizontal">
 
     <TextView
-        android:id="@+id/show_run"
+        android:id="@+id/show_run_title"
         android:text="@string/show_run"
         android:textAlignment="center"
         android:fontFamily="sans-serif-condensed"
@@ -52,16 +52,7 @@
             android:layout_gravity="right"/>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/show_run_title"
-        android:text="RUN: "
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="15dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginLeft="10dp"/>
+
 
     <TextView
         android:id="@+id/show_run_distance"

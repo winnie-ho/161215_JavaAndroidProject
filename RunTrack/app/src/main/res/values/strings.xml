@@ -5,7 +5,7 @@
     <string name="run_roulette">RUN ROULETTE</string>
     <string name="all_runs">RUN LOG</string>
     <string name="edit_run">EDIT RUN</string>
-    <string name="summary">SUMMARY</string>
+    <string name="month_summary">MONTH SUMMARY</string>
     <string name="totals">TOTALS</string>
     <string name="total_distance">DISTANCE</string>
     <string name="total_time">TIME</string>

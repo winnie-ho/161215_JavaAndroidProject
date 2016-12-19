@@ -24,9 +24,6 @@ public class AllRuns extends AppCompatActivity {
     Button addRun;
     EditText titleEditText;
     EditText distanceEditText;
-    Button viewRunButton;
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -55,8 +52,6 @@ public class AllRuns extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 
 
     @Override
@@ -117,8 +112,6 @@ public class AllRuns extends AppCompatActivity {
         });
 
     }
-
-
 
     //Accessing all Runs in DB and returning all runs in runLog to make available for Array List
     private ArrayList<String>getAllRuns(DBHandler db){

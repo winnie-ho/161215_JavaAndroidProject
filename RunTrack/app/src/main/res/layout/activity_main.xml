@@ -12,7 +12,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:text="@string/summary"
+        android:text="@string/month_summary"
         android:textSize="15dp"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"
@@ -23,7 +23,7 @@
     <ImageView
         android:src="@drawable/run_track_only"
         android:layout_width="fill_parent"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_gravity="top"
         android:layout_marginRight="4dp"
         android:layout_marginLeft="4dp"
@@ -67,7 +67,7 @@
         <TextView
             android:id="@+id/total_runs"
             android:layout_width="130dp"
-            android:layout_height="82dp"
+            android:layout_height="78dp"
             android:layout_marginLeft="4dp"
             android:text="@string/total_runs"
             android:textSize="15dp"
@@ -81,7 +81,7 @@
         <TextView
             android:id="@+id/total_distance"
             android:layout_width="130dp"
-            android:layout_height="82dp"
+            android:layout_height="78dp"
             android:textSize="15dp"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
@@ -93,7 +93,7 @@
         <TextView
             android:id="@+id/total_time"
             android:layout_width="132dp"
-            android:layout_height="82dp"
+            android:layout_height="78dp"
             android:layout_marginRight="4dp"
             android:text="@string/total_time"
             android:textSize="15dp"
