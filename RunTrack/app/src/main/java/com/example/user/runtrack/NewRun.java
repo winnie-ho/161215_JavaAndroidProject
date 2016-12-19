@@ -72,7 +72,7 @@ public class NewRun extends AppCompatActivity {
                 String title = titleEditText.getText().toString();
                 float distance = Float.parseFloat(distanceEditText.getText().toString());
                 float time = Float.parseFloat(timeEditText.getText().toString());
-                int pace = Integer.parseInt(paceEditText.getText().toString());
+                float pace = Float.parseFloat(paceEditText.getText().toString());
                 String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
 

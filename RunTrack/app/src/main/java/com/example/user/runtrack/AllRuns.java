@@ -120,7 +120,7 @@ public class AllRuns extends AppCompatActivity {
         ArrayList<Run>runs = db.getAllRuns();
         for (Run run : runs){
             runLog.add("- " + run.getRunTitle() + "  |  " + run.getDistance() +"km  |  " +
-                    run.getTime() + "mins  |  " + run.getType());
+                    run.getTime() + "mins");
             Log.d("Showing:", "Showing" + run.getRunTitle() );
         }
         return runLog;

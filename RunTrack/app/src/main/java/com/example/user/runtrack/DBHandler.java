@@ -215,7 +215,7 @@ public class DBHandler extends SQLiteOpenHelper {
         String title = cursor.getString(titleColumnNum);
         float distance = Float.parseFloat(cursor.getString(distanceColumnNum));
         float time = Float.parseFloat(cursor.getString(timeColumnNum));
-        float pace = Integer.parseInt(cursor.getString(paceColumnNum));
+        float pace = Float.parseFloat(cursor.getString(paceColumnNum));
         String route = cursor.getString(routeColumnNum);
         String type = cursor.getString(typeColumnNum);
 
