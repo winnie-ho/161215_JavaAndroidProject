@@ -134,7 +134,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
         public Run getRun(int id){
-            String sql = "SELECT * FROM " + TABLE_RUNS + "WHERE " + KEY_ID + " = " + id;
+            String sql = "SELECT * FROM " + TABLE_RUNS + " WHERE " + KEY_ID + " = " + id;
 
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(sql, null);

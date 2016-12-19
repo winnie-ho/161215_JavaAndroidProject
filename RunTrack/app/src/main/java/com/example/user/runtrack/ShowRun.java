@@ -60,6 +60,21 @@ public class ShowRun extends AppCompatActivity{
         showTimeTextView = (TextView)findViewById(R.id.show_run_time);
         showPaceTextView = (TextView)findViewById(R.id.show_run_pace);
         showTypeTextView = (TextView)findViewById(R.id.show_run_type);
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+
+        String selectedRunTitle = extras.getString("Selected Run Title");
+        int selectedRunDistance = intent.getIntExtra("Selected Run Distance", 0);
+        int selectedRunTime = intent.getIntExtra("Selected Run Time", 0);
+        int selectedRunPace = intent.getIntExtra("Selected Run Pace", 0);
+        String selectedRunType = extras.getString("Selected Run Type");
+
+        showTitleTextView.setText("Run: " + selectedRunTitle);
+        showDistanceTextView.setText("Distance: " + selectedRunDistance + " km");
+        showTimeTextView.setText("Time: " + selectedRunTime + " mins");
+        showPaceTextView.setText("Pace: " + selectedRunPace + " mins/km");
+        showTypeTextView.setText("Type: " + selectedRunType);
     }
 
     private void backToMainScreen() {

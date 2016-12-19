@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     android:gravity="center_horizontal">
 
     <TextView
@@ -19,7 +20,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="285dp"
         android:layout_margin="4dp"
         android:src="@drawable/sample_map"/>
 
@@ -83,6 +84,34 @@
         android:layout_gravity="left"
         android:layout_marginLeft="10dp"/>
 
+
+    <Button
+        android:id="@+id/button_editRun"
+        android:text="@string/edit_run"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="right"
+        android:textIsSelectable="true"/>
+
+    <Button
+        android:id="@+id/button_deleteRun"
+        android:text="@string/delete_run"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="right"
+        android:textIsSelectable="true"/>
 
 
 

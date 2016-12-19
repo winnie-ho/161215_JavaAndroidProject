@@ -112,13 +112,29 @@ public class AllRuns extends AppCompatActivity {
         allRunList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selected = (String)allRunList.getItemAtPosition(position);
-                Log.d("ListView:", selected + " selected");
+                String selected = (String) allRunList.getItemAtPosition(position);
+                Log.d("ListView:", selected + " selected, position: " + position + ", id: " + id);
+
+                Run selectedRun = db.getRun(position+1);
+                Log.d("Selected Run: ", "Selected run: " + selectedRun);
 
                 Intent intent = new Intent(AllRuns.this, ShowRun.class);
+
+                Log.d("SelectedRunInfo", "Selected run: title: " + selectedRun.getRunTitle() +
+                        ", "  + selectedRun.getDistance() + ", " + selectedRun.getTime() + ", " +
+                        selectedRun.getPace() + ", " + selectedRun.getType());
+
+                intent.putExtra("Selected Run Title",selectedRun.getRunTitle());
+                intent.putExtra("Selected Run Distance",selectedRun.getDistance());
+                intent.putExtra("Selected Run Time",selectedRun.getTime());
+                intent.putExtra("Selected Run Pace",selectedRun.getPace());
+                intent.putExtra("Selected Run Type",selectedRun.getType());
                 startActivity(intent);
+
+
             }
         });
+
     }
 
 
