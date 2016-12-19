@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <EditText
         android:id="@+id/run_title"
         android:fontFamily="sans-serif-condensed"
@@ -13,7 +15,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginLeft="10dp" />
-
 
     <EditText
         android:id="@+id/distance"
@@ -75,10 +76,9 @@
         android:layout_gravity="left"
         android:layout_marginLeft="10dp" />
 
-
     <Button
         android:id="@+id/button_add_run"
-        android:text="@string/add_run"
+        android:text="@string/edit_run"
         android:background="@color/colorPrimary"
         android:fontFamily="sans-serif-condensed"
         android:layout_width="80dp"

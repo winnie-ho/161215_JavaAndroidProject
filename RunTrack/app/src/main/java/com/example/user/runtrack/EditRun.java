@@ -27,9 +27,6 @@ public class EditRun extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_run);
 
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar);
-
         titleEditText = (EditText)findViewById(R.id.run_title);
         distanceEditText = (EditText)findViewById(R.id.distance);
         timeEditText = (EditText)findViewById(R.id.time);
@@ -37,6 +34,23 @@ public class EditRun extends AppCompatActivity{
         routeEditText = (EditText)findViewById(R.id.route);
         typeEditText = (EditText)findViewById(R.id.type);
         editRunButton = (Button)findViewById(R.id.button_add_run);
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+
+        final String originalTitle = extras.getString("OriginalTitle");
+        final int originalDistance = extras.getInt("OriginalDistance");
+        final int originalTime = extras.getInt("OriginalTime");
+        final int originalPace = extras.getInt("OriginalPace");
+        final String originalRoute = extras.getString("OriginalRoute");
+        final String originalType = extras.getString("OriginalType");
+
+        titleEditText.setText(originalTitle);
+        distanceEditText.setText("" + originalDistance);
+        timeEditText.setText("" + originalTime);
+        paceEditText.setText("" + originalPace);
+        routeEditText.setText(originalRoute);
+        typeEditText.setText(originalType);
 
         editRunButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,15 +64,13 @@ public class EditRun extends AppCompatActivity{
 
                 Run runToEdit = new Run(title, distance, time, pace, route, type);
                 db.updateRun(runToEdit);
-                Log.d("Edit:", "Editing run.." + title + " " + distance + "k");
-                backToMainScreen();
+                Log.d("Edit:", "Editing run.." + title + ", " + distance + " k");
+
+                Intent intent = new Intent(EditRun.this, ShowRun.class);
+                startActivity(intent);
             }
         });
     }
 
-    private void backToMainScreen() {
-        Intent intent = new Intent(EditRun.this, AllRuns.class);
-        startActivity(intent);
-    }
 
 }

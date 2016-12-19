@@ -4,8 +4,11 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -18,7 +21,10 @@ public class ShowRun extends AppCompatActivity{
     TextView showDistanceTextView;
     TextView showTimeTextView;
     TextView showPaceTextView;
+    TextView showRouteTextView;
     TextView showTypeTextView;
+    Button editButton;
+    Button deleteButton;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -50,36 +56,52 @@ public class ShowRun extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final DBHandler db = ((MainApplication)getApplication()).db;
+        final DBHandler db = ((MainApplication) getApplication()).db;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_run);
 
-
-        showTitleTextView = (TextView)findViewById(R.id.show_run_title);
-        showDistanceTextView = (TextView)findViewById(R.id.show_run_distance);
-        showTimeTextView = (TextView)findViewById(R.id.show_run_time);
-        showPaceTextView = (TextView)findViewById(R.id.show_run_pace);
-        showTypeTextView = (TextView)findViewById(R.id.show_run_type);
+        showTitleTextView = (TextView) findViewById(R.id.show_run_title);
+        showDistanceTextView = (TextView) findViewById(R.id.show_run_distance);
+        showTimeTextView = (TextView) findViewById(R.id.show_run_time);
+        showPaceTextView = (TextView) findViewById(R.id.show_run_pace);
+        showRouteTextView = (TextView) findViewById(R.id.show_run_route);
+        showTypeTextView = (TextView) findViewById(R.id.show_run_type);
+        editButton = (Button) findViewById(R.id.button_editRun);
+        deleteButton = (Button) findViewById(R.id.button_deleteRun);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
-        String selectedRunTitle = extras.getString("Selected Run Title");
-        int selectedRunDistance = intent.getIntExtra("Selected Run Distance", 0);
-        int selectedRunTime = intent.getIntExtra("Selected Run Time", 0);
-        int selectedRunPace = intent.getIntExtra("Selected Run Pace", 0);
-        String selectedRunType = extras.getString("Selected Run Type");
+        final String selectedRunTitle = extras.getString("Selected Run Title");
+        final int selectedRunDistance = extras.getInt("Selected Run Distance");
+        final int selectedRunTime = extras.getInt("Selected Run Time");
+        final int selectedRunPace = extras.getInt("Selected Run Pace");
+        final String selectedRunRoute = extras.getString("Selected Run Route");
+        final String selectedRunType = extras.getString("Selected Run Type");
 
         showTitleTextView.setText("Run: " + selectedRunTitle);
         showDistanceTextView.setText("Distance: " + selectedRunDistance + " km");
         showTimeTextView.setText("Time: " + selectedRunTime + " mins");
         showPaceTextView.setText("Pace: " + selectedRunPace + " mins/km");
+        showRouteTextView.setText("Route: " + selectedRunRoute);
         showTypeTextView.setText("Type: " + selectedRunType);
-    }
 
-    private void backToMainScreen() {
-        Intent intent = new Intent(ShowRun.this, AllRuns.class);
-        startActivity(intent);
-    }
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("OriginalRunInfo", "Selected run: title: " + selectedRunTitle +
+                        ", "  + selectedRunDistance + ", " + selectedRunTime + ", " +
+                        selectedRunPace + ", " + selectedRunRoute + ", " + selectedRunType);
 
+                Intent intent = new Intent(ShowRun.this, EditRun.class);
+                intent.putExtra("OriginalTitle", selectedRunTitle);
+                intent.putExtra("OriginalDistance",selectedRunDistance);
+                intent.putExtra("OriginalTime", selectedRunTime);
+                intent.putExtra("OriginalPace", selectedRunPace);
+                intent.putExtra("OriginalRoute", selectedRunRoute);
+                intent.putExtra("OriginalType", selectedRunType);
+                startActivity(intent);
+            }
+        });
+    }
 }

@@ -89,7 +89,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
             String sql = "UPDATE " + TABLE_RUNS + " SET "
                     + KEY_TITLE + " = '" + title + "', "
-                    + KEY_DISTANCE + " = '" + distance + "', "
+                    + KEY_DISTANCE + " = " + distance + ", "
                     + KEY_TIME + " = " + time + ", "
                     + KEY_PACE + " = " + pace + ", "
                     + KEY_ROUTE + " = '" + route + "', "

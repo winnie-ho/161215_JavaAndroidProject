@@ -122,21 +122,20 @@ public class AllRuns extends AppCompatActivity {
 
                 Log.d("SelectedRunInfo", "Selected run: title: " + selectedRun.getRunTitle() +
                         ", "  + selectedRun.getDistance() + ", " + selectedRun.getTime() + ", " +
-                        selectedRun.getPace() + ", " + selectedRun.getType());
+                        selectedRun.getPace() + ", " + selectedRun.getRoute() + ", " + selectedRun.getType());
 
+                intent.putExtra("Selected Run ID", selectedRun.getId());
                 intent.putExtra("Selected Run Title",selectedRun.getRunTitle());
                 intent.putExtra("Selected Run Distance",selectedRun.getDistance());
                 intent.putExtra("Selected Run Time",selectedRun.getTime());
                 intent.putExtra("Selected Run Pace",selectedRun.getPace());
+                intent.putExtra("Selected Run Route",selectedRun.getRoute());
                 intent.putExtra("Selected Run Type",selectedRun.getType());
                 startActivity(intent);
-
-
             }
         });
 
     }
-
 
 
 
