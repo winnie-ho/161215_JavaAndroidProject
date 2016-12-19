@@ -73,7 +73,6 @@ public class AllRuns extends AppCompatActivity {
         addRun = (Button) findViewById(R.id.button_newRun);
         titleEditText = (EditText) findViewById(R.id.run_title);
         distanceEditText = (EditText) findViewById(R.id.distance);
-        viewRunButton = (Button) findViewById(R.id.button_view_run);
 
 
         //Add New Run Button
@@ -86,24 +85,6 @@ public class AllRuns extends AppCompatActivity {
             }
         });
 
-
-        //Purge old logs
-//        Log.d("Delete:", "Deleting..");
-//        db.deleteAllRuns();
-
-
-//        Code for Buttons
-        viewRunButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Log.d("Add:", "Adding new run..");
-            }
-        });
-
-
-        //Inserting test data
-        Log.d("Insert: ", "Inserting..");
 
         //Showing data as a List View through and Array Adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getAllRuns(db));
@@ -120,17 +101,17 @@ public class AllRuns extends AppCompatActivity {
 
                 Intent intent = new Intent(AllRuns.this, ShowRun.class);
 
-                Log.d("SelectedRunInfo", "Selected run: title: " + selectedRun.getRunTitle() +
+                Log.d("SelectedRunInfo", "Selected run: " + selectedRun.getId() + ", " + selectedRun.getRunTitle() +
                         ", "  + selectedRun.getDistance() + ", " + selectedRun.getTime() + ", " +
                         selectedRun.getPace() + ", " + selectedRun.getRoute() + ", " + selectedRun.getType());
 
-                intent.putExtra("Selected Run ID", selectedRun.getId());
-                intent.putExtra("Selected Run Title",selectedRun.getRunTitle());
-                intent.putExtra("Selected Run Distance",selectedRun.getDistance());
-                intent.putExtra("Selected Run Time",selectedRun.getTime());
-                intent.putExtra("Selected Run Pace",selectedRun.getPace());
-                intent.putExtra("Selected Run Route",selectedRun.getRoute());
-                intent.putExtra("Selected Run Type",selectedRun.getType());
+                intent.putExtra("ID", selectedRun.getId());
+                intent.putExtra("Title",selectedRun.getRunTitle());
+                intent.putExtra("Distance",selectedRun.getDistance());
+                intent.putExtra("Time",selectedRun.getTime());
+                intent.putExtra("Pace",selectedRun.getPace());
+                intent.putExtra("Route",selectedRun.getRoute());
+                intent.putExtra("Type",selectedRun.getType());
                 startActivity(intent);
             }
         });

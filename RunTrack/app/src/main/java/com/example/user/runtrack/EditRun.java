@@ -38,23 +38,25 @@ public class EditRun extends AppCompatActivity{
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
-        final String originalTitle = extras.getString("OriginalTitle");
-        final int originalDistance = extras.getInt("OriginalDistance");
-        final int originalTime = extras.getInt("OriginalTime");
-        final int originalPace = extras.getInt("OriginalPace");
-        final String originalRoute = extras.getString("OriginalRoute");
-        final String originalType = extras.getString("OriginalType");
+        final int selectedId = extras.getInt("ID");
+        final String selectedTitle = extras.getString("Title");
+        final int selectedDistance = extras.getInt("Distance");
+        final int selectedTime = extras.getInt("Time");
+        final int selectedPace = extras.getInt("Pace");
+        final String selectedRoute = extras.getString("Route");
+        final String selectedType = extras.getString("Type");
 
-        titleEditText.setText(originalTitle);
-        distanceEditText.setText("" + originalDistance);
-        timeEditText.setText("" + originalTime);
-        paceEditText.setText("" + originalPace);
-        routeEditText.setText(originalRoute);
-        typeEditText.setText(originalType);
+        titleEditText.setText(selectedTitle);
+        distanceEditText.setText("" + selectedDistance);
+        timeEditText.setText("" + selectedTime);
+        paceEditText.setText("" + selectedPace);
+        routeEditText.setText(selectedRoute);
+        typeEditText.setText(selectedType);
 
         editRunButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String title = titleEditText.getText().toString();
                 int distance = Integer.parseInt(distanceEditText.getText().toString());
                 int time = Integer.parseInt(timeEditText.getText().toString());
@@ -62,11 +64,18 @@ public class EditRun extends AppCompatActivity{
                 String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
 
-                Run runToEdit = new Run(title, distance, time, pace, route, type);
+                Run runToEdit = new Run(selectedId, title, distance, time, pace, route, type);
                 db.updateRun(runToEdit);
                 Log.d("Edit:", "Editing run.." + title + ", " + distance + " k");
 
-                Intent intent = new Intent(EditRun.this, ShowRun.class);
+                Intent intent = new Intent(EditRun.this, AllRuns.class);
+                intent.putExtra("ID", selectedId);
+                intent.putExtra("Title", selectedTitle);
+                intent.putExtra("Distance",selectedDistance);
+                intent.putExtra("Time", selectedTime);
+                intent.putExtra("Pace", selectedPace);
+                intent.putExtra("Route", selectedRoute);
+                intent.putExtra("Type", selectedType);
                 startActivity(intent);
             }
         });
