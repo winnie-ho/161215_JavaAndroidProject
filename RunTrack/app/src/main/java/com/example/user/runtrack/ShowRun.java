@@ -11,11 +11,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by user on 17/12/2016.
  */
 public class ShowRun extends AppCompatActivity{
     TextView showTitleTextView;
+    TextView showDateTextView;
     TextView showDistanceTextView;
     TextView showTimeTextView;
     TextView showPaceTextView;
@@ -59,6 +62,7 @@ public class ShowRun extends AppCompatActivity{
         setContentView(R.layout.show_run);
 
         showTitleTextView = (TextView) findViewById(R.id.show_run_title);
+        showDateTextView = (TextView) findViewById(R.id.show_run_date);
         showDistanceTextView = (TextView) findViewById(R.id.show_run_distance);
         showTimeTextView = (TextView) findViewById(R.id.show_run_time);
         showPaceTextView = (TextView) findViewById(R.id.show_run_pace);
@@ -72,6 +76,7 @@ public class ShowRun extends AppCompatActivity{
 
         final int Id = extras.getInt("ID");
         final String Title = extras.getString("Title");
+        final String Date = extras.getString("Date");
         final float Distance = extras.getFloat("Distance");
         final float Time = extras.getFloat("Time");
         final float Pace = extras.getFloat("Pace");
@@ -79,6 +84,7 @@ public class ShowRun extends AppCompatActivity{
         final String Type = extras.getString("Type");
 
         showTitleTextView.setText("Run: " + Title);
+        showDateTextView.setText("Date: " + Date);
         showDistanceTextView.setText("Distance: " + Distance + " km");
         showTimeTextView.setText("Time: " + Time + " mins");
         showPaceTextView.setText("Pace: " + Pace + " mins/km");
@@ -95,6 +101,7 @@ public class ShowRun extends AppCompatActivity{
                 Intent intent = new Intent(ShowRun.this, EditRun.class);
                 intent.putExtra("ID", Id);
                 intent.putExtra("Title", Title);
+                intent.putExtra("Date", Date);
                 intent.putExtra("Distance",Distance);
                 intent.putExtra("Time", Time);
                 intent.putExtra("Pace", Pace);

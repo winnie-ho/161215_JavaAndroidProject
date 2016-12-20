@@ -102,6 +102,7 @@ public class AllRuns extends AppCompatActivity {
 
                 intent.putExtra("ID", selectedRun.getId());
                 intent.putExtra("Title",selectedRun.getRunTitle());
+                intent.putExtra("Date",selectedRun.getDate());
                 intent.putExtra("Distance",selectedRun.getDistance());
                 intent.putExtra("Time",selectedRun.getTime());
                 intent.putExtra("Pace",selectedRun.getPace());
@@ -119,7 +120,7 @@ public class AllRuns extends AppCompatActivity {
 
         ArrayList<Run>runs = db.getAllRuns();
         for (Run run : runs){
-            runLog.add("- " + run.getRunTitle() + "  |  " + run.getDistance() +"km  |  " +
+            runLog.add(run.getRunTitle() + "  |  " + run.getDistance() +"km  |  " +
                     run.getTime() + "mins");
             Log.d("Showing:", "Showing" + run.getRunTitle() );
         }

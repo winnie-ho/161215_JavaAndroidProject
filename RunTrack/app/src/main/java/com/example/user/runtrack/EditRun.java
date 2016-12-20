@@ -14,6 +14,7 @@ import android.widget.EditText;
  */
 public class EditRun extends AppCompatActivity{
     EditText titleEditText;
+    EditText dateEditText;
     EditText distanceEditText;
     EditText timeEditText;
     EditText paceEditText;
@@ -28,6 +29,7 @@ public class EditRun extends AppCompatActivity{
         setContentView(R.layout.edit_run);
 
         titleEditText = (EditText)findViewById(R.id.run_title);
+        dateEditText = (EditText)findViewById(R.id.run_date);
         distanceEditText = (EditText)findViewById(R.id.distance);
         timeEditText = (EditText)findViewById(R.id.time);
         paceEditText = (EditText)findViewById(R.id.pace);
@@ -40,6 +42,7 @@ public class EditRun extends AppCompatActivity{
 
         final int selectedId = extras.getInt("ID");
         final String selectedTitle = extras.getString("Title");
+        final String selectedDate = extras.getString("Date");
         final float selectedDistance = extras.getFloat("Distance");
         final float selectedTime = extras.getFloat("Time");
         final float selectedPace = extras.getFloat("Pace");
@@ -47,6 +50,7 @@ public class EditRun extends AppCompatActivity{
         final String selectedType = extras.getString("Type");
 
         titleEditText.setText(selectedTitle);
+        dateEditText.setText(selectedDate);
         distanceEditText.setText("" + selectedDistance);
         timeEditText.setText("" + selectedTime);
         paceEditText.setText("" + selectedPace);
@@ -58,19 +62,21 @@ public class EditRun extends AppCompatActivity{
             public void onClick(View v) {
 
                 String title = titleEditText.getText().toString();
+                String date = dateEditText.getText().toString();
                 float distance = Float.parseFloat(distanceEditText.getText().toString());
                 float time = Float.parseFloat(timeEditText.getText().toString());
                 float pace = Float.parseFloat(paceEditText.getText().toString());
                 String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
 
-                Run runToEdit = new Run(selectedId, title, distance, time, pace, route, type);
+                Run runToEdit = new Run(selectedId, title, date, distance, time, pace, route, type);
                 db.updateRun(runToEdit);
                 Log.d("Edit:", "Editing run.." + title + ", " + distance + " k");
 
                 Intent intent = new Intent(EditRun.this, ShowRun.class);
                 intent.putExtra("ID", selectedId);
                 intent.putExtra("Title", title);
+                intent.putExtra("Date", date);
                 intent.putExtra("Distance",distance);
                 intent.putExtra("Time", time);
                 intent.putExtra("Pace", pace);

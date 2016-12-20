@@ -6,8 +6,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import org.w3c.dom.Text;
+
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by user on 16/12/2016.
@@ -22,6 +25,7 @@ public class DBHandler extends SQLiteOpenHelper {
     //Runs table column names
     private static final String KEY_ID = "id";
     private static final String KEY_TITLE = "title";
+    private static final String KEY_DATE = "date";
     private static final String KEY_DISTANCE = "distance";
     private static final String KEY_TIME = "time";
     private static final String KEY_PACE = "pace";
@@ -37,6 +41,7 @@ public class DBHandler extends SQLiteOpenHelper {
     /*    CREATE TABLE runs(
           id INTEGER PRIMARY KEY,
           title TEXT,
+          date TEXT,
           distance FLOAT,
           time FLOAT,
           pace FLOAT,
@@ -45,7 +50,7 @@ public class DBHandler extends SQLiteOpenHelper {
     )
 */
         String CREATE_TABLE = "CREATE TABLE " + TABLE_RUNS + "(" + KEY_ID + " INTEGER PRIMARY KEY,"
-                + KEY_TITLE + " TEXT," + KEY_DISTANCE + " FLOAT," + KEY_TIME + " FLOAT," + KEY_PACE +
+                + KEY_TITLE + " TEXT," + KEY_DATE + " TEXT," + KEY_DISTANCE + " FLOAT," + KEY_TIME + " FLOAT," + KEY_PACE +
                 " FLOAT," + KEY_ROUTE + " TEXT," + KEY_TYPE + " TEXT )";
         db.execSQL(CREATE_TABLE);
     }
@@ -67,15 +72,16 @@ public class DBHandler extends SQLiteOpenHelper {
     //CRUD METHODS
         public void addRun(Run run){
             String title = run.getRunTitle();
+            String date = run.getDate();
             float distance = run.getDistance();
             float time = run.getTime();
             float pace = run.getPace();
             String route = run.getRoute();
             String type = run.getType();
 
-            String sql = "INSERT INTO " + TABLE_RUNS + " ('" + KEY_TITLE + "', " + KEY_DISTANCE + ", "
+            String sql = "INSERT INTO " + TABLE_RUNS + " ('" + KEY_TITLE + "', " + KEY_DATE + ", " + KEY_DISTANCE + ", "
                     + KEY_TIME + ", "+ KEY_PACE + ", '" + KEY_ROUTE + "', '" + KEY_TYPE + "') VALUES ('" +
-                    title + "', "+ Float.toString(distance) + ", " + Float.toString(time) + ", " +
+                    title + "', "+ date + ", " + Float.toString(distance) + ", " + Float.toString(time) + ", " +
                     Float.toString(pace) + ",'"+ route + "', '" + type + "')";
             SQLrunner(sql);
         }
@@ -83,6 +89,7 @@ public class DBHandler extends SQLiteOpenHelper {
         public void updateRun(Run run) {
             int id = run.getId();
             String title = run.getRunTitle();
+            String date = run.getDate();
             float distance = run.getDistance();
             float time = run.getTime();
             float pace = run.getPace();
@@ -91,6 +98,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
             String sql = "UPDATE " + TABLE_RUNS + " SET "
                     + KEY_TITLE + " = '" + title + "', "
+                    + KEY_DATE + " = " + date + ", "
                     + KEY_DISTANCE + " = " + distance + ", "
                     + KEY_TIME + " = " + time + ", "
                     + KEY_PACE + " = " + pace + ", "
@@ -202,30 +210,29 @@ public class DBHandler extends SQLiteOpenHelper {
         private Run getRunFromDBCursor(Cursor cursor) {
 
         // Get column index for each table column
-        int idColumnNum = cursor.getColumnIndex(KEY_ID);
-        int titleColumnNum = cursor.getColumnIndex(KEY_TITLE);
-        int distanceColumnNum = cursor.getColumnIndex(KEY_DISTANCE);
-        int timeColumnNum = cursor.getColumnIndex(KEY_TIME);
-        int paceColumnNum = cursor.getColumnIndex(KEY_PACE);
-        int routeColumnNum = cursor.getColumnIndex(KEY_ROUTE);
-        int typeColumnNum = cursor.getColumnIndex(KEY_TYPE);
+            int idColumnNum = cursor.getColumnIndex(KEY_ID);
+            int titleColumnNum = cursor.getColumnIndex(KEY_TITLE);
+            int dateColumnNum = cursor.getColumnIndex(KEY_DATE);
+            int distanceColumnNum = cursor.getColumnIndex(KEY_DISTANCE);
+            int timeColumnNum = cursor.getColumnIndex(KEY_TIME);
+            int paceColumnNum = cursor.getColumnIndex(KEY_PACE);
+            int routeColumnNum = cursor.getColumnIndex(KEY_ROUTE);
+            int typeColumnNum = cursor.getColumnIndex(KEY_TYPE);
 
         // Retrieve data in the column field
-        int id = Integer.parseInt(cursor.getString(idColumnNum));
-        String title = cursor.getString(titleColumnNum);
-        float distance = Float.parseFloat(cursor.getString(distanceColumnNum));
-        float time = Float.parseFloat(cursor.getString(timeColumnNum));
-        float pace = Float.parseFloat(cursor.getString(paceColumnNum));
-        String route = cursor.getString(routeColumnNum);
-        String type = cursor.getString(typeColumnNum);
+            int id = Integer.parseInt(cursor.getString(idColumnNum));
+            String title = cursor.getString(titleColumnNum);
+            String date = cursor.getString(dateColumnNum);
+            float distance = Float.parseFloat(cursor.getString(distanceColumnNum));
+            float time = Float.parseFloat(cursor.getString(timeColumnNum));
+            float pace = Float.parseFloat(cursor.getString(paceColumnNum));
+            String route = cursor.getString(routeColumnNum);
+            String type = cursor.getString(typeColumnNum);
 
-        Run run = new Run(id, title, distance, time, pace, route, type);
+            Run run = new Run(id, title, date, distance, time, pace, route, type);
 
-        return run;
+            return run;
     }
-
-
-
-    }
+}
 
 

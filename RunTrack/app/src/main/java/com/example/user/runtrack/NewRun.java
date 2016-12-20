@@ -16,6 +16,7 @@ import android.widget.Toast;
  */
 public class NewRun extends AppCompatActivity {
     EditText titleEditText;
+    EditText dateEditText;
     EditText distanceEditText;
     EditText timeEditText;
     EditText paceEditText;
@@ -59,6 +60,7 @@ public class NewRun extends AppCompatActivity {
 
 
         titleEditText = (EditText)findViewById(R.id.run_title);
+        dateEditText = (EditText)findViewById(R.id.run_date);
         distanceEditText = (EditText)findViewById(R.id.distance);
         timeEditText = (EditText)findViewById(R.id.time);
         paceEditText = (EditText)findViewById(R.id.pace);
@@ -70,13 +72,14 @@ public class NewRun extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String title = titleEditText.getText().toString();
+                String date = dateEditText.getText().toString();
                 float distance = Float.parseFloat(distanceEditText.getText().toString());
                 float time = Float.parseFloat(timeEditText.getText().toString());
                 float pace = Float.parseFloat(paceEditText.getText().toString());
                 String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
 
-                Run newRun = new Run(title, distance, time, pace, route, type);
+                Run newRun = new Run(title, date, distance, time, pace, route, type);
                 db.addRun(newRun);
                 Log.d("Add:", "Adding new run.." + title + " " + distance + "k");
                 Toast.makeText(NewRun.this, "Run Added!", Toast.LENGTH_SHORT).show();

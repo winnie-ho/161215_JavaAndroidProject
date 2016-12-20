@@ -52,13 +52,23 @@
             android:layout_gravity="right"/>
     </LinearLayout>
 
-
+    <TextView
+        android:id="@+id/show_run_date"
+        android:text="DATE: "
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="3dp"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/show_run_distance"
         android:text="DISTANCE: "
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="3dp"
         android:textSize="15dp"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
@@ -70,7 +80,7 @@
         android:id="@+id/show_run_time"
         android:text="TIME: "
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="3dp"
         android:textSize="15dp"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
@@ -82,7 +92,7 @@
         android:id="@+id/show_run_pace"
         android:text="PACE: "
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="3dp"
         android:textSize="15dp"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
@@ -94,7 +104,7 @@
         android:id="@+id/show_run_route"
         android:text="ROUTE: "
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="3dp"
         android:textSize="15dp"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"

@@ -9,7 +9,7 @@
     <EditText
         android:id="@+id/run_title"
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:hint="title"
         android:textColor="@color/colorPrimaryDark"
@@ -18,11 +18,22 @@
         android:layout_gravity="left"
         android:layout_marginLeft="10dp" />
 
+    <EditText
+        android:id="@+id/run_date"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:hint="date (yyyy-mm-dd)"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp" />
 
     <EditText
         android:id="@+id/distance"
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:hint="distance"
         android:textColor="@color/colorPrimaryDark"
@@ -34,7 +45,7 @@
     <EditText
         android:id="@+id/time"
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:hint="time"
         android:textColor="@color/colorPrimaryDark"
@@ -46,7 +57,7 @@
     <EditText
         android:id="@+id/pace"
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:hint="pace"
         android:textColor="@color/colorPrimaryDark"
@@ -58,7 +69,7 @@
     <EditText
         android:id="@+id/route"
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:hint="route"
         android:textColor="@color/colorPrimaryDark"
@@ -70,7 +81,7 @@
     <EditText
         android:id="@+id/type"
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:hint="type"
         android:textColor="@color/colorPrimaryDark"

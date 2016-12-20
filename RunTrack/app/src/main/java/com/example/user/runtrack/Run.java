@@ -1,5 +1,7 @@
 package com.example.user.runtrack;
 
+import org.w3c.dom.Text;
+
 import java.sql.Time;
 import java.util.Date;
 
@@ -9,6 +11,7 @@ import java.util.Date;
 public class Run {
     private int id;
     private String title;
+    private String date;
     private float distance;
     private float time;
     private float pace;
@@ -16,9 +19,10 @@ public class Run {
     private String type;
 
     //Full Run Constructor for DB
-    public Run(int id, String title, float distance, float time, float pace, String route, String type){
+    public Run(int id, String title, String date, float distance, float time, float pace, String route, String type){
         this.id = id;
         this.title = title;
+        this.date = date;
         this.distance = distance;
         this.time = time;
         this.pace = pace;
@@ -27,8 +31,9 @@ public class Run {
     }
 
     //Full Run Constructor
-    public Run(String title, float distance, float time, float pace, String route, String type){
+    public Run(String title, String date, float distance, float time, float pace, String route, String type){
         this.title = title;
+        this.date = date;
         this.distance = distance;
         this.time = time;
         this.pace = pace;
@@ -50,6 +55,10 @@ public class Run {
 
     public String getRunTitle(){
         return this.title;
+    }
+
+    public String getDate() {
+        return this.date;
     }
 
     public float getDistance(){
