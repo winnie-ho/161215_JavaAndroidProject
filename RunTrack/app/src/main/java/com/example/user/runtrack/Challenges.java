@@ -1,12 +1,15 @@
 package com.example.user.runtrack;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -19,6 +22,7 @@ public class Challenges extends AppCompatActivity {
     Button longButton;
     Button intervalsButton;
     Button hillButton;
+    ImageView mapImageView;
     TextView challengeTitleTextView;
     TextView challengeTypeTextView;
     TextView challengeDescriptionTextView;
@@ -58,9 +62,10 @@ public class Challenges extends AppCompatActivity {
         longButton = (Button)findViewById(R.id.type_long);
         intervalsButton = (Button)findViewById(R.id.type_intervals);
         hillButton = (Button)findViewById(R.id.type_hills);
+        mapImageView = (ImageView)findViewById(R.id.map);
         challengeTitleTextView = (TextView)findViewById(R.id.challenge_title);
-        challengeTypeTextView = (TextView)findViewById(R.id.challenge_description);
-        challengeDescriptionTextView = (TextView)findViewById(R.id.challenge_type);
+        challengeTypeTextView = (TextView)findViewById(R.id.challenge_type);
+        challengeDescriptionTextView = (TextView)findViewById(R.id.challenge_description);
 
         final ChallengeSet challengeSet = new ChallengeSet();
 
@@ -100,8 +105,20 @@ public class Challenges extends AppCompatActivity {
     }
 
     public void giveChallenge(Challenge selectedChallenge) {
+        int imageID = getResources().getIdentifier(selectedChallenge.getImage(), "drawable", getPackageName());
+        Log.d("Image ID", "Image selected: " + selectedChallenge.getImage()+ ", " + imageID);
+        mapImageView.setImageResource(imageID);
+
+
         challengeTitleTextView.setText(selectedChallenge.getTitle());
-        challengeTypeTextView.setText(selectedChallenge.getType());
+        challengeTypeTextView.setText(selectedChallenge.getType()+" challenge selected. Are you game?");
         challengeDescriptionTextView.setText(selectedChallenge.getDescription());
     }
 }
+
+
+//    public int getImageId(String imageName){
+//        int imageID = getResources().getIdentifier(imageName , "drawable", getPackageName());
+//        imageView.setImageResource(imageID);
+//    }
+//}

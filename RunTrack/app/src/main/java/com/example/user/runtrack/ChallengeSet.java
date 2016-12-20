@@ -25,30 +25,30 @@ public class ChallengeSet {
 
     //Raw Data
     Challenge cS2 = new Challenge("Park Run Cramond", "5km every Saturday 09:30 on Cramond Shore",
-            "@drawable/cramond_park_run", "Short");
+            "cramond_park_run", "Short");
 
     Challenge cS1 = new Challenge("Arthurs Seat Loop", "A loop of Arthurs Seat",
-            "@drawable/arthurs_seat","Short");
+            "arthurs_seat","Short");
 
     Challenge cL1= new Challenge("Ice Cream Run", "13km run from Edinburgh City Centre to Lucas Ice Cream Shop" +
-            " in Musselborough", "@drawable/ice_cream_run", "Long" );
+            " in Musselborough", "ice_cream_run", "Long" );
 
     Challenge cL2 = new Challenge("East Lothian Sea Trail", "21.2km around East Lothian finishing at the Race Course",
-            "@drawable/east_lothian", "Long");
+            "east_lothian", "Long");
 
     Challenge cI1 = new Challenge("Suicide Runs", "400m Loop. 3 x (4 sides, Sprint 1, Recover 3," +
-            " Sprint 2, Recover 2, Sprint 3, Recover 1, Sprint 4)","@drawable/suicide_runs", "Intervals");
+            " Sprint 2, Recover 2, Sprint 3, Recover 1, Sprint 4)","suicide_runs", "Intervals");
 
     Challenge cI2 = new Challenge("400m Intervals","8 x 400m Intervals on the Meadows. 1 minute recovery",
-            "@drawable/400m_intervals", "Intervals");
+            "400m_intervals", "Intervals");
 
 
     Challenge cH1 = new Challenge("Johnston Terrace Hills", "Phonebox to Phonebox. 10 x (Hill effort," +
-            " recover on descent)","@drawable/suicide_runs", "Hills");
+            " recover on descent)","suicide_runs", "Hills");
 
     Challenge cH2 = new Challenge("New Town Hills", "5 Hills of the New Town, Gloucester Lane, St Stephens Street," +
             " Dundas Street, India Street and Broughton Street. Effort on hill, rest on Queen Street and descent",
-            "@drawable/nth", "Hills");
+            "new_town_hills", "Hills");
 
 
     //Getters
