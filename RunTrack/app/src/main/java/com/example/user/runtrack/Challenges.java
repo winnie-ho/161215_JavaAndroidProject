@@ -23,6 +23,8 @@ public class Challenges extends AppCompatActivity {
     TextView challengeDistanceTextView;
     TextView challengeTypeTextView;
     TextView challengeDescriptionTextView;
+    Button acceptButton;
+    Button declineButton;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,6 +62,8 @@ public class Challenges extends AppCompatActivity {
         challengeDistanceTextView = (TextView)findViewById(R.id.distance);
         challengeTypeTextView = (TextView) findViewById(R.id.challenge_type);
         challengeDescriptionTextView = (TextView) findViewById(R.id.challenge_description);
+        acceptButton = (Button)findViewById(R.id.yea);
+        declineButton = (Button)findViewById(R.id.wimp);
 
 
         Intent intent = getIntent();
@@ -84,6 +88,22 @@ public class Challenges extends AppCompatActivity {
             Challenge selectedChallenge = challengeSet.getHillChallenge();
             giveChallenge(selectedChallenge);
         }
+
+        acceptButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Challenges.this, NewRun.class);
+                startActivity(intent);
+            }
+        });
+
+        declineButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Challenges.this, ChallengeSelect.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -97,43 +117,4 @@ public class Challenges extends AppCompatActivity {
         challengeDescriptionTextView.setText(selectedChallenge.getDescription());
     }
 }
-
-
-//        shortButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                Challenge selectedChallenge = challengeSet.getShortChallenge();
-//                giveChallenge(selectedChallenge);
-//            }
-//        });
-//
-//        longButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                Challenge selectedChallenge = challengeSet.getLongChallenge();
-//                giveChallenge(selectedChallenge);
-//            }
-//        });
-//
-//        intervalsButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                Challenge selectedChallenge = challengeSet.getIntervalChallenge();
-//                giveChallenge(selectedChallenge);
-//            }
-//        });
-//
-//        hillButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                Challenge selectedChallenge = challengeSet.getHillChallenge();
-//                giveChallenge(selectedChallenge);
-//            }
-//        });
-//
-//
-//    }
-
-
-
 
