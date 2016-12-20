@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, AllRuns.class);
             this.startActivity(intent);
             return true;
-        } else if (item.getItemId() == R.id.run_roulette) {
+        } else if (item.getItemId() == R.id.challenges) {
             Intent intent = new Intent(MainActivity.this, Challenges.class);
             this.startActivity(intent);
             return true;

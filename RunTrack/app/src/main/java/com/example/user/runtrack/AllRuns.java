@@ -44,7 +44,7 @@ public class AllRuns extends AppCompatActivity {
             this.startActivity(intent);
             return true;
         }
-        else if (item.getItemId() == R.id.run_roulette){
+        else if (item.getItemId() == R.id.challenges){
             Intent intent = new Intent(AllRuns.this, Challenges.class);
             this.startActivity(intent);
             return true;

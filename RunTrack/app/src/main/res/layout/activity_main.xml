@@ -129,7 +129,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="2dp"
-        android:text="@string/run_roulette"
+        android:text="@string/challenges"
         android:textSize="30dp"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"

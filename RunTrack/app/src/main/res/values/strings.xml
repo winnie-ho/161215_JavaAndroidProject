@@ -2,7 +2,7 @@
     <string name="app_name">RUN TRACK</string>
     <string name="add_run">ADD RUN</string>
     <string name="show_run">RUN DETAIL</string>
-    <string name="run_roulette">CHALLENGES</string>
+    <string name="challenges">CHALLENGES</string>
     <string name="all_runs">RUN LOG</string>
     <string name="edit_run">EDIT RUN</string>
     <string name="month_summary">MONTH SUMMARY</string>
@@ -10,9 +10,17 @@
     <string name="total_distance">DISTANCE</string>
     <string name="total_time">TIME</string>
     <string name="total_runs">RUNS</string>
-    <string name="up_for_it">UP FOR IT!</string>
+    <string name="bring_it_on">BRING IT ON!</string>
     <string name="pick_session_type">WHAT DO YOU FANCY?</string>
-    <string name="excuses">EXCUSES, EXCUSES, EXCUSES</string>
-    <string name="give_excuse">SHOULD I?</string>
     <string name="delete_run">DELETE RUN</string>
+    <string name="session_type">SELECT RUN TYPE</string>
+
+    <string name="type_short">SHORT</string>
+    <string name="type_long">LONG</string>
+    <string name="type_intervals">INTERVALS</string>
+    <string name="type_random">RANDOM</string>
+
+    <string name="yea">YOU\'RE ON!</string>
+    <string name="wimp">LAME</string>
+
 </resources>

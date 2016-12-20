@@ -4,20 +4,18 @@ package com.example.user.runtrack;
  * Created by user on 20/12/2016.
  */
 public class Challenge {
-    private int id;
     private String title;
     private String description;
     private String image;
     private String type;
-    private Boolean status;
+
 
     //Constructor
-    public Challenge(String title, String description, String image, String type, Boolean status){
+    public Challenge(String title, String description, String image, String type){
         this.title = title;
         this.description = description;
         this.image = image;
         this.type = type;
-        this.status = status;
     }
 
     //Getters
@@ -37,7 +35,5 @@ public class Challenge {
         return this.type;
     }
 
-    public Boolean getStatus(){
-        return this.status;
-    }
+
 }

@@ -33,7 +33,7 @@
 
         <activity
             android:name=".Challenges"
-            android:label="@string/run_roulette"
+            android:label="@string/challenges"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
         </activity>
@@ -56,13 +56,6 @@
             android:name=".ShowRun"
             android:label="@string/show_run"
             android:parentActivityName=".AllRuns"
-            android:theme="@style/AppTheme">
-        </activity>
-
-        <activity
-            android:name=".RandomRun"
-            android:label="@string/up_for_it"
-            android:parentActivityName=".Challenges"
             android:theme="@style/AppTheme">
         </activity>
 

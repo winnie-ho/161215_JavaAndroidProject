@@ -9,7 +9,7 @@
         android:title="ADD RUN"/>
 
     <item
-        android:id="@+id/run_roulette"
-        android:title="RUN ROULETTE"/>
+        android:id="@+id/challenges"
+        android:title="CHALLENGES"/>
 
 </menu>

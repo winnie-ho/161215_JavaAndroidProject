@@ -50,7 +50,7 @@ public class ShowRun extends AppCompatActivity{
             this.startActivity(intent);
             return true;
         }
-        else if (item.getItemId() == R.id.run_roulette){
+        else if (item.getItemId() == R.id.challenges){
             Intent intent = new Intent(ShowRun.this, Challenges.class);
             this.startActivity(intent);
             return true;

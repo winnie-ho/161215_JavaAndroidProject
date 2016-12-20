@@ -7,13 +7,21 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by user on 17/12/2016.
  */
 public class Challenges extends AppCompatActivity {
-    Button upForItButton;
-    Button excusesButton;
+    Button shortButton;
+    Button longButton;
+    Button intervalsButton;
+    Button randomButton;
+    TextView challengeTitleTextView;
+    TextView challengeTypeTextView;
+    TextView challengeDescriptionTextView;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -32,7 +40,7 @@ public class Challenges extends AppCompatActivity {
             Intent intent = new Intent(Challenges.this, AllRuns.class);
             this.startActivity(intent);
             return true;
-        } else if (item.getItemId() == R.id.run_roulette) {
+        } else if (item.getItemId() == R.id.challenges) {
             Intent intent = new Intent(Challenges.this, Challenges.class);
             this.startActivity(intent);
             return true;
@@ -44,17 +52,23 @@ public class Challenges extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.run_roulette);
+        setContentView(R.layout.challenges);
 
-        upForItButton = (Button)findViewById(R.id.up_for_it);
+        ChallengeSet challengeSet = new ChallengeSet();
 
-        upForItButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Challenges.this, RandomRun.class);
-                startActivity(intent);
-            }
-        });
+        shortButton = (Button)findViewById(R.id.type_short);
+        longButton = (Button)findViewById(R.id.type_long);
+        intervalsButton = (Button)findViewById(R.id.type_intervals);
+        randomButton = (Button)findViewById(R.id.type_random);
+        challengeTitleTextView = (TextView)findViewById(R.id.challenge_title);
+        challengeTypeTextView = (TextView)findViewById(R.id.challenge_description);
+        challengeDescriptionTextView = (TextView)findViewById(R.id.challenge_type);
+
+        Challenge challenge1 = challengeSet.retrieveChallenge(0);
+        challengeTitleTextView.setText(challenge1.getTitle());
+        challengeTypeTextView.setText(challenge1.getType());
+        challengeDescriptionTextView.setText(challenge1.getDescription());
+
 
 
     }
