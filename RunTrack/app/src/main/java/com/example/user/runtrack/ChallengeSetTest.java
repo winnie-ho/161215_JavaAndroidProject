@@ -16,26 +16,17 @@ public class ChallengeSetTest {
         }
 
         @Test
-        public void challengeSetIsPopulated(){
-            assertEquals(8, challengeSet.challengeSize());
+        public void challengeSetsArePopulated(){
+            assertEquals(2, challengeSet.shortChallengeSize());
+            assertEquals(2, challengeSet.longChallengeSize());
+            assertEquals(2, challengeSet.intervalChallengeSize());
+            assertEquals(2, challengeSet.hillChallengeSize());
         }
 
         @Test
         public void challengeSetHasParticularChallenge(){
-            assertEquals("Suicide Runs", challengeSet.retrieveChallenge(0).getTitle());
-            assertEquals("Johnston Terrace Hills", challengeSet.retrieveChallenge(1).getTitle());
+            assertEquals("Suicide Runs", challengeSet.retrieveIntervalChallenge(0).getTitle());
+            assertEquals("Johnston Terrace Hills", challengeSet.retrieveHillChallenge(0).getTitle());
         }
-
-        @Test
-        public void countChallengesByTypeTest(){
-            assertEquals(2,challengeSet.countShortChallenges());
-            assertEquals(2,challengeSet.countLongChallenges());
-            assertEquals(2,challengeSet.countHillChallenges());
-            assertEquals(2,challengeSet.countIntervalChallenges());
-        }
-
-
-
-
 
 }

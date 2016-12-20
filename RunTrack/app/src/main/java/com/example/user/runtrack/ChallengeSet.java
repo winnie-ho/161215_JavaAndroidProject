@@ -9,180 +9,152 @@ import java.util.Random;
  * Created by user on 20/12/2016.
  */
 public class ChallengeSet {
-    private ArrayList<Challenge>challengeSet;
-
+    private ArrayList<Challenge>shortChallenges;
+    private ArrayList<Challenge>longChallenges;
+    private ArrayList<Challenge>intervalChallenges;
+    private ArrayList<Challenge>hillChallenges;
 
     //Constructor
     public ChallengeSet(){
-        this.challengeSet = new ArrayList<Challenge>();
+        this.shortChallenges = new ArrayList<Challenge>();
+        this.longChallenges = new ArrayList<Challenge>();
+        this.intervalChallenges = new ArrayList<Challenge>();
+        this.hillChallenges = new ArrayList<Challenge>();
         populateMain();
     }
 
-
     //Raw Data
-    Challenge challenge1 = new Challenge("Suicide Runs", "400m Loop. 3 x (4 sides, Sprint 1, Recover 3," +
+    Challenge cS2 = new Challenge("Park Run Cramond", "5km every Saturday 09:30 on Cramond Shore",
+            "@drawable/cramond_park_run", "Short");
+
+    Challenge cS1 = new Challenge("Arthurs Seat Loop", "A loop of Arthurs Seat",
+            "@drawable/arthurs_seat","Short");
+
+    Challenge cL1= new Challenge("Ice Cream Run", "13km run from Edinburgh City Centre to Lucas Ice Cream Shop" +
+            " in Musselborough", "@drawable/ice_cream_run", "Long" );
+
+    Challenge cL2 = new Challenge("East Lothian Sea Trail", "21.2km around East Lothian finishing at the Race Course",
+            "@drawable/east_lothian", "Long");
+
+    Challenge cI1 = new Challenge("Suicide Runs", "400m Loop. 3 x (4 sides, Sprint 1, Recover 3," +
             " Sprint 2, Recover 2, Sprint 3, Recover 1, Sprint 4)","@drawable/suicide_runs", "Intervals");
 
-    Challenge challenge2 = new Challenge("Johnston Terrace Hills", "Phonebox to Phonebox. 10 x (Hill effort," +
+    Challenge cI2 = new Challenge("400m Intervals","8 x 400m Intervals on the Meadows. 1 minute recovery",
+            "@drawable/400m_intervals", "Intervals");
+
+
+    Challenge cH1 = new Challenge("Johnston Terrace Hills", "Phonebox to Phonebox. 10 x (Hill effort," +
             " recover on descent)","@drawable/suicide_runs", "Hills");
 
-    Challenge challenge3 = new Challenge("New Town Hills", "5 Hills of the New Town, Gloucester Lane, St Stephens Street," +
-            " Dundas Street, India Street and Broughton Street. Effort on hill, rest on Queen Street and descent","@drawable/nth", "Hills");
-
-    Challenge challenge4 = new Challenge("Arthurs Seat Loop", "A loop of Arthurs Seat", "@drawable/arthurs_seat","Short");
-
-    Challenge challenge5= new Challenge("Ice Cream Run", "13km run from Edinburgh City Centre to Lucas Ice Cream Shop in Musselborough", "@drawable/ice_cream_run", "Long" );
-
-    Challenge challenge6 = new Challenge("East Lothian Sea Trail", "21.2km around East Lothian finishing at the Race Course", "@drawable/east_lothian", "Long");
-
-    Challenge challenge7 = new Challenge("Park Run Cramond", "5km every Saturday 09:30 on Cramond Shore", "@drawable/cramond_park_run", "Short");
-
-    Challenge challenge8 = new Challenge("400m Intervals","8 x 400m Intervals on the Meadows. 1 minute recovery", "@drawable/400m_intervals", "Intervals");
+    Challenge cH2 = new Challenge("New Town Hills", "5 Hills of the New Town, Gloucester Lane, St Stephens Street," +
+            " Dundas Street, India Street and Broughton Street. Effort on hill, rest on Queen Street and descent",
+            "@drawable/nth", "Hills");
 
 
     //Getters
-    public ArrayList getChallengeSet(){
-        return this.challengeSet;
+    public ArrayList getShortChallenges(){
+        return this.shortChallenges;
+    }
+
+    public ArrayList getLongChallenges(){
+        return this.longChallenges;
+    }
+
+    public ArrayList getIntervalChallenges(){
+        return this.intervalChallenges;
+    }
+
+    public ArrayList getHillChallenges(){
+        return this.hillChallenges;
     }
 
 
     //Methods
-    public void addChallenge(Challenge challenge){
-        challengeSet.add(challenge);
+    public int shortChallengeSize(){
+        return shortChallenges.size();
+    }
+    public int longChallengeSize(){
+        return longChallenges.size();
+    }
+    public int intervalChallengeSize(){
+        return intervalChallenges.size();
+    }
+    public int hillChallengeSize(){
+        return hillChallenges.size();
     }
 
-    public void removeChallenge(Challenge challenge){
-        challengeSet.remove(challenge);
+    public Challenge retrieveShortChallenge(int index){
+        return shortChallenges.get(index);
     }
 
-    public int challengeSize(){
-        return challengeSet.size();
+    public Challenge retrieveLongChallenge(int index){
+        return longChallenges.get(index);
     }
 
-    public Challenge retrieveChallenge(int index){
-        Challenge retrievedChallenge = challengeSet.get(index);
-        return retrievedChallenge;
+    public Challenge retrieveIntervalChallenge(int index){
+        return intervalChallenges.get(index);
     }
 
-    public int countShortChallenges(){
-        int shortCount = 0;
-        for (Challenge c : challengeSet){
-            if(c.getType() == "Short"){
-                shortCount++;
-            }
-        }
-        return shortCount;
+    public Challenge retrieveHillChallenge(int index){
+        return hillChallenges.get(index);
     }
 
-    public int countLongChallenges(){
-        int longCount = 0;
-        for (Challenge c : challengeSet){
-            if(c.getType() == "Long"){
-                longCount++;
-            }
-        }
-        return longCount;
-    }
-
-    public int countIntervalChallenges(){
-        int intervalCount = 0;
-        for (Challenge c : challengeSet){
-            if(c.getType() == "Intervals"){
-                intervalCount++;
-            }
-        }
-        return intervalCount;
-    }
-
-    public int countHillChallenges(){
-        int hillCount = 0;
-        for (Challenge c : challengeSet){
-            if(c.getType() == "Hills"){
-                hillCount++;
-            }
-        }
-        return hillCount;
-    }
 
     private void populateMain(){
-        challengeSet.add(challenge1);
-        challengeSet.add(challenge2);
-        challengeSet.add(challenge3);
-        challengeSet.add(challenge4);
-        challengeSet.add(challenge5);
-        challengeSet.add(challenge6);
-        challengeSet.add(challenge7);
-        challengeSet.add(challenge8);
+        shortChallenges.add(cS1);
+        shortChallenges.add(cS2);
+        longChallenges.add(cL1);
+        longChallenges.add(cL2);
+        intervalChallenges.add(cI1);
+        intervalChallenges.add(cI2);
+        hillChallenges.add(cH1);
+        hillChallenges.add(cH2);
     }
 
     public Challenge getShortChallenge() {
         Random rand = new Random();
-        ArrayList<Challenge> shortChallenges = new ArrayList<Challenge>();
 
         Challenge randomShort = null;
-        int randomIndex = rand.nextInt(countShortChallenges());
-        for (Challenge c:challengeSet) {
-            if (c.getType() == "Short"){
-                shortChallenges.add(c);
-
-                randomShort = shortChallenges.get(randomIndex);
-                return randomShort;
-            }
+        int randomIndex = rand.nextInt(shortChallengeSize());
+        for (Challenge c:shortChallenges) {
+            randomShort = shortChallenges.get(randomIndex);
+            return randomShort;
         }
         return randomShort;
     }
 
     public Challenge getLongChallenge() {
         Random rand = new Random();
-        ArrayList<Challenge> longChallenges = new ArrayList<Challenge>();
 
         Challenge randomLong = null;
-        int randomIndex = rand.nextInt(countLongChallenges());
-        for (Challenge c : challengeSet) {
-            if (c.getType() == "Long") {
-                longChallenges.add(c);
-
-                randomLong = longChallenges.get(randomIndex);
-                return randomLong;
-            }
+        int randomIndex = rand.nextInt(longChallengeSize());
+        for (Challenge c:longChallenges) {
+            randomLong = longChallenges.get(randomIndex);
+            return randomLong;
         }
         return randomLong;
     }
 
     public Challenge getIntervalChallenge() {
         Random rand = new Random();
-        ArrayList<Challenge> intervalChallenges = new ArrayList<Challenge>();
-
-
 
         Challenge randomInterval = null;
-        int randomIndex = rand.nextInt(countIntervalChallenges());
-        for (Challenge c : challengeSet) {
-            if (c.getType() == "Intervals") {
-                intervalChallenges.add(c);
-
-                randomInterval = intervalChallenges.get(randomIndex);
-                return randomInterval;
-
-            }
+        int randomIndex = rand.nextInt(intervalChallengeSize());
+        for (Challenge c:intervalChallenges) {
+            randomInterval = intervalChallenges.get(randomIndex);
+            return randomInterval;
         }
         return randomInterval;
-
     }
 
     public Challenge getHillChallenge() {
         Random rand = new Random();
-        ArrayList<Challenge> hillChallenges = new ArrayList<Challenge>();
 
         Challenge randomHill = null;
-        int randomIndex = rand.nextInt(countHillChallenges());
-        for (Challenge c : challengeSet) {
-            if (c.getType() == "Hill") {
-                hillChallenges.add(c);
-
-                randomHill = hillChallenges.get(randomIndex);
-                return randomHill;
-            }
+        int randomIndex = rand.nextInt(hillChallengeSize());
+        for (Challenge c:hillChallenges) {
+            randomHill = hillChallenges.get(randomIndex);
+            return randomHill;
         }
         return randomHill;
     }
