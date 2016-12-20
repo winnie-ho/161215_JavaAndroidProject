@@ -18,10 +18,6 @@ import org.w3c.dom.Text;
  * Created by user on 17/12/2016.
  */
 public class Challenges extends AppCompatActivity {
-    Button shortButton;
-    Button longButton;
-    Button intervalsButton;
-    Button hillButton;
     ImageView mapImageView;
     TextView challengeTitleTextView;
     TextView challengeTypeTextView;
@@ -58,60 +54,83 @@ public class Challenges extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.challenges);
 
-        shortButton = (Button)findViewById(R.id.type_short);
-        longButton = (Button)findViewById(R.id.type_long);
-        intervalsButton = (Button)findViewById(R.id.type_intervals);
-        hillButton = (Button)findViewById(R.id.type_hills);
-        mapImageView = (ImageView)findViewById(R.id.map);
-        challengeTitleTextView = (TextView)findViewById(R.id.challenge_title);
-        challengeTypeTextView = (TextView)findViewById(R.id.challenge_type);
-        challengeDescriptionTextView = (TextView)findViewById(R.id.challenge_description);
+        mapImageView = (ImageView) findViewById(R.id.map);
+        challengeTitleTextView = (TextView) findViewById(R.id.challenge_title);
+        challengeTypeTextView = (TextView) findViewById(R.id.challenge_type);
+        challengeDescriptionTextView = (TextView) findViewById(R.id.challenge_description);
+
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+
+        final String selectedType = extras.getString("selectedType");
 
         final ChallengeSet challengeSet = new ChallengeSet();
 
-        shortButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Challenge selectedChallenge = challengeSet.getShortChallenge();
-                giveChallenge(selectedChallenge);
-            }
-        });
-
-        longButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Challenge selectedChallenge = challengeSet.getLongChallenge();
-                giveChallenge(selectedChallenge);
-            }
-        });
-
-        intervalsButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Challenge selectedChallenge = challengeSet.getIntervalChallenge();
-                giveChallenge(selectedChallenge);
-            }
-        });
-
-        hillButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Challenge selectedChallenge = challengeSet.getHillChallenge();
-                giveChallenge(selectedChallenge);
-            }
-        });
 
 
+        if (selectedType.equals("Short")) {
+            Challenge selectedChallenge = challengeSet.getShortChallenge();
+            giveChallenge(selectedChallenge);
+        } else if (selectedType.equals("Long")) {
+            Challenge selectedChallenge = challengeSet.getLongChallenge();
+            giveChallenge(selectedChallenge);
+        } else if (selectedType.equals("Intervals")) {
+            Challenge selectedChallenge = challengeSet.getIntervalChallenge();
+            giveChallenge(selectedChallenge);
+        } else if (selectedType.equals("Hills")) {
+            Challenge selectedChallenge = challengeSet.getHillChallenge();
+            giveChallenge(selectedChallenge);
+        }
     }
+
 
     public void giveChallenge(Challenge selectedChallenge) {
         int imageID = getResources().getIdentifier(selectedChallenge.getImage(), "drawable", getPackageName());
-        Log.d("Image ID", "Image selected: " + selectedChallenge.getImage()+ ", " + imageID);
+        Log.d("Image ID", "Image selected: " + selectedChallenge.getImage() + ", " + imageID);
         mapImageView.setImageResource(imageID);
-
-
         challengeTitleTextView.setText(selectedChallenge.getTitle());
-        challengeTypeTextView.setText(selectedChallenge.getType()+" challenge selected. Are you game?");
+        challengeTypeTextView.setText(selectedChallenge.getType() + " challenge selected. Are you game?");
         challengeDescriptionTextView.setText(selectedChallenge.getDescription());
     }
 }
+
+
+//        shortButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Challenge selectedChallenge = challengeSet.getShortChallenge();
+//                giveChallenge(selectedChallenge);
+//            }
+//        });
+//
+//        longButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Challenge selectedChallenge = challengeSet.getLongChallenge();
+//                giveChallenge(selectedChallenge);
+//            }
+//        });
+//
+//        intervalsButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Challenge selectedChallenge = challengeSet.getIntervalChallenge();
+//                giveChallenge(selectedChallenge);
+//            }
+//        });
+//
+//        hillButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Challenge selectedChallenge = challengeSet.getHillChallenge();
+//                giveChallenge(selectedChallenge);
+//            }
+//        });
+//
+//
+//    }
+
+
+
+

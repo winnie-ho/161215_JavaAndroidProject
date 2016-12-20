@@ -71,7 +71,9 @@ public class ChallengeSelect extends AppCompatActivity {
         shortButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                String selectedType = "Short";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
+                intent.putExtra("selectedType", selectedType);
                 startActivity(intent);
             }
         });
@@ -79,7 +81,9 @@ public class ChallengeSelect extends AppCompatActivity {
         longButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                String selectedType = "Long";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
+                intent.putExtra("selectedType", selectedType);
                 startActivity(intent);
             }
         });
@@ -87,7 +91,9 @@ public class ChallengeSelect extends AppCompatActivity {
         intervalsButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                String selectedType = "Intervals";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
+                intent.putExtra("selectedType", selectedType);
                 startActivity(intent);
             }
         });
@@ -95,7 +101,9 @@ public class ChallengeSelect extends AppCompatActivity {
         hillButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                String selectedType = "Hills";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
+                intent.putExtra("selectedType", selectedType);
                 startActivity(intent);
             }
         });
