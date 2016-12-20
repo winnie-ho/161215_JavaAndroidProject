@@ -115,10 +115,3 @@ public class Challenges extends AppCompatActivity {
         challengeDescriptionTextView.setText(selectedChallenge.getDescription());
     }
 }
-
-
-//    public int getImageId(String imageName){
-//        int imageID = getResources().getIdentifier(imageName , "drawable", getPackageName());
-//        imageView.setImageResource(imageID);
-//    }
-//}

@@ -32,9 +32,16 @@
         </activity>
 
         <activity
+            android:name=".ChallengeSelect"
+            android:label="@string/challenge_select"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
             android:name=".Challenges"
             android:label="@string/challenges"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".ChallengeSelect"
             android:theme="@style/AppTheme">
         </activity>
 

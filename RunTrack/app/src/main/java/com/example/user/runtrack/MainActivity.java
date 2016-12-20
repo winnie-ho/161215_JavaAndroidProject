@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         challengesButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, Challenges.class);
+                Intent intent = new Intent(MainActivity.this, ChallengeSelect.class);
                 startActivity(intent);
             }
         });
