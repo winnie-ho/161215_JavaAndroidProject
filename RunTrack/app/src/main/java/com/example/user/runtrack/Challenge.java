@@ -8,13 +8,15 @@ public class Challenge {
     private String title;
     private String description;
     private String image;
+    private String type;
     private Boolean status;
 
     //Constructor
-    public Challenge(String title, String description, String image, Boolean status){
+    public Challenge(String title, String description, String image, String type, Boolean status){
         this.title = title;
         this.description = description;
         this.image = image;
+        this.type = type;
         this.status = status;
     }
 
@@ -29,6 +31,10 @@ public class Challenge {
 
     public String getImage(){
         return this.image;
+    }
+
+    public String getType(){
+        return this.type;
     }
 
     public Boolean getStatus(){

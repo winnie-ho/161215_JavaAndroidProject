@@ -13,6 +13,10 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by user on 17/12/2016.
  */
@@ -82,6 +86,7 @@ public class ShowRun extends AppCompatActivity{
         final float Pace = extras.getFloat("Pace");
         final String Route = extras.getString("Route");
         final String Type = extras.getString("Type");
+
 
         showTitleTextView.setText("Run: " + Title);
         showDateTextView.setText("Date: " + Date);

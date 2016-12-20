@@ -79,7 +79,7 @@ public class DBHandler extends SQLiteOpenHelper {
             String route = run.getRoute();
             String type = run.getType();
 
-            String sql = "INSERT INTO " + TABLE_RUNS + " ('" + KEY_TITLE + "', " + KEY_DATE + ", " + KEY_DISTANCE + ", "
+            String sql = "INSERT INTO " + TABLE_RUNS + " ('" + KEY_TITLE + "', '" + KEY_DATE + "', " + KEY_DISTANCE + ", "
                     + KEY_TIME + ", "+ KEY_PACE + ", '" + KEY_ROUTE + "', '" + KEY_TYPE + "') VALUES ('" +
                     title + "', "+ date + ", " + Float.toString(distance) + ", " + Float.toString(time) + ", " +
                     Float.toString(pace) + ",'"+ route + "', '" + type + "')";
@@ -98,7 +98,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
             String sql = "UPDATE " + TABLE_RUNS + " SET "
                     + KEY_TITLE + " = '" + title + "', "
-                    + KEY_DATE + " = " + date + ", "
+                    + KEY_DATE + " = '" + date + "', "
                     + KEY_DISTANCE + " = " + distance + ", "
                     + KEY_TIME + " = " + time + ", "
                     + KEY_PACE + " = " + pace + ", "

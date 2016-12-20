@@ -81,7 +81,7 @@ public class NewRun extends AppCompatActivity {
 
                 Run newRun = new Run(title, date, distance, time, pace, route, type);
                 db.addRun(newRun);
-                Log.d("Add:", "Adding new run.." + title + " " + distance + "k");
+                Log.d("Add:", "Adding new run.." + title + " " + date + ", " + distance + "k");
                 Toast.makeText(NewRun.this, "Run Added!", Toast.LENGTH_SHORT).show();
                 backToMainScreen();
             }
