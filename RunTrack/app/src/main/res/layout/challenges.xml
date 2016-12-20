@@ -64,8 +64,8 @@
         android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/type_random"
-        android:text="@string/type_random"
+        android:id="@+id/type_hills"
+        android:text="@string/type_hills"
         android:background="@color/colorPrimary"
         android:fontFamily="sans-serif-condensed"
         android:layout_width="92dp"

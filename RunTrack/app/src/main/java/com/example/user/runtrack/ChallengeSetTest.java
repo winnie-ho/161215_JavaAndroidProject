@@ -17,7 +17,7 @@ public class ChallengeSetTest {
 
         @Test
         public void challengeSetIsPopulated(){
-            assertEquals(2, challengeSet.ChallengeSize());
+            assertEquals(8, challengeSet.challengeSize());
         }
 
         @Test
@@ -27,9 +27,15 @@ public class ChallengeSetTest {
         }
 
         @Test
-        public void canRemoveChallenge(){
-
+        public void countChallengesByTypeTest(){
+            assertEquals(2,challengeSet.countShortChallenges());
+            assertEquals(2,challengeSet.countLongChallenges());
+            assertEquals(2,challengeSet.countHillChallenges());
+            assertEquals(2,challengeSet.countIntervalChallenges());
         }
+
+
+
 
 
 }

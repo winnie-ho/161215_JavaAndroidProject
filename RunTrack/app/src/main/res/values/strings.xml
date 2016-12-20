@@ -18,7 +18,7 @@
     <string name="type_short">SHORT</string>
     <string name="type_long">LONG</string>
     <string name="type_intervals">INTERVALS</string>
-    <string name="type_random">RANDOM</string>
+    <string name="type_hills">HILLS</string>
 
     <string name="yea">YOU\'RE ON!</string>
     <string name="wimp">LAME</string>
