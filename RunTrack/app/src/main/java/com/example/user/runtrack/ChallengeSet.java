@@ -24,42 +24,42 @@ public class ChallengeSet {
     }
 
     //Raw Data
-    Challenge cS1 = new Challenge("Casual on the Canal", "5km along the canal to Meggetland and back via Colinton Road and Bruntsfield.",
+    Challenge cS1 = new Challenge("Casual on the Canal",5, "5km along the canal to Meggetland and back via Colinton Road and Bruntsfield.",
             "casual_canal","Short");
 
-    Challenge cS2 = new Challenge("Park Run Cramond", "5km every Saturday 09:30 on Cramond Shore",
+    Challenge cS2 = new Challenge("Park Run Cramond",5, "5km every Saturday 09:30 on Cramond Shore",
             "cramond_park_run", "Short");
 
-    Challenge cS3 = new Challenge("Tortoise", "8km around Edinburgh's New Town to draw out a tortoise", "tortoise", "Short");
+    Challenge cS3 = new Challenge("Tortoise",8, "8km around Edinburgh's New Town to draw out a tortoise", "tortoise", "Short");
 
-    Challenge cS4 = new Challenge("On yer Bike", "3km mini bike run in Edinburgh's West End Crescents", "bike", "Short");
+    Challenge cS4 = new Challenge("On yer Bike",3, "3km mini bike run in Edinburgh's West End Crescents", "bike", "Short");
 
-    Challenge cS5 = new Challenge("Horse sprints in the Colonies", "3.5km horsing up and down the colonies by the Water of Leith.", "horse", "Short");
+    Challenge cS5 = new Challenge("Horse sprints in the Colonies", 3.5 , "3.5km horsing up and down the colonies by the Water of Leith.", "horse", "Short");
 
-    Challenge cS6 = new Challenge("Sausage Dog", "A quick sausage dog run in the city centre.", "sausage_dog", "Short");
+    Challenge cS6 = new Challenge("Sausage Dog",3, "A quick sausage dog run in the city centre.", "sausage_dog", "Short");
 
-    Challenge cL1= new Challenge("Ice Cream Run", "13km run from Edinburgh City Centre to Lucas Ice Cream Shop." +
+    Challenge cL1= new Challenge("Ice Cream Run",13, "13km run from Edinburgh City Centre to Lucas Ice Cream Shop." +
             " in Musselborough", "ice_cream_run", "Long" );
 
-    Challenge cL2 = new Challenge("East Lothian Sea Trail", "21.2km around East Lothian finishing at the Race Course.",
+    Challenge cL2 = new Challenge("East Lothian Sea Trail", 21.2, "21.2km around East Lothian finishing at the Race Course.",
             "east_lothian", "Long");
 
-    Challenge cL3 = new Challenge("Dragon Half Marathon", "21.2km to draw a fire breathing dragon around the city streets of Edinburgh. This is a toughy! Accept at your peril!", "dragon", "Long");
+    Challenge cL3 = new Challenge("Dragon Half Marathon",21.2, "21.2km to draw a fire breathing dragon around the city streets of Edinburgh. This is a toughy! Accept at your peril!", "dragon", "Long");
 
-    Challenge cL4 = new Challenge("Gone Fishing", "15km run to draw this dude fishing in the West End of Edinburgh", "gone_fishing","Long");
+    Challenge cL4 = new Challenge("Gone Fishing",15, "15km run to draw this dude fishing in the West End of Edinburgh", "gone_fishing","Long");
 
-    Challenge cL5 = new Challenge("Run a Rabbit", "14km around Edinburgh Southside on the bunny's trail.", "rabbit", "Long");
+    Challenge cL5 = new Challenge("Run a Rabbit",14, "14km around Edinburgh Southside on the bunny's trail.", "rabbit", "Long");
 
-    Challenge cI1 = new Challenge("Suicide Runs", "400m Loop. 3 x (4 sides, Sprint 1, Recover 3," +
+    Challenge cI1 = new Challenge("Suicide Runs",3.1, "400m Loop. 3 x (4 sides, Sprint 1, Recover 3," +
             " Sprint 2, Recover 2, Sprint 3, Recover 1, Sprint 4)","suicide_runs", "Intervals");
 
-    Challenge cI2 = new Challenge("Mile Intervals","3 x 1 mile intervals on the Meadows measured loop. 1 minute stationary recovery.",
+    Challenge cI2 = new Challenge("Mile Intervals",4.8,"3 x 1 mile intervals on the Meadows measured loop. 1 minute stationary recovery.",
             "meadows_mile_reps", "Intervals");
 
-    Challenge cH1 = new Challenge("Johnston Terrace Hills", "Phonebox to Phonebox. 10 x (Hill effort," +
-            " recover on descent.)","johnston_terrace", "Hills");
+    Challenge cH1 = new Challenge("Johnston Terrace Hills",6.7, "Hill sprints from bottom phonebox to top phonebox. 10 x (Hill effort," +
+            " recovery on descent.)","johnston_terrace", "Hills");
 
-    Challenge cH2 = new Challenge("New Town Hills", "5 Hills of the New Town, Gloucester Lane, St Stephens Street," +
+    Challenge cH2 = new Challenge("New Town Hills",9.5, "5 Hills of the New Town, Gloucester Lane, St Stephens Street," +
             " Dundas Street, India Street and Broughton Street. Effort on hill, rest on Queen Street and descent.",
             "new_town_hills", "Hills");
 

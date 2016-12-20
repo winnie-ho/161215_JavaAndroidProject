@@ -5,14 +5,17 @@ package com.example.user.runtrack;
  */
 public class Challenge {
     private String title;
+    private double distance;
     private String description;
     private String image;
     private String type;
 
 
+
     //Constructor
-    public Challenge(String title, String description, String image, String type){
+    public Challenge(String title,double distance, String description, String image, String type){
         this.title = title;
+        this.distance = distance;
         this.description = description;
         this.image = image;
         this.type = type;
@@ -21,6 +24,10 @@ public class Challenge {
     //Getters
     public String getTitle(){
         return this.title;
+    }
+
+    public double getDistance(){
+        return this.distance;
     }
 
     public String getDescription(){

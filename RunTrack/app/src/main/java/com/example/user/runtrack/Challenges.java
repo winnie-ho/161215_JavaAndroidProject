@@ -20,6 +20,7 @@ import org.w3c.dom.Text;
 public class Challenges extends AppCompatActivity {
     ImageView mapImageView;
     TextView challengeTitleTextView;
+    TextView challengeDistanceTextView;
     TextView challengeTypeTextView;
     TextView challengeDescriptionTextView;
 
@@ -56,6 +57,7 @@ public class Challenges extends AppCompatActivity {
 
         mapImageView = (ImageView) findViewById(R.id.map);
         challengeTitleTextView = (TextView) findViewById(R.id.challenge_title);
+        challengeDistanceTextView = (TextView)findViewById(R.id.distance);
         challengeTypeTextView = (TextView) findViewById(R.id.challenge_type);
         challengeDescriptionTextView = (TextView) findViewById(R.id.challenge_description);
 
@@ -89,8 +91,9 @@ public class Challenges extends AppCompatActivity {
         int imageID = getResources().getIdentifier(selectedChallenge.getImage(), "drawable", getPackageName());
         Log.d("Image ID", "Image selected: " + selectedChallenge.getImage() + ", " + imageID);
         mapImageView.setImageResource(imageID);
-        challengeTitleTextView.setText(selectedChallenge.getTitle());
-        challengeTypeTextView.setText(selectedChallenge.getType() + " challenge selected. Are you game?");
+        challengeTitleTextView.setText(selectedChallenge.getTitle().toUpperCase());
+        challengeDistanceTextView.setText(""+ selectedChallenge.getDistance()+" km");
+        challengeTypeTextView.setText(selectedChallenge.getType().toUpperCase() + " CHALLENGE! ARE YOU GAME?");
         challengeDescriptionTextView.setText(selectedChallenge.getDescription());
     }
 }
