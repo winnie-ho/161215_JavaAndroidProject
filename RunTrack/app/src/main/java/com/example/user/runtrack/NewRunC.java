@@ -12,9 +12,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 /**
- * Created by user on 16/12/2016.
+ * Created by user on 21/12/2016.
  */
-public class NewRun extends AppCompatActivity {
+public class NewRunC extends AppCompatActivity {
     EditText titleEditText;
     EditText dateEditText;
     EditText distanceEditText;
@@ -34,17 +34,17 @@ public class NewRun extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item){
         if (item.getItemId() == R.id.add_run){
-            Intent intent = new Intent(NewRun.this, NewRun.class);
+            Intent intent = new Intent(NewRunC.this, NewRun.class);
             this.startActivity(intent);
             return true;
         }
         else if (item.getItemId() == R.id.all_runs){
-            Intent intent = new Intent(NewRun.this, AllRuns.class);
+            Intent intent = new Intent(NewRunC.this, AllRuns.class);
             this.startActivity(intent);
             return true;
         }
         else if (item.getItemId() == R.id.challenges){
-            Intent intent = new Intent(NewRun.this, Challenges.class);
+            Intent intent = new Intent(NewRunC.this, Challenges.class);
             this.startActivity(intent);
             return true;
         }
@@ -68,6 +68,19 @@ public class NewRun extends AppCompatActivity {
         typeEditText = (EditText)findViewById(R.id.type);
         addRunButton = (Button)findViewById(R.id.button_add_run);
 
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        final int newScore = extras.getInt("newScore");
+        final String challengeTitle = extras.getString("challengeTitle");
+        final int challengeDistance = extras.getInt("challengeDistance");
+        final String challengeType = extras.getString("challengeType");
+        final int pointsAvailable = extras.getInt("pointsAvailable");
+
+        titleEditText.setText(challengeTitle);
+        distanceEditText.setText("" + challengeDistance);
+        typeEditText.setText(challengeType);
+
+
 
         addRunButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,13 +96,11 @@ public class NewRun extends AppCompatActivity {
                 Run newRun = new Run(title, date, distance, time, pace, route, type);
                 db.addRun(newRun);
                 Log.d("Add:", "Adding new run.." + title + " " + date + ", " + distance + "k");
-                Toast.makeText(NewRun.this, "Run Added!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewRunC.this, "Run Added!", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(NewRun.this, AllRuns.class);
+                Intent intent = new Intent(NewRunC.this, AllRuns.class);
                 startActivity(intent);
             }
         });
     }
-
-
 }

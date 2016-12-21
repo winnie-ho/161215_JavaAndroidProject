@@ -46,6 +46,20 @@
         </activity>
 
         <activity
+            android:name=".ChallengeAccepted"
+            android:label="@string/challenge_accepted"
+            android:parentActivityName=".ChallengeSelect"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".NewRunC"
+            android:label="@string/add_run"
+            android:parentActivityName=".ChallengeAccepted"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
             android:name=".AllRuns"
             android:label="@string/all_runs"
             android:parentActivityName=".MainActivity"

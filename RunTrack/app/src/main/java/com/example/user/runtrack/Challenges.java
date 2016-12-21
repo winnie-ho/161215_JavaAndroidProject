@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -103,10 +104,15 @@ public class Challenges extends AppCompatActivity {
                 int newScore = scoreCarried + distancePoints;
                 //int newScore = scoreCarried + getDistancePoints(selectedChallenge);
 
-                Intent intent = new Intent(Challenges.this, NewRun.class);
+                Intent intent = new Intent(Challenges.this, ChallengeAccepted.class);
                 Context context = v.getContext();
+
                 SavedScorePreferences.setStoredScore(context, newScore);
                 intent.putExtra("newScore", newScore);
+                intent.putExtra("challengeTitle", selectedChallenge.getTitle());
+                intent.putExtra("challengeDistance",selectedChallenge.getDistance());
+                intent.putExtra("challengeType",selectedChallenge.getType());
+                intent.putExtra("pointsAvailable", distancePoints);
                 startActivity(intent);
             }
         });
@@ -123,8 +129,14 @@ public class Challenges extends AppCompatActivity {
 
                 Intent intent = new Intent(Challenges.this, ChallengeSelect.class);
                 Context context = v.getContext();
+
                 SavedScorePreferences.setStoredScore(context, newScore);
                 intent.putExtra("newScore", newScore);
+                intent.putExtra("challengeTitle", selectedChallenge.getTitle());
+                intent.putExtra("challengeDistance",selectedChallenge.getDistance());
+                intent.putExtra("challengeType",selectedChallenge.getType());
+                intent.putExtra("pointsAvailable", distancePoints);
+                Toast.makeText(Challenges.this, "Challenge Declined! Score deducted " + distancePoints + " points!", Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
         });
