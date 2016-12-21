@@ -42,7 +42,6 @@
         <activity
             android:name=".Challenges"
             android:label="@string/challenges"
-            android:parentActivityName=".ChallengeSelect"
             android:theme="@style/AppTheme">
         </activity>
 
