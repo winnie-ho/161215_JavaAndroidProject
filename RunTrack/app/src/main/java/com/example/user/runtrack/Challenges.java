@@ -27,6 +27,10 @@ public class Challenges extends AppCompatActivity {
     Button acceptButton;
     Button declineButton;
 
+    ChallengeSet challengeSet = new ChallengeSet();
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -66,16 +70,16 @@ public class Challenges extends AppCompatActivity {
         acceptButton = (Button)findViewById(R.id.yea);
         declineButton = (Button)findViewById(R.id.wimp);
 
-
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-
         final String selectedType = extras.getString("selectedType");
         final int scoreCarried = extras.getInt("score");
 
-        final ChallengeSet challengeSet = new ChallengeSet();
+
+
 
         //Generates the random challenge by type chosen
+
             if (selectedType.equals("Short")) {
                 Challenge selectedChallenge = challengeSet.getShortChallenge();
                 giveChallenge(selectedChallenge);
@@ -91,12 +95,15 @@ public class Challenges extends AppCompatActivity {
             }
 
 
-
         acceptButton.setOnClickListener(new View.OnClickListener(){
             @Override
 
             public void onClick(View v){
-                int newScore = scoreCarried + 10;
+
+                Challenge selectedChallenge = getSelectedChallenge(selectedType);
+                int distancePoints = getDistancePoints(selectedChallenge);
+                int newScore = scoreCarried + distancePoints;
+                //int newScore = scoreCarried + getDistancePoints(selectedChallenge);
 
                 Intent intent = new Intent(Challenges.this, NewRun.class);
                 Context context = v.getContext();
@@ -109,7 +116,12 @@ public class Challenges extends AppCompatActivity {
         declineButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                int newScore = scoreCarried - 10;
+
+                Challenge selectedChallenge = getSelectedChallenge(selectedType);
+                int distancePoints = getDistancePoints(selectedChallenge);
+                int newScore = scoreCarried - distancePoints;
+
+                //int newScore = scoreCarried - getDistancePoints(getSelectedChallenge(selectedType));
 
                 Intent intent = new Intent(Challenges.this, ChallengeSelect.class);
                 Context context = v.getContext();
@@ -129,8 +141,26 @@ public class Challenges extends AppCompatActivity {
         challengeDistanceTextView.setText(""+ selectedChallenge.getDistance()+" km");
         challengeTypeTextView.setText(selectedChallenge.getType().toUpperCase() + " CHALLENGE! ARE YOU GAME?");
         challengeDescriptionTextView.setText(selectedChallenge.getDescription());
+    }
 
 
+    public Challenge getSelectedChallenge(String selectedType){
+        Challenge selectedChallenge = null;
+        if (selectedType.equals("Short")) {
+            selectedChallenge = challengeSet.getShortChallenge();
+        } else if (selectedType.equals("Long")) {
+            selectedChallenge = challengeSet.getLongChallenge();
+        } else if (selectedType.equals("Intervals")) {
+            selectedChallenge = challengeSet.getIntervalChallenge();
+        } else if (selectedType.equals("Hills")) {
+            selectedChallenge = challengeSet.getHillChallenge();
+        }
+        return selectedChallenge ;
+    }
+
+    public int getDistancePoints(Challenge selectedChallenge){
+        int distanceValue = (selectedChallenge.getDistance() * 10);
+        return distanceValue;
     }
 }
 
