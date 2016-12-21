@@ -27,7 +27,7 @@
         <activity
             android:name=".NewRun"
             android:label="@string/add_run"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".AllRuns"
             android:theme="@style/AppTheme">
         </activity>
 
