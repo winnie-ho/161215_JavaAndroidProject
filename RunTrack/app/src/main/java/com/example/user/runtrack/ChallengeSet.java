@@ -27,28 +27,22 @@ public class ChallengeSet {
     Challenge cS1 = new Challenge("Casual on the Canal",5, "5km along the canal to Meggetland and back via Colinton Road and Bruntsfield.",
             "casual_canal","Short");
 
-    Challenge cS2 = new Challenge("Park Run Cramond",5, "5km every Saturday 09:30 on Cramond Shore",
-            "cramond_park_run", "Short");
+    Challenge cS2 = new Challenge("Tortoise",8, "8km around Edinburgh's New Town to draw out a tortoise", "tortoise", "Short");
 
-    Challenge cS3 = new Challenge("Tortoise",8, "8km around Edinburgh's New Town to draw out a tortoise", "tortoise", "Short");
+    Challenge cS3 = new Challenge("On yer Bike",3, "3km mini bike run in Edinburgh's West End Crescents", "bike", "Short");
 
-    Challenge cS4 = new Challenge("On yer Bike",3, "3km mini bike run in Edinburgh's West End Crescents", "bike", "Short");
+    Challenge cS4 = new Challenge("Horse sprints in the Colonies", 3 , "3.5km horsing up and down the colonies by the Water of Leith.", "horse", "Short");
 
-    Challenge cS5 = new Challenge("Horse sprints in the Colonies", 3 , "3.5km horsing up and down the colonies by the Water of Leith.", "horse", "Short");
+    Challenge cS5 = new Challenge("Sausage Dog",3, "A quick sausage dog run in the city centre.", "sausage_dog", "Short");
 
-    Challenge cS6 = new Challenge("Sausage Dog",3, "A quick sausage dog run in the city centre.", "sausage_dog", "Short");
-
-    Challenge cL1= new Challenge("Ice Cream Run",13, "13km run from Edinburgh City Centre to Lucas Ice Cream Shop" +
-            " in Musselborough.", "ice_cream_run", "Long" );
-
-    Challenge cL2 = new Challenge("East Lothian Sea Trail", 21, "21.2km around East Lothian finishing at the Race Course.",
+    Challenge cL1 = new Challenge("East Lothian Sea Trail", 21, "21.2km around East Lothian finishing at the Race Course.",
             "east_lothian", "Long");
 
-    Challenge cL3 = new Challenge("Dragon Half Marathon",21, "21.2km to draw a fire breathing dragon around the city streets of Edinburgh. This is a toughy! Accept at your peril!", "dragon", "Long");
+    Challenge cL2 = new Challenge("Dragon Half Marathon",21, "21.2km to draw a fire breathing dragon around the city streets of Edinburgh. This is a toughy! Accept at your peril!", "dragon", "Long");
 
-    Challenge cL4 = new Challenge("Gone Fishing",15, "15km run to draw this dude fishing in the West End of Edinburgh", "gone_fishing","Long");
+    Challenge cL3 = new Challenge("Gone Fishing",15, "15km run to draw this dude fishing in the West End of Edinburgh", "gone_fishing","Long");
 
-    Challenge cL5 = new Challenge("Run a Rabbit",14, "14km around Edinburgh Southside on the bunny's trail.", "rabbit", "Long");
+    Challenge cL4 = new Challenge("Run a Rabbit",14, "14km around Edinburgh Southside on the bunny's trail.", "rabbit", "Long");
 
     Challenge cI1 = new Challenge("Suicide Runs",3, "400m Loop. 3 x (4 sides, Sprint 1, Recover 3," +
             " Sprint 2, Recover 2, Sprint 3, Recover 1, Sprint 4)","suicide_runs", "Intervals");
@@ -119,12 +113,10 @@ public class ChallengeSet {
         shortChallenges.add(cS3);
         shortChallenges.add(cS4);
         shortChallenges.add(cS5);
-        shortChallenges.add(cS6);
         longChallenges.add(cL1);
         longChallenges.add(cL2);
         longChallenges.add(cL3);
         longChallenges.add(cL4);
-        longChallenges.add(cL5);
         intervalChallenges.add(cI1);
         intervalChallenges.add(cI2);
         hillChallenges.add(cH1);
