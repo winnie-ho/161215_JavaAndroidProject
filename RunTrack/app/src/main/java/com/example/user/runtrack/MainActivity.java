@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView totalRunTextView;
     TextView totalDistanceTextView;
     TextView totalTimeTextView;
+    TextView scoreTextView;
     Button allRunButton;
     Button challengesButton;
 
@@ -61,13 +62,18 @@ public class MainActivity extends AppCompatActivity {
         totalRunTextView = (TextView)findViewById(R.id.total_runs);
         totalDistanceTextView = (TextView)findViewById(R.id.total_distance);
         totalTimeTextView = (TextView)findViewById(R.id.total_time);
+        scoreTextView = (TextView)findViewById(R.id.points_score);
         allRunButton = (Button)findViewById(R.id.all_runs);
         challengesButton = (Button)findViewById(R.id.challenges);
+
+        int savedScoreFromPreferences = SavedScorePreferences.getStoredScore(this);
+        final int score = savedScoreFromPreferences;
 
         progressMessageTextView.setText(message.getMessage());
         totalRunTextView.setText("RUNS \n" + db.getTotalRun());
         totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance()+ " km");
         totalTimeTextView.setText("TIME \n" + db.getTotalTime()+ " mins");
+        scoreTextView.setText("CHALLENGE POINTS: " + savedScoreFromPreferences);
 
         allRunButton.setOnClickListener(new View.OnClickListener(){
             @Override
