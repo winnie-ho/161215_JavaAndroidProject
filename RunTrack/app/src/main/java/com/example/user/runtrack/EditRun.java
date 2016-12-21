@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by user on 17/12/2016.
@@ -82,6 +83,8 @@ public class EditRun extends AppCompatActivity{
                 intent.putExtra("Pace", pace);
                 intent.putExtra("Route", route);
                 intent.putExtra("Type", type);
+
+                Toast.makeText(EditRun.this, "Run Updated!", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });

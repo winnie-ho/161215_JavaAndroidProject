@@ -83,14 +83,12 @@ public class NewRun extends AppCompatActivity {
                 db.addRun(newRun);
                 Log.d("Add:", "Adding new run.." + title + " " + date + ", " + distance + "k");
                 Toast.makeText(NewRun.this, "Run Added!", Toast.LENGTH_SHORT).show();
-                backToMainScreen();
+
+                Intent intent = new Intent(NewRun.this, AllRuns.class);
+                startActivity(intent);
             }
         });
     }
 
-    private void backToMainScreen() {
-        Intent intent = new Intent(NewRun.this, AllRuns.class);
-        startActivity(intent);
-    }
 
 }

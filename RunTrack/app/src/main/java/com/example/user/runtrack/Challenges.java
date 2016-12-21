@@ -76,8 +76,6 @@ public class Challenges extends AppCompatActivity {
         final int scoreCarried = extras.getInt("score");
 
 
-
-
         //Generates the random challenge by type chosen
 
             if (selectedType.equals("Short")) {

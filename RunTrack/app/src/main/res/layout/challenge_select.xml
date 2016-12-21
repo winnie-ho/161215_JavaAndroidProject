@@ -16,12 +16,11 @@
         android:text="@string/points"
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_margin="10dp"
         android:textSize="20dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="20dp" />
 
     <TextView
         android:id="@+id/points_score"
