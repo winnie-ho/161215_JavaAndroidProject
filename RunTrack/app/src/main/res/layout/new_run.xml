@@ -94,6 +94,8 @@
     <Button
         android:id="@+id/button_add_run"
         android:text="@string/add_run"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
         android:background="@color/colorPrimary"
         android:fontFamily="sans-serif-condensed"
         android:layout_width="80dp"

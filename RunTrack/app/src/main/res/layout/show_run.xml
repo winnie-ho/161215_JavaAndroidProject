@@ -34,6 +34,8 @@
         <Button
             android:id="@+id/button_editRun"
             android:text="@string/edit_run"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-condensed"
             android:layout_width="80dp"
@@ -44,6 +46,8 @@
         <Button
             android:id="@+id/button_deleteRun"
             android:text="@string/delete_run"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-condensed"
             android:layout_width="80dp"
