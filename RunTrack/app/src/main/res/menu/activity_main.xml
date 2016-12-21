@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/all_runs"
-        android:title="ALL RUNS"/>
+        android:title="RUN LOG"/>
 
     <item
         android:id="@+id/add_run"
