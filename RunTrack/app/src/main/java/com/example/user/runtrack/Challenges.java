@@ -2,7 +2,6 @@ package com.example.user.runtrack;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
 
 /**
  * Created by user on 17/12/2016.
@@ -30,8 +28,6 @@ public class Challenges extends AppCompatActivity {
     Button declineButton;
 
     ChallengeSet challengeSet = new ChallengeSet();
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -121,19 +117,7 @@ public class Challenges extends AppCompatActivity {
         });
     }
 
-
-    public void giveChallenge(Challenge selectedChallenge) {
-        int imageID = getResources().getIdentifier(selectedChallenge.getImage(), "drawable", getPackageName());
-        Log.d("Image ID", "Image selected: " + selectedChallenge.getImage() + ", " + imageID);
-        mapImageView.setImageResource(imageID);
-        challengeTitleTextView.setText(selectedChallenge.getTitle().toUpperCase()+" -");
-        pointsTextView.setText(selectedChallenge.getDistance()*10 + " points");
-        challengeDistanceTextView.setText(selectedChallenge.getDistance()+" km");
-        challengeTypeTextView.setText(selectedChallenge.getType().toUpperCase() + " CHALLENGE! ARE YOU GAME?");
-        challengeDescriptionTextView.setText(selectedChallenge.getDescription());
-    }
-
-
+    //Generates random challenge depending on the selected category
     public Challenge getSelectedChallenge(String selectedType){
         Challenge selectedChallenge = null;
         if (selectedType.equals("Short")) {
@@ -148,7 +132,17 @@ public class Challenges extends AppCompatActivity {
         return selectedChallenge ;
     }
 
-
+    //Gives the details of the challenged selected to populate the views in activity screen
+    public void giveChallenge(Challenge selectedChallenge) {
+        int imageID = getResources().getIdentifier(selectedChallenge.getImage(), "drawable", getPackageName());
+        Log.d("Image ID", "Image selected: " + selectedChallenge.getImage() + ", " + imageID);
+        mapImageView.setImageResource(imageID);
+        challengeTitleTextView.setText(selectedChallenge.getTitle().toUpperCase()+" -");
+        pointsTextView.setText(selectedChallenge.getDistance()*10 + " points");
+        challengeDistanceTextView.setText(selectedChallenge.getDistance()+" km");
+        challengeTypeTextView.setText(selectedChallenge.getType().toUpperCase() + " CHALLENGE! ARE YOU GAME?");
+        challengeDescriptionTextView.setText(selectedChallenge.getDescription());
+    }
 
     public int getDistancePoints(Challenge selectedChallenge){
         int distanceValue = (selectedChallenge.getDistance() * 10);
