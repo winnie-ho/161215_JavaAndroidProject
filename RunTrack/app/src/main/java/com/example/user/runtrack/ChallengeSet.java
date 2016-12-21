@@ -35,14 +35,11 @@ public class ChallengeSet {
 
     Challenge cS5 = new Challenge("Sausage Dog",3, "A quick sausage dog run in the city centre.", "sausage_dog", "Short");
 
-    Challenge cL1 = new Challenge("East Lothian Sea Trail", 21, "21.2km around East Lothian finishing at the Race Course.",
-            "east_lothian", "Long");
+    Challenge cL1 = new Challenge("Dragon Half Marathon",21, "21.2km to draw a fire breathing dragon around the city streets of Edinburgh. This is a toughy! Accept at your peril!", "dragon", "Long");
 
-    Challenge cL2 = new Challenge("Dragon Half Marathon",21, "21.2km to draw a fire breathing dragon around the city streets of Edinburgh. This is a toughy! Accept at your peril!", "dragon", "Long");
+    Challenge cL2 = new Challenge("Gone Fishing",15, "15km run to draw this dude fishing in the West End of Edinburgh", "gone_fishing","Long");
 
-    Challenge cL3 = new Challenge("Gone Fishing",15, "15km run to draw this dude fishing in the West End of Edinburgh", "gone_fishing","Long");
-
-    Challenge cL4 = new Challenge("Run a Rabbit",14, "14km around Edinburgh Southside on the bunny's trail.", "rabbit", "Long");
+    Challenge cL3 = new Challenge("Run a Rabbit",14, "14km around Edinburgh Southside on the bunny's trail.", "rabbit", "Long");
 
     Challenge cI1 = new Challenge("Suicide Runs",3, "400m Loop. 3 x (4 sides, Sprint 1, Recover 3," +
             " Sprint 2, Recover 2, Sprint 3, Recover 1, Sprint 4)","suicide_runs", "Intervals");
@@ -116,7 +113,6 @@ public class ChallengeSet {
         longChallenges.add(cL1);
         longChallenges.add(cL2);
         longChallenges.add(cL3);
-        longChallenges.add(cL4);
         intervalChallenges.add(cI1);
         intervalChallenges.add(cI2);
         hillChallenges.add(cH1);
