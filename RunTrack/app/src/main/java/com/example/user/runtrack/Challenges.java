@@ -87,10 +87,8 @@ public class Challenges extends AppCompatActivity {
 
             public void onClick(View v){
 
-//                Challenge selectedChallenge = getSelectedChallenge(selectedType);
                 int distancePoints = getDistancePoints(selectedChallenge);
                 int newScore = scoreCarried + distancePoints;
-                //int newScore = scoreCarried + getDistancePoints(selectedChallenge);
 
                 Intent intent = new Intent(Challenges.this, ChallengeAccepted.class);
                 Context context = v.getContext();
@@ -109,11 +107,8 @@ public class Challenges extends AppCompatActivity {
             @Override
             public void onClick(View v){
 
-                Challenge selectedChallenge = getSelectedChallenge(selectedType);
                 int distancePoints = getDistancePoints(selectedChallenge);
                 int newScore = scoreCarried - distancePoints;
-
-                //int newScore = scoreCarried - getDistancePoints(getSelectedChallenge(selectedType));
 
                 Intent intent = new Intent(Challenges.this, ChallengeSelect.class);
                 Context context = v.getContext();

@@ -38,8 +38,8 @@ public class ChallengeSet {
 
     Challenge cS6 = new Challenge("Sausage Dog",3, "A quick sausage dog run in the city centre.", "sausage_dog", "Short");
 
-    Challenge cL1= new Challenge("Ice Cream Run",13, "13km run from Edinburgh City Centre to Lucas Ice Cream Shop." +
-            " in Musselborough", "ice_cream_run", "Long" );
+    Challenge cL1= new Challenge("Ice Cream Run",13, "13km run from Edinburgh City Centre to Lucas Ice Cream Shop" +
+            " in Musselborough.", "ice_cream_run", "Long" );
 
     Challenge cL2 = new Challenge("East Lothian Sea Trail", 21, "21.2km around East Lothian finishing at the Race Course.",
             "east_lothian", "Long");
