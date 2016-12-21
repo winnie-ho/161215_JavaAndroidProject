@@ -22,6 +22,7 @@ import org.w3c.dom.Text;
 public class Challenges extends AppCompatActivity {
     ImageView mapImageView;
     TextView challengeTitleTextView;
+    TextView pointsTextView;
     TextView challengeDistanceTextView;
     TextView challengeTypeTextView;
     TextView challengeDescriptionTextView;
@@ -65,6 +66,7 @@ public class Challenges extends AppCompatActivity {
 
         mapImageView = (ImageView) findViewById(R.id.map);
         challengeTitleTextView = (TextView) findViewById(R.id.challenge_title);
+        pointsTextView = (TextView)findViewById(R.id.challenge_points);
         challengeDistanceTextView = (TextView)findViewById(R.id.distance);
         challengeTypeTextView = (TextView) findViewById(R.id.challenge_type);
         challengeDescriptionTextView = (TextView) findViewById(R.id.challenge_description);
@@ -78,24 +80,6 @@ public class Challenges extends AppCompatActivity {
 
         final Challenge selectedChallenge = getSelectedChallenge(selectedType);
         giveChallenge(selectedChallenge);
-
-
-        //Generates the random challenge by type chosen
-
-//            if (selectedType.equals("Short")) {
-//                Challenge selectedChallenge = challengeSet.getShortChallenge();
-//                giveChallenge(selectedChallenge);
-//            } else if (selectedType.equals("Long")) {
-//                Challenge selectedChallenge = challengeSet.getLongChallenge();
-//                giveChallenge(selectedChallenge);
-//            } else if (selectedType.equals("Intervals")) {
-//                Challenge selectedChallenge = challengeSet.getIntervalChallenge();
-//                giveChallenge(selectedChallenge);
-//            } else if (selectedType.equals("Hills")) {
-//                Challenge selectedChallenge = challengeSet.getHillChallenge();
-//                giveChallenge(selectedChallenge);
-//            }
-
 
 
         acceptButton.setOnClickListener(new View.OnClickListener(){
@@ -147,8 +131,9 @@ public class Challenges extends AppCompatActivity {
         int imageID = getResources().getIdentifier(selectedChallenge.getImage(), "drawable", getPackageName());
         Log.d("Image ID", "Image selected: " + selectedChallenge.getImage() + ", " + imageID);
         mapImageView.setImageResource(imageID);
-        challengeTitleTextView.setText(selectedChallenge.getTitle().toUpperCase());
-        challengeDistanceTextView.setText(""+ selectedChallenge.getDistance()+" km");
+        challengeTitleTextView.setText(selectedChallenge.getTitle().toUpperCase()+" -");
+        pointsTextView.setText(selectedChallenge.getDistance()*10 + " points");
+        challengeDistanceTextView.setText(selectedChallenge.getDistance()+" km");
         challengeTypeTextView.setText(selectedChallenge.getType().toUpperCase() + " CHALLENGE! ARE YOU GAME?");
         challengeDescriptionTextView.setText(selectedChallenge.getDescription());
     }

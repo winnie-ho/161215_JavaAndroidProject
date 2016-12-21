@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,9 @@ public class AllRuns extends AppCompatActivity {
     Button addRun;
     EditText titleEditText;
     EditText distanceEditText;
+    TextView totalRunTextView;
+    TextView totalDistanceTextView;
+    TextView totalTimeTextView;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -68,7 +72,13 @@ public class AllRuns extends AppCompatActivity {
         addRun = (Button) findViewById(R.id.button_newRun);
         titleEditText = (EditText) findViewById(R.id.run_title);
         distanceEditText = (EditText) findViewById(R.id.distance);
+        totalRunTextView = (TextView)findViewById(R.id.total_runs);
+        totalDistanceTextView = (TextView)findViewById(R.id.total_distance);
+        totalTimeTextView = (TextView)findViewById(R.id.total_time);
 
+        totalRunTextView.setText("RUNS \n" + db.getTotalRun());
+        totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance()+ " km");
+        totalTimeTextView.setText("TIME \n" + db.getTotalTime()+ " mins");
 
         //Add New Run Button
         addRun.setOnClickListener(new View.OnClickListener() {
