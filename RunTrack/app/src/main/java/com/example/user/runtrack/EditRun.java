@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +24,34 @@ public class EditRun extends AppCompatActivity{
     EditText routeEditText;
     EditText typeEditText;
     Button editRunButton;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_main,menu);
+        return true ;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item){
+        if (item.getItemId() == R.id.add_run){
+            Intent intent = new Intent(EditRun.this, NewRun.class);
+            this.startActivity(intent);
+            return true;
+        }
+        else if (item.getItemId() == R.id.all_runs){
+            Intent intent = new Intent(EditRun.this, AllRuns.class);
+            this.startActivity(intent);
+            return true;
+        }
+        else if (item.getItemId() == R.id.challenge_select){
+            Intent intent = new Intent(EditRun.this, ChallengeSelect.class);
+            this.startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

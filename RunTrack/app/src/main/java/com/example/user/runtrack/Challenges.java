@@ -49,8 +49,8 @@ public class Challenges extends AppCompatActivity {
             Intent intent = new Intent(Challenges.this, AllRuns.class);
             this.startActivity(intent);
             return true;
-        } else if (item.getItemId() == R.id.challenges) {
-            Intent intent = new Intent(Challenges.this, Challenges.class);
+        } else if (item.getItemId() == R.id.challenge_select) {
+            Intent intent = new Intent(Challenges.this, ChallengeSelect.class);
             this.startActivity(intent);
             return true;
         }

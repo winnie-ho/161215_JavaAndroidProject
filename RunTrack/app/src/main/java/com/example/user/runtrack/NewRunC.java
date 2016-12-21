@@ -43,8 +43,8 @@ public class NewRunC extends AppCompatActivity {
             this.startActivity(intent);
             return true;
         }
-        else if (item.getItemId() == R.id.challenges){
-            Intent intent = new Intent(NewRunC.this, Challenges.class);
+        else if (item.getItemId() == R.id.challenge_select){
+            Intent intent = new Intent(NewRunC.this, ChallengeSelect.class);
             this.startActivity(intent);
             return true;
         }
