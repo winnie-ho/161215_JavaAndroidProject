@@ -1,5 +1,6 @@
 package com.example.user.runtrack;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -70,29 +71,37 @@ public class Challenges extends AppCompatActivity {
         Bundle extras = intent.getExtras();
 
         final String selectedType = extras.getString("selectedType");
+        final int scoreCarried = extras.getInt("score");
 
         final ChallengeSet challengeSet = new ChallengeSet();
 
+        //Generates the random challenge by type chosen
+            if (selectedType.equals("Short")) {
+                Challenge selectedChallenge = challengeSet.getShortChallenge();
+                giveChallenge(selectedChallenge);
+            } else if (selectedType.equals("Long")) {
+                Challenge selectedChallenge = challengeSet.getLongChallenge();
+                giveChallenge(selectedChallenge);
+            } else if (selectedType.equals("Intervals")) {
+                Challenge selectedChallenge = challengeSet.getIntervalChallenge();
+                giveChallenge(selectedChallenge);
+            } else if (selectedType.equals("Hills")) {
+                Challenge selectedChallenge = challengeSet.getHillChallenge();
+                giveChallenge(selectedChallenge);
+            }
 
 
-        if (selectedType.equals("Short")) {
-            Challenge selectedChallenge = challengeSet.getShortChallenge();
-            giveChallenge(selectedChallenge);
-        } else if (selectedType.equals("Long")) {
-            Challenge selectedChallenge = challengeSet.getLongChallenge();
-            giveChallenge(selectedChallenge);
-        } else if (selectedType.equals("Intervals")) {
-            Challenge selectedChallenge = challengeSet.getIntervalChallenge();
-            giveChallenge(selectedChallenge);
-        } else if (selectedType.equals("Hills")) {
-            Challenge selectedChallenge = challengeSet.getHillChallenge();
-            giveChallenge(selectedChallenge);
-        }
 
         acceptButton.setOnClickListener(new View.OnClickListener(){
             @Override
+
             public void onClick(View v){
+                int newScore = scoreCarried + 10;
+
                 Intent intent = new Intent(Challenges.this, NewRun.class);
+                Context context = v.getContext();
+                SavedScorePreferences.setStoredScore(context, newScore);
+                intent.putExtra("newScore", newScore);
                 startActivity(intent);
             }
         });
@@ -100,7 +109,12 @@ public class Challenges extends AppCompatActivity {
         declineButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                int newScore = scoreCarried - 10;
+
                 Intent intent = new Intent(Challenges.this, ChallengeSelect.class);
+                Context context = v.getContext();
+                SavedScorePreferences.setStoredScore(context, newScore);
+                intent.putExtra("newScore", newScore);
                 startActivity(intent);
             }
         });
@@ -115,6 +129,8 @@ public class Challenges extends AppCompatActivity {
         challengeDistanceTextView.setText(""+ selectedChallenge.getDistance()+" km");
         challengeTypeTextView.setText(selectedChallenge.getType().toUpperCase() + " CHALLENGE! ARE YOU GAME?");
         challengeDescriptionTextView.setText(selectedChallenge.getDescription());
+
+
     }
 }
 

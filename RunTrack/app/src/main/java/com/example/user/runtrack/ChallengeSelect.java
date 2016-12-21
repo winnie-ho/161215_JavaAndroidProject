@@ -1,5 +1,6 @@
 package com.example.user.runtrack;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -64,16 +65,24 @@ public class ChallengeSelect extends AppCompatActivity {
         scoreTextView = (TextView)findViewById(R.id.points_score);
         challengeTitleTextView = (TextView)findViewById(R.id.challenges);
 
-//        scoreTextView.setText();
+        int savedScoreFromPreferences = SavedScorePreferences.getStoredScore(this);
+
+        final int score = 0;
+        scoreTextView.setText("" + savedScoreFromPreferences);
+
 
         final ChallengeSet challengeSet = new ChallengeSet();
 
         shortButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Context context = v.getContext();
+                SavedScorePreferences.setStoredScore(context, score);
+
                 String selectedType = "Short";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
                 intent.putExtra("selectedType", selectedType);
+                intent.putExtra("score", score);
                 startActivity(intent);
             }
         });
@@ -81,9 +90,13 @@ public class ChallengeSelect extends AppCompatActivity {
         longButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Context context = v.getContext();
+                SavedScorePreferences.setStoredScore(context, score);
+
                 String selectedType = "Long";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
                 intent.putExtra("selectedType", selectedType);
+                intent.putExtra("score", score);;
                 startActivity(intent);
             }
         });
@@ -91,9 +104,13 @@ public class ChallengeSelect extends AppCompatActivity {
         intervalsButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Context context = v.getContext();
+                SavedScorePreferences.setStoredScore(context, score);
+
                 String selectedType = "Intervals";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
                 intent.putExtra("selectedType", selectedType);
+                intent.putExtra("score", score);
                 startActivity(intent);
             }
         });
@@ -101,9 +118,13 @@ public class ChallengeSelect extends AppCompatActivity {
         hillButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Context context = v.getContext();
+                SavedScorePreferences.setStoredScore(context, score);
+
                 String selectedType = "Hills";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
                 intent.putExtra("selectedType", selectedType);
+                intent.putExtra("score", score);
                 startActivity(intent);
             }
         });
