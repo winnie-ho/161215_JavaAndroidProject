@@ -76,22 +76,25 @@ public class Challenges extends AppCompatActivity {
         final String selectedType = extras.getString("selectedType");
         final int scoreCarried = extras.getInt("score");
 
+        final Challenge selectedChallenge = getSelectedChallenge(selectedType);
+        giveChallenge(selectedChallenge);
+
 
         //Generates the random challenge by type chosen
 
-            if (selectedType.equals("Short")) {
-                Challenge selectedChallenge = challengeSet.getShortChallenge();
-                giveChallenge(selectedChallenge);
-            } else if (selectedType.equals("Long")) {
-                Challenge selectedChallenge = challengeSet.getLongChallenge();
-                giveChallenge(selectedChallenge);
-            } else if (selectedType.equals("Intervals")) {
-                Challenge selectedChallenge = challengeSet.getIntervalChallenge();
-                giveChallenge(selectedChallenge);
-            } else if (selectedType.equals("Hills")) {
-                Challenge selectedChallenge = challengeSet.getHillChallenge();
-                giveChallenge(selectedChallenge);
-            }
+//            if (selectedType.equals("Short")) {
+//                Challenge selectedChallenge = challengeSet.getShortChallenge();
+//                giveChallenge(selectedChallenge);
+//            } else if (selectedType.equals("Long")) {
+//                Challenge selectedChallenge = challengeSet.getLongChallenge();
+//                giveChallenge(selectedChallenge);
+//            } else if (selectedType.equals("Intervals")) {
+//                Challenge selectedChallenge = challengeSet.getIntervalChallenge();
+//                giveChallenge(selectedChallenge);
+//            } else if (selectedType.equals("Hills")) {
+//                Challenge selectedChallenge = challengeSet.getHillChallenge();
+//                giveChallenge(selectedChallenge);
+//            }
 
 
 
@@ -100,7 +103,7 @@ public class Challenges extends AppCompatActivity {
 
             public void onClick(View v){
 
-                Challenge selectedChallenge = getSelectedChallenge(selectedType);
+//                Challenge selectedChallenge = getSelectedChallenge(selectedType);
                 int distancePoints = getDistancePoints(selectedChallenge);
                 int newScore = scoreCarried + distancePoints;
                 //int newScore = scoreCarried + getDistancePoints(selectedChallenge);
@@ -164,6 +167,8 @@ public class Challenges extends AppCompatActivity {
         }
         return selectedChallenge ;
     }
+
+
 
     public int getDistancePoints(Challenge selectedChallenge){
         int distanceValue = (selectedChallenge.getDistance() * 10);
