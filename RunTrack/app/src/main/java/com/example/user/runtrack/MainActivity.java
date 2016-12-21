@@ -43,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, ChallengeSelect.class);
             this.startActivity(intent);
             return true;
+        }else if (item.getItemId() == R.id.home){
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            this.startActivity(intent);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

@@ -29,32 +29,6 @@ public class Challenges extends AppCompatActivity {
 
     ChallengeSet challengeSet = new ChallengeSet();
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.activity_main, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(android.view.MenuItem item) {
-//        if (item.getItemId() == R.id.add_run) {
-//            Intent intent = new Intent(Challenges.this, NewRun.class);
-//            this.startActivity(intent);
-//            return true;
-//        } else if (item.getItemId() == R.id.all_runs) {
-//            Intent intent = new Intent(Challenges.this, AllRuns.class);
-//            this.startActivity(intent);
-//            return true;
-//        } else if (item.getItemId() == R.id.challenge_select) {
-//            Intent intent = new Intent(Challenges.this, ChallengeSelect.class);
-//            this.startActivity(intent);
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

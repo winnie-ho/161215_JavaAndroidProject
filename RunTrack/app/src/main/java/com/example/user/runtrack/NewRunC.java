@@ -48,6 +48,11 @@ public class NewRunC extends AppCompatActivity {
             this.startActivity(intent);
             return true;
         }
+        else if (item.getItemId() == R.id.home){
+            Intent intent = new Intent(NewRunC.this, MainActivity.class);
+            this.startActivity(intent);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }

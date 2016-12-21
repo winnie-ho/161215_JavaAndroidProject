@@ -48,6 +48,10 @@ public class EditRun extends AppCompatActivity{
             Intent intent = new Intent(EditRun.this, ChallengeSelect.class);
             this.startActivity(intent);
             return true;
+        }else if (item.getItemId() == R.id.home){
+            Intent intent = new Intent(EditRun.this, MainActivity.class);
+            this.startActivity(intent);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
