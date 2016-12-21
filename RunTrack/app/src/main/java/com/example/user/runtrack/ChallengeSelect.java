@@ -66,9 +66,9 @@ public class ChallengeSelect extends AppCompatActivity {
         challengeTitleTextView = (TextView)findViewById(R.id.challenges);
 
         int savedScoreFromPreferences = SavedScorePreferences.getStoredScore(this);
+        final int score = savedScoreFromPreferences;
 
-        final int score = 0;
-        scoreTextView.setText("" + savedScoreFromPreferences);
+            scoreTextView.setText("" + savedScoreFromPreferences);
 
 
         final ChallengeSet challengeSet = new ChallengeSet();
