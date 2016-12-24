@@ -17,6 +17,7 @@
     <string name="bring_it_on">BRING IT ON!</string>
     <string name="delete_run">DELETE RUN</string>
     <string name="session_type">SELECT RUN TYPE</string>
+    <string name="filter">FILTER BY: </string>
 
     <string name="type_short">SHORT</string>
     <string name="type_long">LONG</string>

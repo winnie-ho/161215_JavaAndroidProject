@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
  */
 public class AllRuns extends AppCompatActivity {
     //Activity Items
+    Spinner monthSpinner;
     ListView allRunList;
     Button addRun;
     EditText titleEditText;
@@ -72,7 +74,7 @@ public class AllRuns extends AppCompatActivity {
         final DBHandler db = ((MainApplication) getApplication()).db;
 
         //Allocating Activity Items an ID from all_runs
-
+        monthSpinner = (Spinner)findViewById(R.id.month_spinner);
         allRunList = (ListView) findViewById(R.id.run_list);
         addRun = (Button) findViewById(R.id.button_newRun);
         titleEditText = (EditText) findViewById(R.id.run_title);
@@ -128,6 +130,13 @@ public class AllRuns extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ArrayAdapter<CharSequence> adapterMonth = ArrayAdapter.createFromResource(this,
+                R.array.month_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapterMonth.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        monthSpinner.setAdapter(adapterMonth);
 
     }
 
