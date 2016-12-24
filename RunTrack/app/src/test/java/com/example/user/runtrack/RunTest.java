@@ -7,11 +7,13 @@ import static org.junit.Assert.*;
 public class RunTest {
     Run run1;
     Run run2;
+    Run run3;
 
     @Before
     public void before(){
         run1 = new Run("Out and Back", 12);
         run2 = new Run("Cramond Park Run", 5);
+        run3 = new Run("Arthurs Seat", 22, 03, 2016, 13, 61, 5, "Queens Drive", "Long");
     }
 
 
@@ -20,7 +22,8 @@ public class RunTest {
     }
 
     @Test public void getRunDistanceTest(){
-        assertEquals(5,run2.getDistance());
+        assertEquals(5,run2.getDistance(),0);
     }
+
 
 }

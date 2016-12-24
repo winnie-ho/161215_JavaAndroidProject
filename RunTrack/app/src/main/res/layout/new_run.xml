@@ -11,31 +11,61 @@
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="15dp"
         android:textSize="20dp"
-        android:hint="title"
+        android:hint="Title"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginLeft="10dp" />
 
-    <EditText
-        android:id="@+id/run_date"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="15dp"
-        android:textSize="20dp"
-        android:hint="date (yyyy-mm-dd)"
-        android:textColor="@color/colorPrimaryDark"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginLeft="10dp" />
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:id="@+id/run_day"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="15dp"
+            android:textSize="20dp"
+            android:hint="DD"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp" />
+
+        <EditText
+            android:id="@+id/run_month"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="15dp"
+            android:textSize="20dp"
+            android:hint="MM"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp" />
+
+        <EditText
+            android:id="@+id/run_year"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="15dp"
+            android:textSize="20dp"
+            android:hint="YYYY"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/distance"
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="15dp"
         android:textSize="20dp"
-        android:hint="distance"
+        android:hint="Distance"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +77,7 @@
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="15dp"
         android:textSize="20dp"
-        android:hint="time"
+        android:hint="Time"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +89,7 @@
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="15dp"
         android:textSize="20dp"
-        android:hint="pace"
+        android:hint="Pace"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,7 +101,7 @@
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="15dp"
         android:textSize="20dp"
-        android:hint="route"
+        android:hint="Route"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,7 +113,7 @@
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="15dp"
         android:textSize="20dp"
-        android:hint="type"
+        android:hint="Type"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

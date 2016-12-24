@@ -4,28 +4,23 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>30</y>
+      <x>260</x>
+      <y>20</y>
       <w>210</w>
       <h>280</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Class Diagram Run&gt;&gt;
+    <panel_attributes>&lt;&lt;Class Challenge&gt;&gt;
 --
--id: Long
 -title: String
--date: Date
 -distance: int
--time: time
--pace: time
--map: String
--type: Enum
+-description: String
+-image: String
+-type: String
 --
 getRunTitle()
-getDate()
 getDistance()
-getTime()
-getPace()
-getMap()
+getDescription()
+getImage()
 getType()</panel_attributes>
     <additional_attributes/>
   </element>
@@ -33,7 +28,7 @@ getType()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>60</x>
-      <y>380</y>
+      <y>530</y>
       <w>210</w>
       <h>270</h>
     </coordinates>
@@ -60,8 +55,8 @@ Methods
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
-      <y>50</y>
+      <x>320</x>
+      <y>480</y>
       <w>210</w>
       <h>190</h>
     </coordinates>
@@ -75,6 +70,89 @@ Methods
 -addRun()
 -deleteRun()
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>490</x>
+      <y>10</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Shortable Interface
+--
+getShortChallenge()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>490</x>
+      <y>110</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Longable Interface
+--
+getLongChallenge()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>490</x>
+      <y>210</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Intervalable Interface
+--
+getIntervalChallenge()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>510</x>
+      <y>310</y>
+      <w>140</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Hillable Interface
+--
+getHillChallenge()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>210</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class Run&gt;&gt;
+--
+-id: Int
+-title: String
+-date: Date
+-distance: int
+-time: time
+-pace: time
+-map: String
+-type: Enum
+--
+getRunTitle()
+getDate()
+getDistance()
+getTime()
+getPace()
+getMap()
+getType()</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

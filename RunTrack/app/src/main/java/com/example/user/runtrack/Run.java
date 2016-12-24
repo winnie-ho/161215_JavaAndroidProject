@@ -11,7 +11,9 @@ import java.util.Date;
 public class Run {
     private int id;
     private String title;
-    private String date;
+    private int day;
+    private int month;
+    private int year;
     private float distance;
     private float time;
     private float pace;
@@ -19,10 +21,12 @@ public class Run {
     private String type;
 
     //Full Run Constructor for DB
-    public Run(int id, String title, String date, float distance, float time, float pace, String route, String type){
+    public Run(int id, String title, int day, int month, int year, float distance, float time, float pace, String route, String type){
         this.id = id;
         this.title = title;
-        this.date = date;
+        this.day = day;
+        this.month = month;
+        this.year = year;
         this.distance = distance;
         this.time = time;
         this.pace = pace;
@@ -31,9 +35,11 @@ public class Run {
     }
 
     //Full Run Constructor
-    public Run(String title, String date, float distance, float time, float pace, String route, String type){
+    public Run(String title, int day, int month, int year, float distance, float time, float pace, String route, String type){
         this.title = title;
-        this.date = date;
+        this.day = day;
+        this.month = month;
+        this.year = year;
         this.distance = distance;
         this.time = time;
         this.pace = pace;
@@ -57,8 +63,16 @@ public class Run {
         return this.title;
     }
 
-    public String getDate() {
-        return this.date;
+    public int getDay() {
+        return this.day;
+    }
+
+    public int getMonth() {
+        return this.month;
+    }
+
+    public int getYear() {
+        return this.year;
     }
 
     public float getDistance(){

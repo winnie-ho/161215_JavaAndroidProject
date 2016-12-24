@@ -68,6 +68,7 @@
         android:layout_gravity="left"
         android:layout_marginLeft="10dp"/>
 
+
     <TextView
         android:id="@+id/show_run_distance"
         android:text="DISTANCE: "

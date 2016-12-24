@@ -16,7 +16,9 @@ import android.widget.Toast;
  */
 public class NewRunC extends AppCompatActivity {
     EditText titleEditText;
-    EditText dateEditText;
+    EditText dayEditText;
+    EditText monthEditText;
+    EditText yearEditText;
     EditText distanceEditText;
     EditText timeEditText;
     EditText paceEditText;
@@ -65,7 +67,9 @@ public class NewRunC extends AppCompatActivity {
 
 
         titleEditText = (EditText)findViewById(R.id.run_title);
-        dateEditText = (EditText)findViewById(R.id.run_date);
+        dayEditText = (EditText)findViewById(R.id.run_day);
+        monthEditText = (EditText)findViewById(R.id.run_month);
+        yearEditText = (EditText)findViewById(R.id.run_year);
         distanceEditText = (EditText)findViewById(R.id.distance);
         timeEditText = (EditText)findViewById(R.id.time);
         paceEditText = (EditText)findViewById(R.id.pace);
@@ -91,16 +95,18 @@ public class NewRunC extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String title = titleEditText.getText().toString();
-                String date = dateEditText.getText().toString();
+                int day = Integer.parseInt(dayEditText.getText().toString());
+                int month = Integer.parseInt(monthEditText.getText().toString());
+                int year = Integer.parseInt(yearEditText.getText().toString());
                 float distance = Float.parseFloat(distanceEditText.getText().toString());
                 float time = Float.parseFloat(timeEditText.getText().toString());
                 float pace = Float.parseFloat(paceEditText.getText().toString());
                 String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
 
-                Run newRun = new Run(title, date, distance, time, pace, route, type);
+                Run newRun = new Run(title, day, month, year, distance, time, pace, route, type);
                 db.addRun(newRun);
-                Log.d("Add:", "Adding new run.." + title + " " + date + ", " + distance + "k");
+                Log.d("Add:", "Adding new run.." + title + ", " + distance + "k");
                 Toast.makeText(NewRunC.this, "Run Added!", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(NewRunC.this, AllRuns.class);

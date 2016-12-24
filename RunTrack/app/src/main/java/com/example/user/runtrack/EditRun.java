@@ -17,7 +17,9 @@ import android.widget.Toast;
  */
 public class EditRun extends AppCompatActivity{
     EditText titleEditText;
-    EditText dateEditText;
+    EditText dayEditText;
+    EditText monthEditText;
+    EditText yearEditText;
     EditText distanceEditText;
     EditText timeEditText;
     EditText paceEditText;
@@ -64,7 +66,9 @@ public class EditRun extends AppCompatActivity{
         setContentView(R.layout.edit_run);
 
         titleEditText = (EditText)findViewById(R.id.run_title);
-        dateEditText = (EditText)findViewById(R.id.run_date);
+        dayEditText = (EditText)findViewById(R.id.run_day);
+        monthEditText = (EditText)findViewById(R.id.run_month);
+        yearEditText = (EditText)findViewById(R.id.run_year);
         distanceEditText = (EditText)findViewById(R.id.distance);
         timeEditText = (EditText)findViewById(R.id.time);
         paceEditText = (EditText)findViewById(R.id.pace);
@@ -77,7 +81,9 @@ public class EditRun extends AppCompatActivity{
 
         final int selectedId = extras.getInt("ID");
         final String selectedTitle = extras.getString("Title");
-        final String selectedDate = extras.getString("Date");
+        final int selectedDay = extras.getInt("Day");
+        final int selectedMonth = extras.getInt("Month");
+        final int selectedYear = extras.getInt("Year");
         final float selectedDistance = extras.getFloat("Distance");
         final float selectedTime = extras.getFloat("Time");
         final float selectedPace = extras.getFloat("Pace");
@@ -85,7 +91,9 @@ public class EditRun extends AppCompatActivity{
         final String selectedType = extras.getString("Type");
 
         titleEditText.setText(selectedTitle);
-        dateEditText.setText(selectedDate);
+        dayEditText.setText("" + selectedDay);
+        monthEditText.setText("" + selectedMonth);
+        yearEditText.setText("" + selectedYear);
         distanceEditText.setText("" + selectedDistance);
         timeEditText.setText("" + selectedTime);
         paceEditText.setText("" + selectedPace);
@@ -97,21 +105,25 @@ public class EditRun extends AppCompatActivity{
             public void onClick(View v) {
 
                 String title = titleEditText.getText().toString();
-                String date = dateEditText.getText().toString();
+                int day = Integer.parseInt(dayEditText.getText().toString());
+                int month = Integer.parseInt(monthEditText.getText().toString());
+                int year = Integer.parseInt(yearEditText.getText().toString());
                 float distance = Float.parseFloat(distanceEditText.getText().toString());
                 float time = Float.parseFloat(timeEditText.getText().toString());
                 float pace = Float.parseFloat(paceEditText.getText().toString());
                 String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
 
-                Run runToEdit = new Run(selectedId, title, date, distance, time, pace, route, type);
+                Run runToEdit = new Run(selectedId, title, day, month, year, distance, time, pace, route, type);
                 db.updateRun(runToEdit);
                 Log.d("Edit:", "Editing run.." + title + ", " + distance + " k");
 
                 Intent intent = new Intent(EditRun.this, ShowRun.class);
                 intent.putExtra("ID", selectedId);
                 intent.putExtra("Title", title);
-                intent.putExtra("Date", date);
+                intent.putExtra("Day", day);
+                intent.putExtra("Month", month);
+                intent.putExtra("Year", year);
                 intent.putExtra("Distance",distance);
                 intent.putExtra("Time", time);
                 intent.putExtra("Pace", pace);

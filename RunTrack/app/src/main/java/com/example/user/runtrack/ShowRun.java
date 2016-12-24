@@ -61,7 +61,6 @@ public class ShowRun extends AppCompatActivity{
             return true;
         }
 
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -86,7 +85,9 @@ public class ShowRun extends AppCompatActivity{
 
         final int Id = extras.getInt("ID");
         final String Title = extras.getString("Title");
-        final String Date = extras.getString("Date");
+        final int Day = extras.getInt("Day");
+        final int Month = extras.getInt("Month");
+        final int Year = extras.getInt("Year");
         final float Distance = extras.getFloat("Distance");
         final float Time = extras.getFloat("Time");
         final float Pace = extras.getFloat("Pace");
@@ -95,7 +96,7 @@ public class ShowRun extends AppCompatActivity{
 
 
         showTitleTextView.setText("RUN: " + Title.toUpperCase());
-        showDateTextView.setText("Date: " + Date);
+        showDateTextView.setText("Date: " + Day + "/" + Month + "/" + Year);
         showDistanceTextView.setText("Distance: " + Distance + " km");
         showTimeTextView.setText("Time: " + Time + " mins");
         showPaceTextView.setText("Pace: " + Pace + " mins/km");
@@ -112,7 +113,9 @@ public class ShowRun extends AppCompatActivity{
                 Intent intent = new Intent(ShowRun.this, EditRun.class);
                 intent.putExtra("ID", Id);
                 intent.putExtra("Title", Title);
-                intent.putExtra("Date", Date);
+                intent.putExtra("Day", Day);
+                intent.putExtra("Month", Month);
+                intent.putExtra("Year", Year);
                 intent.putExtra("Distance",Distance);
                 intent.putExtra("Time", Time);
                 intent.putExtra("Pace", Pace);

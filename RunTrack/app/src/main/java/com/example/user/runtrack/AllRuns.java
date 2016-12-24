@@ -117,7 +117,9 @@ public class AllRuns extends AppCompatActivity {
 
                 intent.putExtra("ID", selectedRun.getId());
                 intent.putExtra("Title",selectedRun.getRunTitle());
-                intent.putExtra("Date",selectedRun.getDate());
+                intent.putExtra("Day",selectedRun.getDay());
+                intent.putExtra("Month",selectedRun.getMonth());
+                intent.putExtra("Year",selectedRun.getYear());
                 intent.putExtra("Distance",selectedRun.getDistance());
                 intent.putExtra("Time",selectedRun.getTime());
                 intent.putExtra("Pace",selectedRun.getPace());
