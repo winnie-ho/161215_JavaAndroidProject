@@ -96,12 +96,8 @@ public class AllRuns extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                int filterMonth = position;
-                totalRunTextView.setText("RUNS \n" + db.getTotalRun(filterMonth));
-                totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance(filterMonth) + " km");
-                totalTimeTextView.setText("TIME \n" + db.getTotalTime(filterMonth) + "mins");
 
-                Log.d("Selected Month position", "filterMonth = " + monthSpinner.getSelectedItemPosition());
+                updateTotals(db,position);
                 updateListView(db);
             }
 
@@ -122,9 +118,21 @@ public class AllRuns extends AppCompatActivity {
             }
         });
 
+    }
 
 
-
+    //Determining the totals bar
+    private void updateTotals(DBHandler db, int month){
+        if (month == 0) {
+            totalRunTextView.setText("RUNS \n" + db.getTotalRun());
+            totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance() + " km");
+            totalTimeTextView.setText("TIME \n" + db.getTotalTime() + "mins");
+        }
+        else if (month > 0) {
+            totalRunTextView.setText("RUNS \n" + db.getTotalRun(month));
+            totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance(month) + " km");
+            totalTimeTextView.setText("TIME \n" + db.getTotalTime(month) + "mins");
+        }
     }
 
 
