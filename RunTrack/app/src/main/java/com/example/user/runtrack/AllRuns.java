@@ -25,6 +25,8 @@ import java.util.ArrayList;
 public class AllRuns extends AppCompatActivity {
     //Activity Items
     ListView allRunList;
+    ArrayAdapter<String> adapter1;
+
     Button addRun;
     EditText titleEditText;
     EditText distanceEditText;
@@ -35,7 +37,7 @@ public class AllRuns extends AppCompatActivity {
     Spinner monthSpinner;
     ArrayAdapter<CharSequence> adapter;
 
-    int filterMonth;
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -86,10 +88,6 @@ public class AllRuns extends AppCompatActivity {
         monthSpinner = (Spinner) findViewById(R.id.month_spinner);
 
 
-
-
-
-
         adapter = ArrayAdapter.createFromResource(this,R.array.month_array,android.R.layout.simple_spinner_item );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         monthSpinner.setAdapter(adapter);
@@ -98,22 +96,20 @@ public class AllRuns extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                filterMonth = position;
+                int filterMonth = position;
                 totalRunTextView.setText("RUNS \n" + db.getTotalRun(filterMonth));
                 totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance(filterMonth) + " km");
                 totalTimeTextView.setText("TIME \n" + db.getTotalTime(filterMonth) + "mins");
 
-                Log.d("Selected Month position", "filterMonth = " + filterMonth);
-
+                Log.d("Selected Month position", "filterMonth = " + monthSpinner.getSelectedItemPosition());
+                updateListView(db);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent){
 
             }
-
         });
-
 
 
         //Add New Run Button
@@ -127,48 +123,24 @@ public class AllRuns extends AppCompatActivity {
         });
 
 
-        //Showing data as a List View through and Array Adapter
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getAllRuns(db, filterMonth));
-        allRunList.setAdapter(adapter1);
 
-        allRunList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selected = (String) allRunList.getItemAtPosition(position);
-                Log.d("ListView:", selected + " selected, position: " + position + ", id: " + id);
 
-                Run selectedRun = db.getRun(position + 1);
-                Log.d("Selected Run: ", "Selected run: " + selectedRun);
-
-                Intent intent = new Intent(AllRuns.this, ShowRun.class);
-                intent.putExtra("ID", selectedRun.getId());
-                intent.putExtra("Title", selectedRun.getRunTitle());
-                intent.putExtra("Day", selectedRun.getDay());
-                intent.putExtra("Month", selectedRun.getMonth());
-                intent.putExtra("Year", selectedRun.getYear());
-                intent.putExtra("Distance", selectedRun.getDistance());
-                intent.putExtra("Time", selectedRun.getTime());
-                intent.putExtra("Pace", selectedRun.getPace());
-                intent.putExtra("Route", selectedRun.getRoute());
-                intent.putExtra("Type", selectedRun.getType());
-                startActivity(intent);
-            }
-        });
     }
 
+
     //Accessing all Runs in DB and returning all runs in runLog to make available for Array List
-    private ArrayList<String> getAllRuns(DBHandler db, int filterMonth) {
+    private ArrayList<String> getAllRuns(DBHandler db, int month) {
         ArrayList<String> runLog = new ArrayList<String>();
 
-        if (filterMonth == 0) {
+        if (month == 0) {
             ArrayList<Run> runs = db.getAllRuns();
             for (Run run : runs) {
                 runLog.add(run.getDay() + "/" + run.getMonth() + "/" + run.getYear() +
                         "         " + run.getRunTitle() + "        " + run.getDistance() + "km");
             }
         }
-        else if (filterMonth > 0) {
-            ArrayList<Run> runs = db.getAllRuns(filterMonth);
+        else if (month > 0) {
+            ArrayList<Run> runs = db.getAllRuns(month);
             for (Run run : runs) {
                 runLog.add(run.getDay() + "/" + run.getMonth() + "/" + run.getYear() +
                         "         " + run.getRunTitle() + "        " + run.getDistance() + "km");
@@ -176,5 +148,37 @@ public class AllRuns extends AppCompatActivity {
         }
         return runLog;
     }
+
+
+        public void updateListView(final DBHandler db) {
+
+            //Showing data as a List View through an Array Adapter
+
+            adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getAllRuns(db, monthSpinner.getSelectedItemPosition()));
+            allRunList.setAdapter(adapter1);
+            allRunList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String selected = (String) allRunList.getItemAtPosition(position);
+                    Log.d("ListView:", selected + " selected, position: " + position + ", id: " + id);
+
+                    Run selectedRun = db.getRun(position + 1);
+                    Log.d("Selected Run: ", "Selected run: " + selectedRun);
+
+                    Intent intent = new Intent(AllRuns.this, ShowRun.class);
+                    intent.putExtra("ID", selectedRun.getId());
+                    intent.putExtra("Title", selectedRun.getRunTitle());
+                    intent.putExtra("Day", selectedRun.getDay());
+                    intent.putExtra("Month", selectedRun.getMonth());
+                    intent.putExtra("Year", selectedRun.getYear());
+                    intent.putExtra("Distance", selectedRun.getDistance());
+                    intent.putExtra("Time", selectedRun.getTime());
+                    intent.putExtra("Pace", selectedRun.getPace());
+                    intent.putExtra("Route", selectedRun.getRoute());
+                    intent.putExtra("Type", selectedRun.getType());
+                    startActivity(intent);
+                }
+            });
+        }
 
 }
