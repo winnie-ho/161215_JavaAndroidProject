@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>20</y>
+      <y>0</y>
       <w>210</w>
       <h>280</h>
     </coordinates>
@@ -27,8 +27,8 @@ getType()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>530</y>
+      <x>20</x>
+      <y>340</y>
       <w>210</w>
       <h>270</h>
     </coordinates>
@@ -55,8 +55,8 @@ Methods
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>480</y>
+      <x>260</x>
+      <y>340</y>
       <w>210</w>
       <h>190</h>
     </coordinates>
@@ -73,65 +73,10 @@ Methods
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLInterface</id>
-    <coordinates>
-      <x>490</x>
-      <y>10</y>
-      <w>160</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>Shortable Interface
---
-getShortChallenge()
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLInterface</id>
-    <coordinates>
-      <x>490</x>
-      <y>110</y>
-      <w>140</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>Longable Interface
---
-getLongChallenge()</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLInterface</id>
-    <coordinates>
-      <x>490</x>
-      <y>210</y>
-      <w>160</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>Intervalable Interface
---
-getIntervalChallenge()
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLInterface</id>
-    <coordinates>
-      <x>510</x>
-      <y>310</y>
-      <w>140</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>Hillable Interface
---
-getHillChallenge()
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
       <x>20</x>
-      <y>20</y>
+      <y>0</y>
       <w>210</w>
       <h>280</h>
     </coordinates>
@@ -139,7 +84,9 @@ getHillChallenge()
 --
 -id: Int
 -title: String
--date: Date
+-day: int
+-month: int
+-year: int
 -distance: int
 -time: time
 -pace: time

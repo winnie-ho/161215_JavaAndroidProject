@@ -40,13 +40,13 @@
             android:paddingRight="5dp" />
 
         <Spinner
+            android:id="@+id/month_spinner"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="6dp"
             android:layout_marginRight="4dp"
-            android:id="@+id/month_spinner"
-            android:background="@color/colorPrimary"
-            android:layout_gravity="right">
+            android:layout_gravity="right"
+            android:dropDownSelector="@android:drawable/btn_dropdown">
 
         </Spinner>
 

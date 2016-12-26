@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,7 +24,6 @@ import java.util.ArrayList;
  */
 public class AllRuns extends AppCompatActivity {
     //Activity Items
-    Spinner monthSpinner;
     ListView allRunList;
     Button addRun;
     EditText titleEditText;
@@ -31,6 +31,10 @@ public class AllRuns extends AppCompatActivity {
     TextView totalRunTextView;
     TextView totalDistanceTextView;
     TextView totalTimeTextView;
+
+    Spinner monthSpinner;
+    ArrayAdapter<CharSequence> adapter;
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -58,10 +62,8 @@ public class AllRuns extends AppCompatActivity {
             this.startActivity(intent);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +74,7 @@ public class AllRuns extends AppCompatActivity {
         final DBHandler db = ((MainApplication) getApplication()).db;
 
         //Allocating Activity Items an ID from all_runs
-        monthSpinner = (Spinner) findViewById(R.id.month_spinner);
+
         allRunList = (ListView) findViewById(R.id.run_list);
         addRun = (Button) findViewById(R.id.button_newRun);
         titleEditText = (EditText) findViewById(R.id.run_title);
@@ -81,11 +83,32 @@ public class AllRuns extends AppCompatActivity {
         totalDistanceTextView = (TextView) findViewById(R.id.total_distance);
         totalTimeTextView = (TextView) findViewById(R.id.total_time);
 
-        totalRunTextView.setText("RUNS \n" + db.getTotalRun());
-        totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance() + " km");
-        totalTimeTextView.setText("TIME \n" + db.getTotalTime() + " mins");
 
-        monthSpinner.setOnItemSelectedListener(new SpinnerActivity());
+
+
+
+
+        monthSpinner = (Spinner) findViewById(R.id.month_spinner);
+        adapter = ArrayAdapter.createFromResource(this,R.array.month_array,android.R.layout.simple_spinner_item );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        monthSpinner.setAdapter(adapter);
+
+        monthSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            int filterMonth = 1;
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getBaseContext(), parent.getItemAtPosition(position)+ " is selected", Toast.LENGTH_LONG).show();
+                filterMonth = position;
+                totalRunTextView.setText("RUNS \n" + db.getTotalRun(filterMonth));
+                totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance(filterMonth) + " km");
+                totalTimeTextView.setText("TIME \n" + db.getTotalTime(filterMonth) + "mins");
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent){
+
+            }
+        });
 
 
         //Add New Run Button
@@ -131,17 +154,6 @@ public class AllRuns extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-        ArrayAdapter<CharSequence> adapterMonth = ArrayAdapter.createFromResource(this,
-                R.array.month_array, android.R.layout.simple_spinner_item);
-
-        // Specify the layout to use when the list of choices appears
-        adapterMonth.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // Apply the adapter to the spinner
-        monthSpinner.setAdapter(adapterMonth);
-
     }
 
     //Accessing all Runs in DB and returning all runs in runLog to make available for Array List
