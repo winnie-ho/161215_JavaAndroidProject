@@ -182,7 +182,24 @@ public class DBHandler extends SQLiteOpenHelper {
         public ArrayList<Run> getAllRuns() {
             ArrayList<Run> runList = new ArrayList<Run>();
 
-            String sql = "SELECT * FROM " + TABLE_RUNS;
+            String sql = "SELECT * FROM " + TABLE_RUNS + " ORDER BY " + KEY_YEAR + " ASC, " + KEY_MONTH + " ASC, " + KEY_DAY + " ASC";
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(sql, null);
+
+            if (cursor.moveToFirst()){
+                do {
+                    Run run = getRunFromDBCursor(cursor);
+                    runList.add(run);
+                } while(cursor.moveToNext());
+            }
+            return runList;
+        }
+
+        public ArrayList<Run> getAllRuns(int month) {
+            ArrayList<Run> runList = new ArrayList<Run>();
+
+            String sql = "SELECT * FROM " + TABLE_RUNS + " WHERE " + KEY_MONTH + " = " + month;
 
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(sql, null);

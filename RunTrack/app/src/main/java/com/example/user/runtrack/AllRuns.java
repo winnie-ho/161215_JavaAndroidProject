@@ -35,6 +35,7 @@ public class AllRuns extends AppCompatActivity {
     Spinner monthSpinner;
     ArrayAdapter<CharSequence> adapter;
 
+    int filterMonth;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -82,33 +83,37 @@ public class AllRuns extends AppCompatActivity {
         totalRunTextView = (TextView) findViewById(R.id.total_runs);
         totalDistanceTextView = (TextView) findViewById(R.id.total_distance);
         totalTimeTextView = (TextView) findViewById(R.id.total_time);
-
-
-
-
-
-
         monthSpinner = (Spinner) findViewById(R.id.month_spinner);
+
+
+
+
+
+
         adapter = ArrayAdapter.createFromResource(this,R.array.month_array,android.R.layout.simple_spinner_item );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         monthSpinner.setAdapter(adapter);
 
         monthSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            int filterMonth = 1;
+
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(), parent.getItemAtPosition(position)+ " is selected", Toast.LENGTH_LONG).show();
                 filterMonth = position;
                 totalRunTextView.setText("RUNS \n" + db.getTotalRun(filterMonth));
                 totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance(filterMonth) + " km");
                 totalTimeTextView.setText("TIME \n" + db.getTotalTime(filterMonth) + "mins");
+
+                Log.d("Selected Month position", "filterMonth = " + filterMonth);
+
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent){
 
             }
+
         });
+
 
 
         //Add New Run Button
@@ -123,8 +128,8 @@ public class AllRuns extends AppCompatActivity {
 
 
         //Showing data as a List View through and Array Adapter
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getAllRuns(db));
-        allRunList.setAdapter(adapter);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getAllRuns(db, filterMonth));
+        allRunList.setAdapter(adapter1);
 
         allRunList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -136,11 +141,6 @@ public class AllRuns extends AppCompatActivity {
                 Log.d("Selected Run: ", "Selected run: " + selectedRun);
 
                 Intent intent = new Intent(AllRuns.this, ShowRun.class);
-
-                Log.d("SelectedRunInfo", "Selected run: " + selectedRun.getId() + ", " + selectedRun.getRunTitle() +
-                        ", " + selectedRun.getDistance() + ", " + selectedRun.getTime() + ", " +
-                        selectedRun.getPace() + ", " + selectedRun.getRoute() + ", " + selectedRun.getType());
-
                 intent.putExtra("ID", selectedRun.getId());
                 intent.putExtra("Title", selectedRun.getRunTitle());
                 intent.putExtra("Day", selectedRun.getDay());
@@ -157,13 +157,22 @@ public class AllRuns extends AppCompatActivity {
     }
 
     //Accessing all Runs in DB and returning all runs in runLog to make available for Array List
-    private ArrayList<String> getAllRuns(DBHandler db) {
+    private ArrayList<String> getAllRuns(DBHandler db, int filterMonth) {
         ArrayList<String> runLog = new ArrayList<String>();
 
-        ArrayList<Run> runs = db.getAllRuns();
-        for (Run run : runs) {
-            runLog.add(run.getDay() + "/" + run.getMonth() + "/" + run.getYear() + "         " + run.getRunTitle() + "        " + run.getDistance() + "km");
-            Log.d("Showing:", "Showing" + run.getRunTitle());
+        if (filterMonth == 0) {
+            ArrayList<Run> runs = db.getAllRuns();
+            for (Run run : runs) {
+                runLog.add(run.getDay() + "/" + run.getMonth() + "/" + run.getYear() +
+                        "         " + run.getRunTitle() + "        " + run.getDistance() + "km");
+            }
+        }
+        else if (filterMonth > 0) {
+            ArrayList<Run> runs = db.getAllRuns(filterMonth);
+            for (Run run : runs) {
+                runLog.add(run.getDay() + "/" + run.getMonth() + "/" + run.getYear() +
+                        "         " + run.getRunTitle() + "        " + run.getDistance() + "km");
+            }
         }
         return runLog;
     }
