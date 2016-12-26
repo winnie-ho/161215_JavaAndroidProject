@@ -128,6 +128,16 @@ public class DBHandler extends SQLiteOpenHelper {
             return totalRun;
         }
 
+        public int getTotalRun(){
+            String sql = "SELECT count (" + KEY_TITLE + ") FROM " + TABLE_RUNS;
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(sql, null);
+            cursor.moveToFirst();
+            int totalRun = cursor.getInt(0);
+            cursor.close();
+            return totalRun;
+        }
+
         public float getTotalDistance(int month){
             String sql = "SELECT sum (" + KEY_DISTANCE + ") FROM " + TABLE_RUNS + " WHERE " + KEY_MONTH + " = " + month;
             SQLiteDatabase db = this.getWritableDatabase();
@@ -138,8 +148,28 @@ public class DBHandler extends SQLiteOpenHelper {
             return totalDistance;
         }
 
+        public float getTotalDistance(){
+            String sql = "SELECT sum (" + KEY_DISTANCE + ") FROM " + TABLE_RUNS;
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(sql, null);
+            cursor.moveToFirst();
+            float totalDistance = cursor.getFloat(0);
+            cursor.close();
+            return totalDistance;
+        }
+
         public Float getTotalTime(int month){
             String sql = "SELECT sum (" + KEY_TIME + ") FROM " + TABLE_RUNS + " WHERE " + KEY_MONTH + " = " + month;
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(sql, null);
+            cursor.moveToFirst();
+            float totalTime = cursor.getFloat(0);
+            cursor.close();
+            return totalTime;
+        }
+
+        public Float getTotalTime(){
+            String sql = "SELECT sum (" + KEY_TIME + ") FROM " + TABLE_RUNS;
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(sql, null);
             cursor.moveToFirst();
