@@ -287,7 +287,7 @@ public class DBHandler extends SQLiteOpenHelper {
             String route = cursor.getString(routeColumnNum);
             String type = cursor.getString(typeColumnNum);
 
-            Run run = new Run(id, title, day, month, year, distance, time, pace, route, type);
+            Run run = new Run(id, title, day, month, year, distance, time, route, type);
 
             return run;
     }

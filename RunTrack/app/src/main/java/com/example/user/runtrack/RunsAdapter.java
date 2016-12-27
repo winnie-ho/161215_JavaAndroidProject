@@ -30,11 +30,16 @@ public class RunsAdapter extends ArrayAdapter<Run>{
         TextView runDistance = (TextView)convertView.findViewById(R.id.runDistance);
         TextView runTime = (TextView)convertView.findViewById(R.id.runTime);
         TextView runDate = (TextView)convertView.findViewById(R.id.runDate);
+        TextView runPace = (TextView)convertView.findViewById(R.id.runPace);
 
         runTitle.setText(run.getRunTitle());
         runDistance.setText(run.getDistance() + "km");
         runTime.setText(run.getTime() + "mins");
         runDate.setText(run.getDay() + "/" + run.getMonth() + "/" + run.getYear());
+        runPace.setText(String.format("%.2f", run.getPace()) + "min/km");
+
+        ;
+
         return convertView;
     }
 }

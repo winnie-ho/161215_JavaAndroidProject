@@ -21,7 +21,6 @@ public class NewRunC extends AppCompatActivity {
     EditText yearEditText;
     EditText distanceEditText;
     EditText timeEditText;
-    EditText paceEditText;
     EditText routeEditText;
     EditText typeEditText;
     Button addRunButton;
@@ -72,7 +71,6 @@ public class NewRunC extends AppCompatActivity {
         yearEditText = (EditText)findViewById(R.id.run_year);
         distanceEditText = (EditText)findViewById(R.id.distance);
         timeEditText = (EditText)findViewById(R.id.time);
-        paceEditText = (EditText)findViewById(R.id.pace);
         routeEditText = (EditText)findViewById(R.id.route);
         typeEditText = (EditText)findViewById(R.id.type);
         addRunButton = (Button)findViewById(R.id.button_add_run);
@@ -100,11 +98,10 @@ public class NewRunC extends AppCompatActivity {
                 int year = Integer.parseInt(yearEditText.getText().toString());
                 float distance = Float.parseFloat(distanceEditText.getText().toString());
                 float time = Float.parseFloat(timeEditText.getText().toString());
-                float pace = Float.parseFloat(paceEditText.getText().toString());
                 String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
 
-                Run newRun = new Run(title, day, month, year, distance, time, pace, route, type);
+                Run newRun = new Run(title, day, month, year, distance, time, route, type);
                 db.addRun(newRun);
                 Log.d("Add:", "Adding new run.." + title + ", " + distance + "k");
                 Toast.makeText(NewRunC.this, "Run Added!", Toast.LENGTH_SHORT).show();

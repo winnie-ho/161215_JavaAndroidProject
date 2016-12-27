@@ -21,7 +21,7 @@ public class Run {
     private String type;
 
     //Full Run Constructor for DB
-    public Run(int id, String title, int day, int month, int year, float distance, float time, float pace, String route, String type){
+    public Run(int id, String title, int day, int month, int year, float distance, float time, String route, String type){
         this.id = id;
         this.title = title;
         this.day = day;
@@ -29,20 +29,20 @@ public class Run {
         this.year = year;
         this.distance = distance;
         this.time = time;
-        this.pace = pace;
+//        this.pace = pace;
         this.route = route;
         this.type = type;
     }
 
     //Full Run Constructor
-    public Run(String title, int day, int month, int year, float distance, float time, float pace, String route, String type){
+    public Run(String title, int day, int month, int year, float distance, float time, String route, String type){
         this.title = title;
         this.day = day;
         this.month = month;
         this.year = year;
         this.distance = distance;
         this.time = time;
-        this.pace = pace;
+//        this.pace = pace;
         this.route = route;
         this.type = type;
     }
@@ -84,6 +84,7 @@ public class Run {
     }
 
     public float getPace(){
+        this.pace = this.time/this.distance;
         return this.pace;
     }
 
