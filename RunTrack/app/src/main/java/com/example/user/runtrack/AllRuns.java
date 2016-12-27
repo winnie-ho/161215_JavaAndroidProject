@@ -25,7 +25,8 @@ import java.util.ArrayList;
 public class AllRuns extends AppCompatActivity {
     //Activity Items
     ListView allRunList;
-    ArrayAdapter<String> adapter1;
+//    ArrayAdapter<String> adapter1;
+
 
     Button addRun;
     EditText titleEditText;
@@ -137,21 +138,19 @@ public class AllRuns extends AppCompatActivity {
 
 
     //Accessing all Runs in DB and returning all runs in runLog to make available for Array List
-    private ArrayList<String> getAllRuns(DBHandler db, int month) {
-        ArrayList<String> runLog = new ArrayList<String>();
+    private ArrayList<Run> getAllRuns(DBHandler db, int month) {
+        ArrayList<Run> runLog = new ArrayList<Run>();
 
         if (month == 0) {
             ArrayList<Run> runs = db.getAllRuns();
             for (Run run : runs) {
-                runLog.add(run.getDay() + "/" + run.getMonth() + "/" + run.getYear() +
-                        "         " + run.getRunTitle() + "        " + run.getDistance() + "km");
+                runLog.add(run);
             }
         }
         else if (month > 0) {
             ArrayList<Run> runs = db.getAllRuns(month);
             for (Run run : runs) {
-                runLog.add(run.getDay() + "/" + run.getMonth() + "/" + run.getYear() +
-                        "         " + run.getRunTitle() + "        " + run.getDistance() + "km");
+                runLog.add(run);
             }
         }
         return runLog;
@@ -159,18 +158,21 @@ public class AllRuns extends AppCompatActivity {
 
 
         public void updateListView(final DBHandler db) {
-
+            ArrayList<Run>arrayOfRuns = getAllRuns(db, monthSpinner.getSelectedItemPosition());
             //Showing data as a List View through an Array Adapter
+            RunsAdapter adapter1 = new RunsAdapter(this, arrayOfRuns);
+            ListView listView = (ListView) findViewById(R.id.run_list);
 
-            adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getAllRuns(db, monthSpinner.getSelectedItemPosition()));
+//            adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getAllRuns(db, monthSpinner.getSelectedItemPosition()));
             allRunList.setAdapter(adapter1);
             allRunList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    String selected = (String) allRunList.getItemAtPosition(position);
-                    Log.d("ListView:", selected + " selected, position: " + position + ", id: " + id);
+                    Run selectedRunFile = (Run)allRunList.getItemAtPosition(position);
 
-                    Run selectedRun = db.getRun(position + 1);
+                    Log.d("ListView:", "position: " + position + ", id: " + id + ", Run File: " + selectedRunFile + ", Run File ID: " + selectedRunFile);
+
+                    Run selectedRun = db.getRun(selectedRunFile.getId());
                     Log.d("Selected Run: ", "Selected run: " + selectedRun);
 
                     Intent intent = new Intent(AllRuns.this, ShowRun.class);
@@ -188,5 +190,4 @@ public class AllRuns extends AppCompatActivity {
                 }
             });
         }
-
 }
