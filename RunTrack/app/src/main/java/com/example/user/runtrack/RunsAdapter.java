@@ -34,7 +34,7 @@ public class RunsAdapter extends ArrayAdapter<Run>{
 
         runTitle.setText(run.getRunTitle());
         runDistance.setText(run.getDistance() + "km");
-        runTime.setText(run.getTime() + "mins");
+        runTime.setText(run.getTime());
         runDate.setText(run.getDay() + "/" + run.getMonth() + "/" + run.getYear());
         runPace.setText(String.format("%.2f", run.getPace()) + "min/km");
 

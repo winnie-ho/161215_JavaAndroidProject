@@ -20,7 +20,9 @@ public class NewRunC extends AppCompatActivity {
     EditText monthEditText;
     EditText yearEditText;
     EditText distanceEditText;
-    EditText timeEditText;
+    EditText hoursEditText;
+    EditText minutesEditText;
+    EditText secondsEditText;
     EditText typeEditText;
     EditText commentEditText;
     Button addRunButton;
@@ -69,7 +71,9 @@ public class NewRunC extends AppCompatActivity {
         monthEditText = (EditText)findViewById(R.id.run_month);
         yearEditText = (EditText)findViewById(R.id.run_year);
         distanceEditText = (EditText)findViewById(R.id.distance);
-        timeEditText = (EditText)findViewById(R.id.time);
+        hoursEditText = (EditText)findViewById(R.id.timeHours);
+        minutesEditText = (EditText)findViewById(R.id.timeMins);
+        secondsEditText = (EditText)findViewById(R.id.timeSecs);
         typeEditText = (EditText)findViewById(R.id.type);
         commentEditText = (EditText)findViewById(R.id.comment);
         addRunButton = (Button)findViewById(R.id.button_add_run);
@@ -94,11 +98,13 @@ public class NewRunC extends AppCompatActivity {
                 int month = Integer.parseInt(monthEditText.getText().toString());
                 int year = Integer.parseInt(yearEditText.getText().toString());
                 float distance = Float.parseFloat(distanceEditText.getText().toString());
-                float time = Float.parseFloat(timeEditText.getText().toString());
+                float hours = Float.parseFloat(hoursEditText.getText().toString());
+                float minutes = Float.parseFloat(minutesEditText.getText().toString());
+                float seconds = Float.parseFloat(secondsEditText.getText().toString());
                 String type = typeEditText.getText().toString();
                 String comment = commentEditText.getText().toString();
 
-                Run newRun = new Run(title, day, month, year, distance, time, type, comment);
+                Run newRun = new Run(title, day, month, year, distance, hours, minutes, seconds, type, comment);
                 db.addRun(newRun);
                 Log.d("Add:", "Adding new run: " + title + ", " + distance + "k");
                 Toast.makeText(NewRunC.this, "Run Added!", Toast.LENGTH_SHORT).show();

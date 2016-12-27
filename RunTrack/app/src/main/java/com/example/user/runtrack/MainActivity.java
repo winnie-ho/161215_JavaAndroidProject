@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         progressMessageTextView.setText(message.getMessage());
         totalRunTextView.setText("RUNS \n" + db.getTotalRun());
         totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance()+ " km");
-        totalTimeTextView.setText("TIME \n" + db.getTotalTime()+ " mins");
+        totalTimeTextView.setText("TIME \n" + db.getTotalHours()+ " mins");
         scoreTextView.setText("CHALLENGE POINTS: " + savedScoreFromPreferences);
 
         allRunButton.setOnClickListener(new View.OnClickListener(){

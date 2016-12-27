@@ -21,7 +21,9 @@ public class EditRun extends AppCompatActivity{
     EditText monthEditText;
     EditText yearEditText;
     EditText distanceEditText;
-    EditText timeEditText;
+    EditText hoursEditText;
+    EditText minutesEditText;
+    EditText secondsEditText;
     EditText typeEditText;
     EditText commentEditText;
     Button editRunButton;
@@ -69,7 +71,9 @@ public class EditRun extends AppCompatActivity{
         monthEditText = (EditText)findViewById(R.id.run_month);
         yearEditText = (EditText)findViewById(R.id.run_year);
         distanceEditText = (EditText)findViewById(R.id.distance);
-        timeEditText = (EditText)findViewById(R.id.time);
+        hoursEditText = (EditText)findViewById(R.id.timeHours);
+        minutesEditText = (EditText)findViewById(R.id.timeMins);
+        secondsEditText = (EditText)findViewById(R.id.timeSecs);
         typeEditText = (EditText)findViewById(R.id.type);
         commentEditText = (EditText)findViewById(R.id.comment);
         editRunButton = (Button)findViewById(R.id.button_add_run);
@@ -83,7 +87,9 @@ public class EditRun extends AppCompatActivity{
         final int selectedMonth = extras.getInt("Month");
         final int selectedYear = extras.getInt("Year");
         final float selectedDistance = extras.getFloat("Distance");
-        final float selectedTime = extras.getFloat("Time");
+        final float selectedHours = extras.getFloat("Hours");
+        final float selectedMinutes = extras.getFloat("Minutes");
+        final float selectedSeconds = extras.getFloat("Seconds");
         final String selectedType = extras.getString("Type");
         final String selectedComment = extras.getString("Comment");
 
@@ -92,7 +98,9 @@ public class EditRun extends AppCompatActivity{
         monthEditText.setText("" + selectedMonth);
         yearEditText.setText("" + selectedYear);
         distanceEditText.setText("" + selectedDistance);
-        timeEditText.setText("" + selectedTime);
+        hoursEditText.setText("" + selectedHours);
+        minutesEditText.setText("" + selectedMinutes);
+        secondsEditText.setText("" + selectedSeconds);
         typeEditText.setText(selectedType);
         commentEditText.setText(selectedComment);
 
@@ -105,11 +113,13 @@ public class EditRun extends AppCompatActivity{
                 int month = Integer.parseInt(monthEditText.getText().toString());
                 int year = Integer.parseInt(yearEditText.getText().toString());
                 float distance = Float.parseFloat(distanceEditText.getText().toString());
-                float time = Float.parseFloat(timeEditText.getText().toString());
+                float hours = Float.parseFloat(hoursEditText.getText().toString());
+                float minutes = Float.parseFloat(minutesEditText.getText().toString());
+                float seconds = Float.parseFloat(secondsEditText.getText().toString());
                 String type = typeEditText.getText().toString();
                 String comment = commentEditText.getText().toString();
 
-                Run runToEdit = new Run(selectedId, title, day, month, year, distance, time, type, comment);
+                Run runToEdit = new Run(selectedId, title, day, month, year, distance, hours, minutes, seconds, type, comment);
                 db.updateRun(runToEdit);
                 Log.d("Edit:", "Editing run.." + title + ", " + distance + " k");
 
@@ -120,7 +130,9 @@ public class EditRun extends AppCompatActivity{
                 intent.putExtra("Month", month);
                 intent.putExtra("Year", year);
                 intent.putExtra("Distance",distance);
-                intent.putExtra("Time", time);
+                intent.putExtra("Hours", hours);
+                intent.putExtra("Minutes", minutes);
+                intent.putExtra("Seconds", seconds);
                 intent.putExtra("Type", type);
                 intent.putExtra("Comment", comment);
 
@@ -129,6 +141,4 @@ public class EditRun extends AppCompatActivity{
             }
         });
     }
-
-
 }

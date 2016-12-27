@@ -29,7 +29,9 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_MONTH = "month";
     private static final String KEY_YEAR = "year";
     private static final String KEY_DISTANCE = "distance";
-    private static final String KEY_TIME = "time";
+    private static final String KEY_HOURS = "hours";
+    private static final String KEY_MINUTES = "minutes";
+    private static final String KEY_SECONDS = "seconds";
     private static final String KEY_PACE = "pace";
     private static final String KEY_TYPE = "type";
     private static final String KEY_COMMENT = "comment";
@@ -48,7 +50,9 @@ public class DBHandler extends SQLiteOpenHelper {
           month INTEGER,
           year INTEGER,
           distance FLOAT,
-          time FLOAT,
+          hours FLOAT,
+          minutes FLOAT,
+          seconds FLOAT,
           pace FLOAT,
           type TEXT
           comment TEXT,
@@ -56,8 +60,10 @@ public class DBHandler extends SQLiteOpenHelper {
     )
 */
         String CREATE_TABLE = "CREATE TABLE " + TABLE_RUNS + "(" + KEY_ID + " INTEGER PRIMARY KEY,"
-                + KEY_TITLE + " TEXT," + KEY_DAY + " INTEGER," + KEY_MONTH + " INTEGER," + KEY_YEAR + " INTEGER," + KEY_DISTANCE + " FLOAT," + KEY_TIME + " FLOAT," + KEY_PACE +
-                " FLOAT," + KEY_TYPE + " TEXT," + KEY_COMMENT + " TEXT )";
+                + KEY_TITLE + " TEXT," + KEY_DAY + " INTEGER," + KEY_MONTH + " INTEGER," +
+                KEY_YEAR + " INTEGER," + KEY_DISTANCE + " FLOAT," + KEY_HOURS + " FLOAT," +
+                KEY_MINUTES + " FLOAT," + KEY_SECONDS + " FLOAT," + KEY_PACE + " FLOAT," +
+                KEY_TYPE + " TEXT," + KEY_COMMENT + " TEXT )";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -82,15 +88,17 @@ public class DBHandler extends SQLiteOpenHelper {
             Integer month = run.getMonth();
             Integer year = run.getYear();
             float distance = run.getDistance();
-            float time = run.getTime();
+            float hours = run.getHours();
+            float minutes = run.getMinutes();
+            float seconds = run.getSeconds();
             float pace = run.getPace();
             String type = run.getType();
             String comment = run.getComment();
 
             String sql = "INSERT INTO " + TABLE_RUNS + " ('" + KEY_TITLE + "', " + KEY_DAY + ", " + KEY_MONTH + ", " + KEY_YEAR + ", " + KEY_DISTANCE + ", "
-                    + KEY_TIME + ", "+ KEY_PACE + ", '" + KEY_TYPE + "', '" + KEY_COMMENT + "') VALUES ('" +
-                    title + "', "+ day + ", " + month + ", " + year + ", " + Float.toString(distance) + ", " + Float.toString(time) + ", " +
-                    Float.toString(pace) + ",'"+ type + "', '" + comment + "')";
+                    + KEY_HOURS + ", " + KEY_MINUTES + ", " + KEY_SECONDS + ", " + KEY_PACE + ", '" + KEY_TYPE + "', '" + KEY_COMMENT + "') VALUES ('" +
+                    title + "', "+ day + ", " + month + ", " + year + ", " + Float.toString(distance) + ", " + Float.toString(hours) + ", " +
+                    Float.toString(minutes) + ", " + Float.toString(seconds) + ", " + Float.toString(pace) + ",'"+ type + "', '" + comment + "')";
             SQLrunner(sql);
         }
 
@@ -101,7 +109,9 @@ public class DBHandler extends SQLiteOpenHelper {
             Integer month = run.getMonth();
             Integer year = run.getYear();
             float distance = run.getDistance();
-            float time = run.getTime();
+            float hours = run.getHours();
+            float minutes = run.getMinutes();
+            float seconds = run.getSeconds();
             float pace = run.getPace();
             String type = run.getType();
             String comment = run.getComment();
@@ -112,7 +122,9 @@ public class DBHandler extends SQLiteOpenHelper {
                     + KEY_MONTH + " = " + month + ", "
                     + KEY_YEAR + " = " + year + ", "
                     + KEY_DISTANCE + " = " + distance + ", "
-                    + KEY_TIME + " = " + time + ", "
+                    + KEY_HOURS + " = " + hours + ", "
+                    + KEY_MINUTES + " = " + minutes + ", "
+                    + KEY_SECONDS + " = " + seconds + ", "
                     + KEY_PACE + " = " + pace + ", "
                     + KEY_TYPE + " = '" + type + "', "
                     + KEY_COMMENT + " = '" + comment + "' WHERE " + KEY_ID + " = " + id;
@@ -160,8 +172,8 @@ public class DBHandler extends SQLiteOpenHelper {
             return totalDistance;
         }
 
-        public Float getTotalTime(int month){
-            String sql = "SELECT sum (" + KEY_TIME + ") FROM " + TABLE_RUNS + " WHERE " + KEY_MONTH + " = " + month;
+        public Float getTotalHours(int month){
+            String sql = "SELECT sum (" + KEY_HOURS + ") FROM " + TABLE_RUNS + " WHERE " + KEY_MONTH + " = " + month;
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(sql, null);
             cursor.moveToFirst();
@@ -170,8 +182,8 @@ public class DBHandler extends SQLiteOpenHelper {
             return totalTime;
         }
 
-        public Float getTotalTime(){
-            String sql = "SELECT sum (" + KEY_TIME + ") FROM " + TABLE_RUNS;
+        public Float getTotalHours(){
+            String sql = "SELECT sum (" + KEY_HOURS + ") FROM " + TABLE_RUNS;
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(sql, null);
             cursor.moveToFirst();
@@ -180,9 +192,48 @@ public class DBHandler extends SQLiteOpenHelper {
             return totalTime;
         }
 
+    public Float getTotalMinutes(int month){
+        String sql = "SELECT sum (" + KEY_MINUTES + ") FROM " + TABLE_RUNS + " WHERE " + KEY_MONTH + " = " + month;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+        cursor.moveToFirst();
+        float totalTime = cursor.getFloat(0);
+        cursor.close();
+        return totalTime;
+    }
+
+    public Float getTotalMinutes(){
+        String sql = "SELECT sum (" + KEY_MINUTES + ") FROM " + TABLE_RUNS;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+        cursor.moveToFirst();
+        float totalTime = cursor.getFloat(0);
+        cursor.close();
+        return totalTime;
+    }
+
+    public Float getTotalSeconds(int month){
+        String sql = "SELECT sum (" + KEY_SECONDS + ") FROM " + TABLE_RUNS + " WHERE " + KEY_MONTH + " = " + month;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+        cursor.moveToFirst();
+        float totalTime = cursor.getFloat(0);
+        cursor.close();
+        return totalTime;
+    }
+
+    public Float getTotalSeconds(){
+        String sql = "SELECT sum (" + KEY_SECONDS + ") FROM " + TABLE_RUNS;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+        cursor.moveToFirst();
+        float totalTime = cursor.getFloat(0);
+        cursor.close();
+        return totalTime;
+    }
 
 
-        public Run getRun(int id){
+    public Run getRun(int id){
             String sql = "SELECT * FROM " + TABLE_RUNS + " WHERE " + KEY_ID + " = " + id;
 
             SQLiteDatabase db = this.getWritableDatabase();
@@ -272,7 +323,9 @@ public class DBHandler extends SQLiteOpenHelper {
             int monthColumnNum = cursor.getColumnIndex(KEY_MONTH);
             int yearColumnNum = cursor.getColumnIndex(KEY_YEAR);
             int distanceColumnNum = cursor.getColumnIndex(KEY_DISTANCE);
-            int timeColumnNum = cursor.getColumnIndex(KEY_TIME);
+            int hoursColumnNum = cursor.getColumnIndex(KEY_HOURS);
+            int minutesColumnNum = cursor.getColumnIndex(KEY_MINUTES);
+            int secondsColumnNum = cursor.getColumnIndex(KEY_SECONDS);
             int paceColumnNum = cursor.getColumnIndex(KEY_PACE);
             int typeColumnNum = cursor.getColumnIndex(KEY_TYPE);
             int commentColumnNum = cursor.getColumnIndex(KEY_COMMENT);
@@ -284,12 +337,14 @@ public class DBHandler extends SQLiteOpenHelper {
             int month = cursor.getInt(monthColumnNum);
             int year = cursor.getInt(yearColumnNum);
             float distance = Float.parseFloat(cursor.getString(distanceColumnNum));
-            float time = Float.parseFloat(cursor.getString(timeColumnNum));
+            float hours = Float.parseFloat(cursor.getString(hoursColumnNum));
+            float minutes = Float.parseFloat(cursor.getString(minutesColumnNum));
+            float seconds = Float.parseFloat(cursor.getString(secondsColumnNum));
             float pace = Float.parseFloat(cursor.getString(paceColumnNum));
             String comment = cursor.getString(commentColumnNum);
             String type = cursor.getString(typeColumnNum);
 
-            Run run = new Run(id, title, day, month, year, distance, time, type, comment);
+            Run run = new Run(id, title, day, month, year, distance, hours, minutes, seconds, type, comment);
 
             return run;
     }
