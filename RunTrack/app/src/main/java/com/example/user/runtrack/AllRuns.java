@@ -25,20 +25,14 @@ import java.util.ArrayList;
 public class AllRuns extends AppCompatActivity {
     //Activity Items
     ListView allRunList;
-//    ArrayAdapter<String> adapter1;
-
-
     Button addRun;
     EditText titleEditText;
     EditText distanceEditText;
     TextView totalRunTextView;
     TextView totalDistanceTextView;
     TextView totalTimeTextView;
-
     Spinner monthSpinner;
-    ArrayAdapter<CharSequence> adapter;
-
-
+    ArrayAdapter<CharSequence> adapterSpinner;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -78,7 +72,6 @@ public class AllRuns extends AppCompatActivity {
         final DBHandler db = ((MainApplication) getApplication()).db;
 
         //Allocating Activity Items an ID from all_runs
-
         allRunList = (ListView) findViewById(R.id.run_list);
         addRun = (Button) findViewById(R.id.button_newRun);
         titleEditText = (EditText) findViewById(R.id.run_title);
@@ -88,39 +81,32 @@ public class AllRuns extends AppCompatActivity {
         totalTimeTextView = (TextView) findViewById(R.id.total_time);
         monthSpinner = (Spinner) findViewById(R.id.month_spinner);
 
-
-        adapter = ArrayAdapter.createFromResource(this,R.array.month_array,android.R.layout.simple_spinner_item );
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        monthSpinner.setAdapter(adapter);
+        adapterSpinner = ArrayAdapter.createFromResource(this,R.array.month_array,android.R.layout.simple_spinner_item );
+        adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        monthSpinner.setAdapter(adapterSpinner);
 
         monthSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 updateTotals(db,position);
                 updateListView(db);
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent){
-
             }
         });
-
 
         //Add New Run Button
         addRun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Runs: ", "new run button clicked");
+                Log.d("Runs: ", "New Run button clicked");
                 Intent intent = new Intent(AllRuns.this, NewRun.class);
                 startActivity(intent);
             }
         });
 
     }
-
 
     //Determining the totals bar
     private void updateTotals(DBHandler db, int month){
@@ -136,8 +122,8 @@ public class AllRuns extends AppCompatActivity {
         }
     }
 
-
-    //Accessing all Runs in DB and returning all runs in runLog to make available for Array List
+    //Accessing all Runs in DB and returning all runs in runLog to make available for ArrayList
+    // by month or by ALL according to monthSpinner
     private ArrayList<Run> getAllRuns(DBHandler db, int month) {
         ArrayList<Run> runLog = new ArrayList<Run>();
 
@@ -156,24 +142,17 @@ public class AllRuns extends AppCompatActivity {
         return runLog;
     }
 
-
+    //Populating the ListView to get the run data by month or by ALL according to monthSpinner
         public void updateListView(final DBHandler db) {
             ArrayList<Run>arrayOfRuns = getAllRuns(db, monthSpinner.getSelectedItemPosition());
-            //Showing data as a List View through an Array Adapter
-            RunsAdapter adapter1 = new RunsAdapter(this, arrayOfRuns);
-            ListView listView = (ListView) findViewById(R.id.run_list);
+            RunsAdapter runsAdapter = new RunsAdapter(this, arrayOfRuns);
 
-//            adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getAllRuns(db, monthSpinner.getSelectedItemPosition()));
-            allRunList.setAdapter(adapter1);
+            allRunList.setAdapter(runsAdapter);
             allRunList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Run selectedRunFile = (Run)allRunList.getItemAtPosition(position);
-
-                    Log.d("ListView:", "position: " + position + ", id: " + id + ", Run File: " + selectedRunFile + ", Run File ID: " + selectedRunFile);
-
-                    Run selectedRun = db.getRun(selectedRunFile.getId());
-                    Log.d("Selected Run: ", "Selected run: " + selectedRun);
+                    Run selectedRun = (Run)allRunList.getItemAtPosition(position);
+                    Log.d("ListView Selected Run:", "Run File: " + selectedRun + ", Run Title: " + selectedRun.getRunTitle());
 
                     Intent intent = new Intent(AllRuns.this, ShowRun.class);
                     intent.putExtra("ID", selectedRun.getId());
