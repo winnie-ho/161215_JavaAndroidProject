@@ -22,8 +22,8 @@ public class EditRun extends AppCompatActivity{
     EditText yearEditText;
     EditText distanceEditText;
     EditText timeEditText;
-    EditText routeEditText;
     EditText typeEditText;
+    EditText commentEditText;
     Button editRunButton;
 
     @Override
@@ -70,8 +70,8 @@ public class EditRun extends AppCompatActivity{
         yearEditText = (EditText)findViewById(R.id.run_year);
         distanceEditText = (EditText)findViewById(R.id.distance);
         timeEditText = (EditText)findViewById(R.id.time);
-        routeEditText = (EditText)findViewById(R.id.route);
         typeEditText = (EditText)findViewById(R.id.type);
+        commentEditText = (EditText)findViewById(R.id.comment);
         editRunButton = (Button)findViewById(R.id.button_add_run);
 
         Intent intent = getIntent();
@@ -84,16 +84,17 @@ public class EditRun extends AppCompatActivity{
         final int selectedYear = extras.getInt("Year");
         final float selectedDistance = extras.getFloat("Distance");
         final float selectedTime = extras.getFloat("Time");
-        final String selectedRoute = extras.getString("Route");
         final String selectedType = extras.getString("Type");
+        final String selectedComment = extras.getString("Comment");
 
         titleEditText.setText(selectedTitle);
         dayEditText.setText("" + selectedDay);
         monthEditText.setText("" + selectedMonth);
         yearEditText.setText("" + selectedYear);
         distanceEditText.setText("" + selectedDistance);
-        timeEditText.setText("" + selectedTime);routeEditText.setText(selectedRoute);
+        timeEditText.setText("" + selectedTime);
         typeEditText.setText(selectedType);
+        commentEditText.setText(selectedComment);
 
         editRunButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,10 +106,10 @@ public class EditRun extends AppCompatActivity{
                 int year = Integer.parseInt(yearEditText.getText().toString());
                 float distance = Float.parseFloat(distanceEditText.getText().toString());
                 float time = Float.parseFloat(timeEditText.getText().toString());
-                String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
+                String comment = commentEditText.getText().toString();
 
-                Run runToEdit = new Run(selectedId, title, day, month, year, distance, time, route, type);
+                Run runToEdit = new Run(selectedId, title, day, month, year, distance, time, type, comment);
                 db.updateRun(runToEdit);
                 Log.d("Edit:", "Editing run.." + title + ", " + distance + " k");
 
@@ -120,8 +121,8 @@ public class EditRun extends AppCompatActivity{
                 intent.putExtra("Year", year);
                 intent.putExtra("Distance",distance);
                 intent.putExtra("Time", time);
-                intent.putExtra("Route", route);
                 intent.putExtra("Type", type);
+                intent.putExtra("Comment", comment);
 
                 Toast.makeText(EditRun.this, "Run Updated!", Toast.LENGTH_SHORT).show();
                 startActivity(intent);

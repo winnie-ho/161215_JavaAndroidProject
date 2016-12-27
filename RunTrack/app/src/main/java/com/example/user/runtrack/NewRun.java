@@ -21,8 +21,8 @@ public class NewRun extends AppCompatActivity {
     EditText yearEditText;
     EditText distanceEditText;
     EditText timeEditText;
-    EditText routeEditText;
     EditText typeEditText;
+    EditText commentEditText;
     Button addRunButton;
 
     @Override
@@ -70,8 +70,8 @@ public class NewRun extends AppCompatActivity {
         yearEditText = (EditText)findViewById(R.id.run_year);
         distanceEditText = (EditText)findViewById(R.id.distance);
         timeEditText = (EditText)findViewById(R.id.time);
-        routeEditText = (EditText)findViewById(R.id.route);
         typeEditText = (EditText)findViewById(R.id.type);
+        commentEditText = (EditText)findViewById(R.id.comment);
         addRunButton = (Button)findViewById(R.id.button_add_run);
 
 
@@ -84,10 +84,10 @@ public class NewRun extends AppCompatActivity {
                 int year = Integer.parseInt(yearEditText.getText().toString());
                 float distance = Float.parseFloat(distanceEditText.getText().toString());
                 float time = Float.parseFloat(timeEditText.getText().toString());
-                String route = routeEditText.getText().toString();
                 String type = typeEditText.getText().toString();
+                String comment = commentEditText.getText().toString();
 
-                Run newRun = new Run(title, day, month, year, distance, time, route, type);
+                Run newRun = new Run(title, day, month, year, distance, time, type, comment);
                 db.addRun(newRun);
                 Log.d("Add:", "Adding new run.." + title + ", " + distance + "k");
                 Toast.makeText(NewRun.this, "Run Added!", Toast.LENGTH_SHORT).show();

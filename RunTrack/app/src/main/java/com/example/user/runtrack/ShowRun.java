@@ -26,8 +26,8 @@ public class ShowRun extends AppCompatActivity{
     TextView showDistanceTextView;
     TextView showTimeTextView;
     TextView showPaceTextView;
-    TextView showRouteTextView;
     TextView showTypeTextView;
+    TextView showCommentTextView;
     Button editButton;
     Button deleteButton;
 
@@ -75,8 +75,8 @@ public class ShowRun extends AppCompatActivity{
         showDistanceTextView = (TextView) findViewById(R.id.show_run_distance);
         showTimeTextView = (TextView) findViewById(R.id.show_run_time);
         showPaceTextView = (TextView) findViewById(R.id.show_run_pace);
-        showRouteTextView = (TextView) findViewById(R.id.show_run_route);
         showTypeTextView = (TextView) findViewById(R.id.show_run_type);
+        showCommentTextView = (TextView) findViewById(R.id.show_run_comment);
         editButton = (Button) findViewById(R.id.button_editRun);
         deleteButton = (Button) findViewById(R.id.button_deleteRun);
 
@@ -91,24 +91,24 @@ public class ShowRun extends AppCompatActivity{
         final float Distance = extras.getFloat("Distance");
         final float Time = extras.getFloat("Time");
         final float Pace = extras.getFloat("Pace");
-        final String Route = extras.getString("Route");
         final String Type = extras.getString("Type");
+        final String Comment = extras.getString("Comment");
 
 
         showTitleTextView.setText("RUN: " + Title.toUpperCase());
         showDateTextView.setText("Date: " + Day + "/" + Month + "/" + Year);
         showDistanceTextView.setText("Distance: " + Distance + " km");
         showTimeTextView.setText("Time: " + Time + " mins");
-        showPaceTextView.setText("Pace: " + String.format("%.2f", Pace) + "min/km");
-        showRouteTextView.setText("Route: " + Route);
+        showPaceTextView.setText("Pace: " + String.format("%.2f", Time/Distance) + "min/km");
         showTypeTextView.setText("Type: " + Type);
+        showCommentTextView.setText("Comment: " + Comment);
 
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("OriginalRunInfo", "RunToEdit: title: " + Title +
                         ", "  + Distance + ", " + Time + ", " +
-                        Pace + ", " + Route + ", " + Type);
+                        Pace + ", " + Comment + ", " + Type);
 
                 Intent intent = new Intent(ShowRun.this, EditRun.class);
                 intent.putExtra("ID", Id);
@@ -119,8 +119,8 @@ public class ShowRun extends AppCompatActivity{
                 intent.putExtra("Distance",Distance);
                 intent.putExtra("Time", Time);
                 intent.putExtra("Pace", Pace);
-                intent.putExtra("Route", Route);
                 intent.putExtra("Type", Type);
+                intent.putExtra("Comment", Comment);
                 startActivity(intent);
             }
         });

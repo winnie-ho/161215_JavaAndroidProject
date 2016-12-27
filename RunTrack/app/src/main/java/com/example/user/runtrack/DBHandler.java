@@ -31,8 +31,9 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_DISTANCE = "distance";
     private static final String KEY_TIME = "time";
     private static final String KEY_PACE = "pace";
-    private static final String KEY_ROUTE = "route";
     private static final String KEY_TYPE = "type";
+    private static final String KEY_COMMENT = "comment";
+
 
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -49,13 +50,14 @@ public class DBHandler extends SQLiteOpenHelper {
           distance FLOAT,
           time FLOAT,
           pace FLOAT,
-          route TEXT,
           type TEXT
+          comment TEXT,
+
     )
 */
         String CREATE_TABLE = "CREATE TABLE " + TABLE_RUNS + "(" + KEY_ID + " INTEGER PRIMARY KEY,"
                 + KEY_TITLE + " TEXT," + KEY_DAY + " INTEGER," + KEY_MONTH + " INTEGER," + KEY_YEAR + " INTEGER," + KEY_DISTANCE + " FLOAT," + KEY_TIME + " FLOAT," + KEY_PACE +
-                " FLOAT," + KEY_ROUTE + " TEXT," + KEY_TYPE + " TEXT )";
+                " FLOAT," + KEY_TYPE + " TEXT," + KEY_COMMENT + " TEXT )";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -82,13 +84,13 @@ public class DBHandler extends SQLiteOpenHelper {
             float distance = run.getDistance();
             float time = run.getTime();
             float pace = run.getPace();
-            String route = run.getRoute();
             String type = run.getType();
+            String comment = run.getComment();
 
             String sql = "INSERT INTO " + TABLE_RUNS + " ('" + KEY_TITLE + "', " + KEY_DAY + ", " + KEY_MONTH + ", " + KEY_YEAR + ", " + KEY_DISTANCE + ", "
-                    + KEY_TIME + ", "+ KEY_PACE + ", '" + KEY_ROUTE + "', '" + KEY_TYPE + "') VALUES ('" +
+                    + KEY_TIME + ", "+ KEY_PACE + ", '" + KEY_TYPE + "', '" + KEY_COMMENT + "') VALUES ('" +
                     title + "', "+ day + ", " + month + ", " + year + ", " + Float.toString(distance) + ", " + Float.toString(time) + ", " +
-                    Float.toString(pace) + ",'"+ route + "', '" + type + "')";
+                    Float.toString(pace) + ",'"+ type + "', '" + comment + "')";
             SQLrunner(sql);
         }
 
@@ -101,8 +103,8 @@ public class DBHandler extends SQLiteOpenHelper {
             float distance = run.getDistance();
             float time = run.getTime();
             float pace = run.getPace();
-            String route = run.getRoute();
             String type = run.getType();
+            String comment = run.getComment();
 
             String sql = "UPDATE " + TABLE_RUNS + " SET "
                     + KEY_TITLE + " = '" + title + "', "
@@ -112,8 +114,8 @@ public class DBHandler extends SQLiteOpenHelper {
                     + KEY_DISTANCE + " = " + distance + ", "
                     + KEY_TIME + " = " + time + ", "
                     + KEY_PACE + " = " + pace + ", "
-                    + KEY_ROUTE + " = '" + route + "', "
-                    + KEY_TYPE + " = '" + type + "' WHERE " + KEY_ID + " = " + id;
+                    + KEY_TYPE + " = '" + type + "', "
+                    + KEY_COMMENT + " = '" + comment + "' WHERE " + KEY_ID + " = " + id;
             Log.d("Running SQL: ",sql);
             SQLrunner(sql);
         }
@@ -272,8 +274,8 @@ public class DBHandler extends SQLiteOpenHelper {
             int distanceColumnNum = cursor.getColumnIndex(KEY_DISTANCE);
             int timeColumnNum = cursor.getColumnIndex(KEY_TIME);
             int paceColumnNum = cursor.getColumnIndex(KEY_PACE);
-            int routeColumnNum = cursor.getColumnIndex(KEY_ROUTE);
             int typeColumnNum = cursor.getColumnIndex(KEY_TYPE);
+            int commentColumnNum = cursor.getColumnIndex(KEY_COMMENT);
 
         // Retrieve data in the column field
             int id = Integer.parseInt(cursor.getString(idColumnNum));
@@ -284,10 +286,10 @@ public class DBHandler extends SQLiteOpenHelper {
             float distance = Float.parseFloat(cursor.getString(distanceColumnNum));
             float time = Float.parseFloat(cursor.getString(timeColumnNum));
             float pace = Float.parseFloat(cursor.getString(paceColumnNum));
-            String route = cursor.getString(routeColumnNum);
+            String comment = cursor.getString(commentColumnNum);
             String type = cursor.getString(typeColumnNum);
 
-            Run run = new Run(id, title, day, month, year, distance, time, route, type);
+            Run run = new Run(id, title, day, month, year, distance, time, type, comment);
 
             return run;
     }

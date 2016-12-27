@@ -163,8 +163,8 @@ public class AllRuns extends AppCompatActivity {
                     intent.putExtra("Distance", selectedRun.getDistance());
                     intent.putExtra("Time", selectedRun.getTime());
                     intent.putExtra("Pace", selectedRun.getPace());
-                    intent.putExtra("Route", selectedRun.getRoute());
                     intent.putExtra("Type", selectedRun.getType());
+                    intent.putExtra("Comment", selectedRun.getComment());
                     startActivity(intent);
                 }
             });
