@@ -64,7 +64,6 @@ public class NewRunC extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_run);
 
-
         titleEditText = (EditText)findViewById(R.id.run_title);
         dayEditText = (EditText)findViewById(R.id.run_day);
         monthEditText = (EditText)findViewById(R.id.run_month);
@@ -87,8 +86,6 @@ public class NewRunC extends AppCompatActivity {
         distanceEditText.setText("" + challengeDistance);
         typeEditText.setText(challengeType);
 
-
-
         addRunButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,8 +100,9 @@ public class NewRunC extends AppCompatActivity {
 
                 Run newRun = new Run(title, day, month, year, distance, time, route, type);
                 db.addRun(newRun);
-                Log.d("Add:", "Adding new run.." + title + ", " + distance + "k");
+                Log.d("Add:", "Adding new run: " + title + ", " + distance + "k");
                 Toast.makeText(NewRunC.this, "Run Added!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewRunC.this, "You Gained " + pointsAvailable +  " Points!", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(NewRunC.this, AllRuns.class);
                 startActivity(intent);
