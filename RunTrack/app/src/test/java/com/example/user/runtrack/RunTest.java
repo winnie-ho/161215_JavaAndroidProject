@@ -13,9 +13,8 @@ public class RunTest {
     public void before(){
         run1 = new Run("Out and Back", 12);
         run2 = new Run("Cramond Park Run", 5);
-        run3 = new Run("Arthurs Seat", 22, 03, 2016, 13, 61, 5, "Queens Drive", "Long");
+        run3 = new Run("Arthurs Seat", 2, 2, 2, 2, "Long", "Hard");
     }
-
 
     @Test public void getRunTitleTest(){
         assertEquals("Out and Back",run1.getRunTitle());
@@ -24,6 +23,5 @@ public class RunTest {
     @Test public void getRunDistanceTest(){
         assertEquals(5,run2.getDistance(),0);
     }
-
 
 }
