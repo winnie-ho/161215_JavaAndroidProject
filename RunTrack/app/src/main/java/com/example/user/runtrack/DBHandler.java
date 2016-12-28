@@ -232,6 +232,28 @@ public class DBHandler extends SQLiteOpenHelper {
         return totalTime;
     }
 
+    //Calculating total time
+    public String getTotalTime(){
+        float totalSeconds = getTotalSeconds();
+        float rSeconds = totalSeconds%60;
+        float sToM = (totalSeconds - rSeconds)/60;
+
+        float totalMinutes = getTotalMinutes();
+        float rMinutes = (totalMinutes + sToM)%60;
+        float mToH = ((totalMinutes + sToM)-rMinutes)/60;
+
+        float totalHours = getTotalHours();
+        float rHours = totalHours + mToH;
+
+
+        return (String.format("%.0f",rHours) + ":" + String.format("%.0f", rMinutes) + ":" + String.format("%.0f",rSeconds));
+    }
+
+
+
+
+
+
 
     public Run getRun(int id){
             String sql = "SELECT * FROM " + TABLE_RUNS + " WHERE " + KEY_ID + " = " + id;
