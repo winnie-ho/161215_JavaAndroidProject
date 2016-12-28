@@ -98,9 +98,9 @@ public class EditRun extends AppCompatActivity{
         monthEditText.setText("" + selectedMonth);
         yearEditText.setText("" + selectedYear);
         distanceEditText.setText("" + selectedDistance);
-        hoursEditText.setText("" + selectedHours);
-        minutesEditText.setText("" + selectedMinutes);
-        secondsEditText.setText("" + selectedSeconds);
+        hoursEditText.setText(String.format("%.0f",selectedHours));
+        minutesEditText.setText(String.format("%.0f",selectedMinutes));
+        secondsEditText.setText(String.format("%.0f",selectedSeconds));
         typeEditText.setText(selectedType);
         commentEditText.setText(selectedComment);
 

@@ -89,6 +89,9 @@ public class ShowRun extends AppCompatActivity{
         final int Month = extras.getInt("Month");
         final int Year = extras.getInt("Year");
         final float Distance = extras.getFloat("Distance");
+        final float Hours = extras.getFloat("Hours");
+        final float Minutes = extras.getFloat("Minutes");
+        final float Seconds = extras.getFloat("Seconds");
         final String Time = extras.getString("Time");
         final float Pace = extras.getFloat("Pace");
         final String Type = extras.getString("Type");
@@ -108,7 +111,8 @@ public class ShowRun extends AppCompatActivity{
             public void onClick(View v) {
                 Log.d("OriginalRunInfo", "RunToEdit: title: " + Title +
                         ", "  + Distance + ", " + Time + ", " +
-                        Pace + ", " + Comment + ", " + Type);
+                        Pace + ", " + Comment + ", " + Type + ", Hours:" + Hours +
+                        " Mins: " + Minutes + " Secs: " + Seconds);
 
                 Intent intent = new Intent(ShowRun.this, EditRun.class);
                 intent.putExtra("ID", Id);
@@ -117,6 +121,9 @@ public class ShowRun extends AppCompatActivity{
                 intent.putExtra("Month", Month);
                 intent.putExtra("Year", Year);
                 intent.putExtra("Distance",Distance);
+                intent.putExtra("Hours", Hours);
+                intent.putExtra("Minutes", Minutes);
+                intent.putExtra("Seconds", Seconds);
                 intent.putExtra("Time", Time);
                 intent.putExtra("Pace", Pace);
                 intent.putExtra("Type", Type);

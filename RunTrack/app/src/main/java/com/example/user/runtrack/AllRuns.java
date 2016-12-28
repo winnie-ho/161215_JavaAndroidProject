@@ -152,7 +152,9 @@ public class AllRuns extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Run selectedRun = (Run)allRunList.getItemAtPosition(position);
-                    Log.d("ListView Selected Run:", "Run File: " + selectedRun + ", Run Title: " + selectedRun.getRunTitle());
+                    Log.d("ListView Selected Run:", "Run File: " + selectedRun + ", Run Title: " +
+                            selectedRun.getRunTitle() + ", Hours:" + selectedRun.getHours() +
+                            " Mins: " + selectedRun.getMinutes() + " Secs: " + selectedRun.getSeconds());
 
                     Intent intent = new Intent(AllRuns.this, ShowRun.class);
                     intent.putExtra("ID", selectedRun.getId());
@@ -161,6 +163,9 @@ public class AllRuns extends AppCompatActivity {
                     intent.putExtra("Month", selectedRun.getMonth());
                     intent.putExtra("Year", selectedRun.getYear());
                     intent.putExtra("Distance", selectedRun.getDistance());
+                    intent.putExtra("Hours", selectedRun.getHours());
+                    intent.putExtra("Minutes", selectedRun.getMinutes());
+                    intent.putExtra("Seconds", selectedRun.getSeconds());
                     intent.putExtra("Time", selectedRun.getTime());
                     intent.putExtra("Pace", selectedRun.getPace());
                     intent.putExtra("Type", selectedRun.getType());

@@ -72,22 +72,53 @@
         android:layout_gravity="left"
         android:layout_marginLeft="10dp" />
 
-    <EditText
-        android:id="@+id/time"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="15dp"
-        android:textSize="20dp"
-        android:hint="Time"
-        android:textColor="@color/colorPrimaryDark"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginLeft="10dp" />
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:id="@+id/timeHours"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="15dp"
+            android:textSize="20dp"
+            android:hint="HH"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp" />
+
+        <EditText
+            android:id="@+id/timeMins"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="15dp"
+            android:textSize="20dp"
+            android:hint="MM"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp" />
+
+        <EditText
+            android:id="@+id/timeSecs"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="15dp"
+            android:textSize="20dp"
+            android:hint="SS"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/type"
         android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:hint="Type"
         android:textColor="@color/colorPrimaryDark"
