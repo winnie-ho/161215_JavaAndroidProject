@@ -105,7 +105,7 @@ public class Run {
     }
 
     public float getPace(){
-        this.pace = this.hours/ this.distance;
+        this.pace = ((this.hours * 60)+this.minutes + (this.seconds/60))/ this.distance;
         return this.pace;
     }
 

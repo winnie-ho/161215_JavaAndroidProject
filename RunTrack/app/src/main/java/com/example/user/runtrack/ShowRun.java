@@ -99,7 +99,7 @@ public class ShowRun extends AppCompatActivity{
         showDateTextView.setText("Date: " + Day + "/" + Month + "/" + Year);
         showDistanceTextView.setText("Distance: " + Distance + " km");
         showTimeTextView.setText("Time: " + Time + " mins");
-        showPaceTextView.setText("Pace: " + String.format("%.2f", Time/Distance) + "min/km");
+        showPaceTextView.setText("Pace: " + String.format("%.2f", Pace) + "min/km");
         showTypeTextView.setText("Type: " + Type);
         showCommentTextView.setText("Comment: " + Comment);
 
