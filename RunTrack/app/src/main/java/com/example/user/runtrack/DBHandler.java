@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.renderscript.RenderScript;
 import android.util.Log;
 
 import org.w3c.dom.Text;
@@ -237,35 +238,68 @@ public class DBHandler extends SQLiteOpenHelper {
         float totalSeconds = getTotalSeconds();
         float rSeconds = totalSeconds%60;
         float sToM = (totalSeconds - rSeconds)/60;
+            String seconds = null;
+            if (rSeconds < 10) {
+                seconds = "0" + String.format("%.0f",rSeconds);
+            } else if (rSeconds >= 10) {
+                seconds = String.format("%.0f",rSeconds) + "";
+            }
 
         float totalMinutes = getTotalMinutes();
         float rMinutes = (totalMinutes + sToM)%60;
         float mToH = ((totalMinutes + sToM)-rMinutes)/60;
+            String minutes = null;
+            if (rMinutes < 10) {
+                minutes = "0" + String.format("%.0f",rMinutes);
+            } else if (rMinutes >= 10) {
+                minutes = String.format("%.0f",rMinutes)+ "";
+            }
 
         float totalHours = getTotalHours();
         float rHours = totalHours + mToH;
-
-        return (String.format("%.0f",rHours) + ":" + String.format("%.0f", rMinutes) + ":" + String.format("%.0f",rSeconds));
+            String hours = null;
+            if (rHours < 10) {
+                hours = "0" + String.format("%.0f",rHours);
+            } else if (rHours >= 10) {
+                hours = String.format("%.0f",rHours) + "";
+            }
+       return (hours + ":" + minutes + ":" + seconds);
     }
+
 
     //Calculating total time by month
     public String getTotalTime(int month){
+
         float totalSeconds = getTotalSeconds(month);
         float rSeconds = totalSeconds%60;
         float sToM = (totalSeconds - rSeconds)/60;
+        String seconds = null;
+            if (rSeconds < 10) {
+                seconds = "0" + String.format("%.0f",rSeconds);
+            } else if (rSeconds >= 10) {
+                seconds = String.format("%.0f",rSeconds) + "";
+            }
 
         float totalMinutes = getTotalMinutes(month);
         float rMinutes = (totalMinutes + sToM)%60;
         float mToH = ((totalMinutes + sToM)-rMinutes)/60;
+        String minutes = null;
+            if (rMinutes < 10) {
+                minutes = "0" + String.format("%.0f",rMinutes);
+            } else if (rMinutes >= 10) {
+                minutes = String.format("%.0f",rMinutes)+ "";
+            }
 
         float totalHours = getTotalHours(month);
         float rHours = totalHours + mToH;
-
-        return (String.format("%.0f",rHours) + ":" + String.format("%.0f", rMinutes) + ":" + String.format("%.0f",rSeconds));
+        String hours = null;
+            if (rHours < 10) {
+                hours = "0" + String.format("%.0f",rHours);
+            } else if (rHours >= 10) {
+                hours = String.format("%.0f",rHours) + "";
+            }
+        return (hours + ":" + minutes + ":" + seconds);
     }
-
-
-
 
 
     public Run getRun(int id){

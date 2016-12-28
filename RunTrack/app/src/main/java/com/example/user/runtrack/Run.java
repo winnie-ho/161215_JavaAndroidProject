@@ -99,9 +99,29 @@ public class Run {
     }
 
     public String getTime(){
-        return (String.format("%.0f", this.hours) + ":" +
-                String.format("%.0f", this.minutes)  + ":" +
-                String.format("%.0f", this.seconds) );
+
+        String seconds = null;
+        if (this.seconds < 10) {
+            seconds = "0" + String.format("%.0f",this.seconds);
+        } else if (this.seconds >= 10) {
+            seconds = String.format("%.0f",this.seconds) + "";
+        }
+
+        String minutes = null;
+        if (this.minutes < 10) {
+            minutes = "0" + String.format("%.0f",this.minutes);
+        } else if (this.minutes >= 10) {
+            minutes = String.format("%.0f",this.minutes)+ "";
+        }
+
+        String hours = null;
+        if (this.hours <10) {
+            hours = "0" + String.format("%.0f",this.hours);
+        } else if (this.hours >= 10) {
+            hours = String.format("%.0f",this.hours) + "";
+        }
+        return (hours + ":" + minutes + ":" + seconds);
+
     }
 
     public float getPace(){
