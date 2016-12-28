@@ -7,9 +7,8 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:orientation="horizontal"
-        android:layout_marginTop="16dp"
         android:layout_gravity="center"
         android:gravity="center_vertical"
         >
@@ -18,8 +17,8 @@
             android:id="@+id/points"
             android:text="CHALLENGE POINTS: "
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:textSize="25dp"
+            android:layout_height="25dp"
+            android:textSize="20dp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             android:gravity="center_horizontal"
@@ -28,14 +27,60 @@
         <TextView
             android:id="@+id/points_score"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_margin="15dp"
-            android:textSize="25dp"
+            android:layout_height="25dp"
+            android:textSize="20dp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:gravity="center_vertical" />
 
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/played"
+            android:layout_width="130dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="4dp"
+            android:text="@string/challenges_played"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:background="@color/colorWhite"
+            android:padding="5dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/complete"
+            android:layout_width="130dp"
+            android:layout_height="55dp"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:background="@color/colorWhite"
+            android:padding="5dp"
+            android:text="@string/challenges_complete"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/failed"
+            android:layout_width="132dp"
+            android:layout_height="55dp"
+            android:layout_marginRight="4dp"
+            android:text="@string/challenges_failed"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:background="@color/colorWhite"
+            android:padding="5dp"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
     <TextView
@@ -46,7 +91,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -55,28 +100,30 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal">
 
         <Button
             android:id="@+id/type_short"
             android:text="@string/type_short"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-condensed"
-            android:layout_width="191dp"
-            android:layout_height="191dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_margin="4dp"
             android:layout_gravity="center"
             android:textSize="30dp"
             android:textColor="@color/colorWhite"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/type_long"
             android:text="@string/type_long"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-condensed"
-            android:layout_width="191dp"
-            android:layout_height="191dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_margin="4dp"
             android:layout_gravity="center"
             android:textSize="30dp"
@@ -88,15 +135,16 @@
     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
 
         <Button
             android:id="@+id/type_intervals"
             android:text="@string/type_intervals"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-condensed"
-            android:layout_width="191dp"
-            android:layout_height="191dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_margin="4dp"
             android:layout_gravity="center"
             android:textSize="30dp"
@@ -108,8 +156,8 @@
             android:text="@string/type_hills"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-condensed"
-            android:layout_width="191dp"
-            android:layout_height="191dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_margin="4dp"
             android:layout_gravity="center"
             android:textSize="30dp"
