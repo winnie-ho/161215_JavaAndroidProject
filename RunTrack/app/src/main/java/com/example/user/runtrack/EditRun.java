@@ -123,6 +123,7 @@ public class EditRun extends AppCompatActivity{
                 Run runToEdit = new Run(selectedId, title, day, month, year, distance, hours, minutes, seconds, type, comment);
                 db.updateRun(runToEdit);
                 String time = db.getRun(selectedId).getTime();
+                Float pace = db.getRun(selectedId).getPace();
                 Log.d("Edit:", "Editing run.." + title + ", " + distance + " k");
 
                 Intent intent = new Intent(EditRun.this, ShowRun.class);
@@ -136,6 +137,7 @@ public class EditRun extends AppCompatActivity{
                 intent.putExtra("Minutes", minutes);
                 intent.putExtra("Seconds", seconds);
                 intent.putExtra("Time", time);
+                intent.putExtra("Pace", pace);
                 intent.putExtra("Type", type);
                 intent.putExtra("Comment", comment);
 
