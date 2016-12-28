@@ -89,7 +89,7 @@ public class ShowRun extends AppCompatActivity{
         final int Month = extras.getInt("Month");
         final int Year = extras.getInt("Year");
         final float Distance = extras.getFloat("Distance");
-        final float Time = extras.getFloat("Time");
+        final String Time = extras.getString("Time");
         final float Pace = extras.getFloat("Pace");
         final String Type = extras.getString("Type");
         final String Comment = extras.getString("Comment");
@@ -98,7 +98,7 @@ public class ShowRun extends AppCompatActivity{
         showTitleTextView.setText("RUN: " + Title.toUpperCase());
         showDateTextView.setText("Date: " + Day + "/" + Month + "/" + Year);
         showDistanceTextView.setText("Distance: " + Distance + " km");
-        showTimeTextView.setText("Time: " + Time + " mins");
+        showTimeTextView.setText("Time: " + Time);
         showPaceTextView.setText("Pace: " + String.format("%.2f", Pace) + "min/km");
         showTypeTextView.setText("Type: " + Type);
         showCommentTextView.setText("Comment: " + Comment);
