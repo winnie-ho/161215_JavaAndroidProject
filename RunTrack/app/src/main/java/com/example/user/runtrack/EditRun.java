@@ -90,6 +90,7 @@ public class EditRun extends AppCompatActivity{
         final float selectedHours = extras.getFloat("Hours");
         final float selectedMinutes = extras.getFloat("Minutes");
         final float selectedSeconds = extras.getFloat("Seconds");
+        final String selectedTime = extras.getString("Time");
         final String selectedType = extras.getString("Type");
         final String selectedComment = extras.getString("Comment");
 
@@ -121,6 +122,7 @@ public class EditRun extends AppCompatActivity{
 
                 Run runToEdit = new Run(selectedId, title, day, month, year, distance, hours, minutes, seconds, type, comment);
                 db.updateRun(runToEdit);
+                String time = db.getRun(selectedId).getTime();
                 Log.d("Edit:", "Editing run.." + title + ", " + distance + " k");
 
                 Intent intent = new Intent(EditRun.this, ShowRun.class);
@@ -133,6 +135,7 @@ public class EditRun extends AppCompatActivity{
                 intent.putExtra("Hours", hours);
                 intent.putExtra("Minutes", minutes);
                 intent.putExtra("Seconds", seconds);
+                intent.putExtra("Time", time);
                 intent.putExtra("Type", type);
                 intent.putExtra("Comment", comment);
 
