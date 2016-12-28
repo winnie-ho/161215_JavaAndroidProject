@@ -174,10 +174,17 @@ public class AllRuns extends AppCompatActivity {
         public String getTotalTime(DBHandler db){
             float totalSeconds = db.getTotalSeconds();
             float rSeconds = totalSeconds%60;
-            float totalMinutes = db.getTotalMinutes() + (totalSeconds/60) - rSeconds;
-            float rMinutes = totalMinutes%60;
-            float totalHours = db.getTotalHours() + (totalMinutes/60) - rMinutes;
-            return (String.format("%.0f",totalHours) + ":" + String.format("%.0f", totalMinutes) + ":" + String.format("%.0f",totalSeconds));
+            float sToM = (totalSeconds - rSeconds)/60;
+
+            float totalMinutes = db.getTotalMinutes();
+            float rMinutes = (totalMinutes + sToM)%60;
+            float mToH = ((totalMinutes + sToM)-rMinutes)/60;
+
+            float totalHours = db.getTotalHours();
+            float rHours = totalHours + mToH;
+
+
+            return (String.format("%.0f",rHours) + ":" + String.format("%.0f", rMinutes) + ":" + String.format("%.0f",rSeconds));
 
 
 

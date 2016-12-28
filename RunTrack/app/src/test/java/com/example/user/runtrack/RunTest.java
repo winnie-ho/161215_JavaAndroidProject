@@ -13,7 +13,7 @@ public class RunTest {
     public void before(){
         run1 = new Run("Out and Back", 12);
         run2 = new Run("Cramond Park Run", 5);
-        run3 = new Run("Arthurs Seat", 23, 2, 2016, 21, 1, 12, 23, "Long", "Hard work");
+        run3 = new Run("Arthurs Seat", 23, 2, 2016, 21, 1, 23, 12, "Long", "Hard work");
     }
 
     @Test public void getRunTitleTest(){
@@ -24,15 +24,19 @@ public class RunTest {
         assertEquals(5, run2.getDistance(),0);
     }
 
-    @Test public void getPace(){
+    @Test public void getRunInfo(){
         assertEquals(23, run3.getDay());
         assertEquals(2, run3.getMonth());
         assertEquals(2016, run3.getYear());
         assertEquals("Long", run3.getType());
         assertEquals("Hard work", run3.getComment());
         assertEquals(1, 0,run3.getHours());
-        assertEquals(12, 0,run3.getMinutes());
-        assertEquals(23, 0,run3.getSeconds());
+        assertEquals(23, 0,run3.getMinutes());
+        assertEquals(12, 0,run3.getSeconds());
+    }
+
+    @Test public void getTimeTest(){
+        assertEquals("1:23:12", run3.getTime());
     }
 
 }
