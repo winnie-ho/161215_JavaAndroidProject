@@ -118,7 +118,7 @@ public class AllRuns extends AppCompatActivity {
         else if (month > 0) {
             totalRunTextView.setText("RUNS \n" + db.getTotalRun(month));
             totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance(month) + " km");
-            totalTimeTextView.setText("TIME \n" + db.getTotalTime());
+            totalTimeTextView.setText("TIME \n" + db.getTotalTime(month));
         }
     }
 
@@ -169,22 +169,4 @@ public class AllRuns extends AppCompatActivity {
                 }
             });
         }
-
-//    //Calculating total time
-//        public String getTotalTime(DBHandler db){
-//            float totalSeconds = db.getTotalSeconds();
-//            float rSeconds = totalSeconds%60;
-//            float sToM = (totalSeconds - rSeconds)/60;
-//
-//            float totalMinutes = db.getTotalMinutes();
-//            float rMinutes = (totalMinutes + sToM)%60;
-//            float mToH = ((totalMinutes + sToM)-rMinutes)/60;
-//
-//            float totalHours = db.getTotalHours();
-//            float rHours = totalHours + mToH;
-//
-//
-//            return (String.format("%.0f",rHours) + ":" + String.format("%.0f", rMinutes) + ":" + String.format("%.0f",rSeconds));
-//        }
-
 }

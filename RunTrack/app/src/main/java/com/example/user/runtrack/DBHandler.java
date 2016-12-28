@@ -245,11 +245,24 @@ public class DBHandler extends SQLiteOpenHelper {
         float totalHours = getTotalHours();
         float rHours = totalHours + mToH;
 
-
         return (String.format("%.0f",rHours) + ":" + String.format("%.0f", rMinutes) + ":" + String.format("%.0f",rSeconds));
     }
 
+    //Calculating total time by month
+    public String getTotalTime(int month){
+        float totalSeconds = getTotalSeconds(month);
+        float rSeconds = totalSeconds%60;
+        float sToM = (totalSeconds - rSeconds)/60;
 
+        float totalMinutes = getTotalMinutes(month);
+        float rMinutes = (totalMinutes + sToM)%60;
+        float mToH = ((totalMinutes + sToM)-rMinutes)/60;
+
+        float totalHours = getTotalHours(month);
+        float rHours = totalHours + mToH;
+
+        return (String.format("%.0f",rHours) + ":" + String.format("%.0f", rMinutes) + ":" + String.format("%.0f",rSeconds));
+    }
 
 
 
