@@ -49,17 +49,24 @@ public class Challenges extends AppCompatActivity {
         final Challenge selectedChallenge = getSelectedChallenge(selectedType);
         giveChallenge(selectedChallenge);
 
+        int savedCompleteFromPreferences = SavedCompletePreferences.getStoredComplete(this);
+        final int complete = savedCompleteFromPreferences;
+
+        int savedFailedFromPreferences = SavedFailedPreferences.getStoredFailed(this);
+        final int failed = savedFailedFromPreferences;
 
         acceptButton.setOnClickListener(new View.OnClickListener(){
             @Override
 
             public void onClick(View v){
-
+                Context context = v.getContext();
                 int distancePoints = getDistancePoints(selectedChallenge);
                 int newScore = scoreCarried + distancePoints;
 
+                SavedCompletePreferences.setStoredComplete(context, complete + 1);
+
+
                 Intent intent = new Intent(Challenges.this, ChallengeAccepted.class);
-                Context context = v.getContext();
 
                 SavedScorePreferences.setStoredScore(context, newScore);
                 intent.putExtra("newScore", newScore);
@@ -74,13 +81,14 @@ public class Challenges extends AppCompatActivity {
         declineButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
+                Context context = v.getContext();
                 int distancePoints = getDistancePoints(selectedChallenge);
                 int newScore = scoreCarried - distancePoints;
 
-                Intent intent = new Intent(Challenges.this, ChallengeSelect.class);
-                Context context = v.getContext();
+                SavedFailedPreferences.setStoredFailed(context, failed + 1);
 
+                Intent intent = new Intent(Challenges.this, ChallengeSelect.class);
+                
                 SavedScorePreferences.setStoredScore(context, newScore);
                 intent.putExtra("newScore", newScore);
                 Toast.makeText(Challenges.this, "Challenge Declined! Score deducted " + distancePoints + " points!", Toast.LENGTH_LONG).show();

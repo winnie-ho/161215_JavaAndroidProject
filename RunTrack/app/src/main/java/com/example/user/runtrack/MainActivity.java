@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by user on 17/12/2016.
  */
@@ -18,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     TextView totalDistanceTextView;
     TextView totalTimeTextView;
     TextView scoreTextView;
+    TextView playedTextView;
+    TextView completeTextView;
+    TextView failedTextView;
     Button allRunButton;
     Button challengesButton;
 
@@ -67,17 +72,32 @@ public class MainActivity extends AppCompatActivity {
         totalDistanceTextView = (TextView)findViewById(R.id.total_distance);
         totalTimeTextView = (TextView)findViewById(R.id.total_time);
         scoreTextView = (TextView)findViewById(R.id.points_score);
+        playedTextView = (TextView)findViewById(R.id.played);
+        completeTextView = (TextView)findViewById(R.id.complete);
+        failedTextView = (TextView)findViewById(R.id.failed);
         allRunButton = (Button)findViewById(R.id.all_runs);
         challengesButton = (Button)findViewById(R.id.challenges);
 
         int savedScoreFromPreferences = SavedScorePreferences.getStoredScore(this);
         final int score = savedScoreFromPreferences;
 
+        int savedPlayedFromPreferences = SavedPlayedPreferences.getStoredPlayed(this);
+        final int played = savedPlayedFromPreferences;
+
+        int savedCompleteFromPreferences = SavedCompletePreferences.getStoredComplete(this);
+        final int complete = savedCompleteFromPreferences;
+
+        int savedFailedFromPreferences = SavedFailedPreferences.getStoredFailed(this);
+        final int failed = savedFailedFromPreferences;
+
         progressMessageTextView.setText(message.getMessage());
         totalRunTextView.setText("RUNS \n" + db.getTotalRun());
         totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance()+ " km");
         totalTimeTextView.setText("TIME \n" + db.getTotalTime());
         scoreTextView.setText("CHALLENGE POINTS: " + savedScoreFromPreferences);
+        playedTextView.setText("PLAYED \n" + savedPlayedFromPreferences);
+        completeTextView.setText("COMPLETE \n" + savedCompleteFromPreferences);
+        failedTextView.setText("FAILED \n" + savedFailedFromPreferences);
 
         allRunButton.setOnClickListener(new View.OnClickListener(){
             @Override

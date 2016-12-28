@@ -72,6 +72,9 @@ public class ChallengeSelect extends AppCompatActivity {
         int savedScoreFromPreferences = SavedScorePreferences.getStoredScore(this);
         final int score = savedScoreFromPreferences;
 
+        int savedPlayedFromPreferences = SavedPlayedPreferences.getStoredPlayed(this);
+        final int played = savedPlayedFromPreferences;
+
             scoreTextView.setText("" + savedScoreFromPreferences);
 
 
@@ -82,6 +85,7 @@ public class ChallengeSelect extends AppCompatActivity {
             public void onClick(View v){
                 Context context = v.getContext();
                 SavedScorePreferences.setStoredScore(context, score);
+                SavedPlayedPreferences.setStoredPlayed(context, played + 1);
 
                 String selectedType = "Short";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
@@ -96,6 +100,7 @@ public class ChallengeSelect extends AppCompatActivity {
             public void onClick(View v){
                 Context context = v.getContext();
                 SavedScorePreferences.setStoredScore(context, score);
+                SavedPlayedPreferences.setStoredPlayed(context, played + 1);
 
                 String selectedType = "Long";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
@@ -110,6 +115,7 @@ public class ChallengeSelect extends AppCompatActivity {
             public void onClick(View v){
                 Context context = v.getContext();
                 SavedScorePreferences.setStoredScore(context, score);
+                SavedPlayedPreferences.setStoredPlayed(context, played + 1);
 
                 String selectedType = "Intervals";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
@@ -124,6 +130,7 @@ public class ChallengeSelect extends AppCompatActivity {
             public void onClick(View v){
                 Context context = v.getContext();
                 SavedScorePreferences.setStoredScore(context, score);
+                SavedPlayedPreferences.setStoredPlayed(context, played +1);
 
                 String selectedType = "Hills";
                 Intent intent = new Intent(ChallengeSelect.this, Challenges.class);
