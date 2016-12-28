@@ -8,7 +8,9 @@
     <TextView
         android:id="@+id/progress_message"
         android:layout_width="match_parent"
+        android:text="RANDOM MESSAGE"
         android:layout_height="70dp"
+        android:layout_marginTop="12dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:textSize="25dp"
@@ -29,13 +31,12 @@
         android:layout_marginRight="4dp"
         android:text="@string/totals"
         android:textSize="20dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:textAlignment="center"
         android:background="@color/colorWhite"
-        android:padding="5dp"
-        android:paddingBottom="10dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center"
+        android:gravity="bottom" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
@@ -45,7 +46,7 @@
         <TextView
             android:id="@+id/total_runs"
             android:layout_width="130dp"
-            android:layout_height="72dp"
+            android:layout_height="55dp"
             android:layout_marginLeft="4dp"
             android:text="@string/total_runs"
             android:textSize="18dp"
@@ -59,7 +60,7 @@
         <TextView
             android:id="@+id/total_distance"
             android:layout_width="130dp"
-            android:layout_height="72dp"
+            android:layout_height="55dp"
             android:textSize="18dp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -72,7 +73,7 @@
         <TextView
             android:id="@+id/total_time"
             android:layout_width="132dp"
-            android:layout_height="72dp"
+            android:layout_height="55dp"
             android:layout_marginRight="4dp"
             android:text="@string/total_time"
             android:textSize="18dp"
@@ -86,6 +87,7 @@
 
     <TextView
         android:id="@+id/points_score"
+        android:text="CHALLENGE TOTALS"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginTop="4dp"
@@ -93,11 +95,11 @@
         android:layout_marginRight="4dp"
         android:textSize="20dp"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:background="@color/colorWhite"
-        android:padding="5dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:gravity="bottom" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
@@ -107,7 +109,7 @@
         <TextView
             android:id="@+id/played"
             android:layout_width="130dp"
-            android:layout_height="72dp"
+            android:layout_height="55dp"
             android:layout_marginLeft="4dp"
             android:text="@string/challenges_played"
             android:textSize="18dp"
@@ -121,7 +123,7 @@
         <TextView
             android:id="@+id/complete"
             android:layout_width="130dp"
-            android:layout_height="72dp"
+            android:layout_height="55dp"
             android:textSize="18dp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -134,7 +136,7 @@
         <TextView
             android:id="@+id/failed"
             android:layout_width="132dp"
-            android:layout_height="72dp"
+            android:layout_height="55dp"
             android:layout_marginRight="4dp"
             android:text="@string/challenges_failed"
             android:textSize="18dp"
@@ -149,7 +151,7 @@
     <Button
         android:id="@+id/challenges"
         android:layout_width="match_parent"
-        android:layout_height="102dp"
+        android:layout_height="113dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="4dp"
@@ -165,7 +167,7 @@
     <Button
         android:id="@+id/all_runs"
         android:layout_width="match_parent"
-        android:layout_height="102dp"
+        android:layout_height="113dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="2dp"
