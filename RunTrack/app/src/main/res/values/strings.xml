@@ -19,6 +19,10 @@
     <string name="session_type">SELECT RUN TYPE</string>
     <string name="filter">FILTER BY: </string>
 
+    <string name="challenges_played">PLAYED</string>
+    <string name="challenges_complete">COMPLETE</string>
+    <string name="challenges_failed">FAILED</string>
+
     <string name="type_short">SHORT</string>
     <string name="type_long">LONG</string>
     <string name="type_intervals">INTERVALS</string>
