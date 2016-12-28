@@ -23,6 +23,9 @@ public class ChallengeSelect extends AppCompatActivity {
     Button hillButton;
     TextView pointsTextView;
     TextView scoreTextView;
+    TextView playedTextView;
+    TextView completeTextView;
+    TextView failedTextView;
     TextView challengeTitleTextView;
 
 
@@ -67,6 +70,9 @@ public class ChallengeSelect extends AppCompatActivity {
         hillButton = (Button)findViewById(R.id.type_hills);
         pointsTextView = (TextView)findViewById(R.id.points);
         scoreTextView = (TextView)findViewById(R.id.points_score);
+        playedTextView = (TextView)findViewById(R.id.played);
+        completeTextView = (TextView)findViewById(R.id.complete);
+        failedTextView = (TextView)findViewById(R.id.failed);
         challengeTitleTextView = (TextView)findViewById(R.id.challenges);
 
         int savedScoreFromPreferences = SavedScorePreferences.getStoredScore(this);
@@ -75,7 +81,16 @@ public class ChallengeSelect extends AppCompatActivity {
         int savedPlayedFromPreferences = SavedPlayedPreferences.getStoredPlayed(this);
         final int played = savedPlayedFromPreferences;
 
+        int savedCompleteFromPreferences = SavedCompletePreferences.getStoredComplete(this);
+        final int complete = savedCompleteFromPreferences;
+
+        int savedFailedFromPreferences = SavedFailedPreferences.getStoredFailed(this);
+        final int failed = savedFailedFromPreferences;
+
             scoreTextView.setText("" + savedScoreFromPreferences);
+            playedTextView.setText("PLAYED\n" + savedPlayedFromPreferences);
+            completeTextView.setText("COMPLETE\n" + savedCompleteFromPreferences);
+            failedTextView.setText("FAILED\n" + savedFailedFromPreferences);
 
 
         final ChallengeSet challengeSet = new ChallengeSet();
