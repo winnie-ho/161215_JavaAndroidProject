@@ -3,6 +3,7 @@ package com.example.user.runtrack;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.sax.RootElement;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -20,8 +21,8 @@ import org.w3c.dom.Text;
 public class ChallengeSelect extends AppCompatActivity {
     RelativeLayout shortButton;
     RelativeLayout longButton;
-    Button intervalsButton;
-    Button hillButton;
+    RelativeLayout intervalsButton;
+    RelativeLayout hillButton;
     TextView pointsTextView;
     TextView scoreTextView;
     TextView playedTextView;
@@ -67,8 +68,8 @@ public class ChallengeSelect extends AppCompatActivity {
 
         shortButton = (RelativeLayout) findViewById(R.id.type_short);
         longButton = (RelativeLayout)findViewById(R.id.type_long);
-        intervalsButton = (Button)findViewById(R.id.type_intervals);
-        hillButton = (Button)findViewById(R.id.type_hills);
+        intervalsButton = (RelativeLayout) findViewById(R.id.type_intervals);
+        hillButton = (RelativeLayout)findViewById(R.id.type_hills);
         pointsTextView = (TextView)findViewById(R.id.points);
         scoreTextView = (TextView)findViewById(R.id.points_score);
         playedTextView = (TextView)findViewById(R.id.played);
