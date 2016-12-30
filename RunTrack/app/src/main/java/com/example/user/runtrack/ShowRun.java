@@ -110,7 +110,7 @@ public class ShowRun extends AppCompatActivity{
         final String Comment = extras.getString("Comment");
 
 
-        showTitleTextView.setText("RUN: " + Title.toUpperCase());
+        showTitleTextView.setText(Title.toUpperCase());
         showDateTextView.setText("Date: " + Day + "/" + Month + "/" + Year);
         showDistanceTextView.setText("Distance: " + Distance + " km");
         showTimeTextView.setText("Time: " + Time);

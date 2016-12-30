@@ -4,7 +4,7 @@
     <string name="show_run">RUN DETAIL</string>
     <string name="challenges">CHALLENGES</string>
     <string name="challenge_select">SELECT CHALLENGE TYPE</string>
-    <string name="challenge_select_title">CHOOSE YOUR PAIN</string>
+    <string name="challenge_select_title">CHOOSE YOUR PAIN:</string>
     <string name="points">CHALLENGE POINTS: </string>
     <string name="challenge_accepted">CHALLENGE ACCEPTED!</string>
     <string name="all_runs">RUN LOG</string>

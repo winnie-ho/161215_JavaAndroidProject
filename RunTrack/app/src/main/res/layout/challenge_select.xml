@@ -113,7 +113,8 @@
             android:layout_marginRight="4dp"
             android:layout_marginTop="2dp"
             android:id="@+id/type_short"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:paddingTop="35dp">
 
             <ImageView
                 android:id="@+id/short_button_image"
@@ -137,7 +138,7 @@
                 android:layout_gravity="center"
                 android:gravity="left|center_vertical"
                 android:fontFamily="sans-serif-condensed"
-                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
 
@@ -150,7 +151,8 @@
             android:layout_marginRight="4dp"
             android:layout_marginTop="2dp"
             android:id="@+id/type_long"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:paddingTop="35dp">
 
             <ImageView
                 android:id="@+id/long_button_image"
@@ -174,7 +176,7 @@
                 android:layout_gravity="center"
                 android:gravity="left|center_vertical"
                 android:fontFamily="sans-serif-condensed"
-                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
 
@@ -195,7 +197,8 @@
             android:layout_marginRight="4dp"
             android:layout_marginTop="2dp"
             android:id="@+id/type_intervals"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:paddingTop="35dp">
 
             <ImageView
                 android:id="@+id/intervals_button_image"
@@ -219,7 +222,7 @@
                 android:layout_gravity="center"
                 android:gravity="left|center_vertical"
                 android:fontFamily="sans-serif-condensed"
-                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
 
@@ -232,7 +235,8 @@
             android:layout_marginRight="4dp"
             android:layout_marginTop="2dp"
             android:id="@+id/type_hills"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:paddingTop="35dp">
 
             <ImageView
                 android:id="@+id/hills_button_image"
@@ -256,7 +260,7 @@
                 android:layout_gravity="center"
                 android:gravity="left|center_vertical"
                 android:fontFamily="sans-serif-condensed"
-                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
 
