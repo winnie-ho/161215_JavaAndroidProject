@@ -112,6 +112,7 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginTop="2dp"
+            android:layout_marginBottom="4dp"
             android:id="@+id/type_short"
             android:layout_gravity="center"
             android:paddingTop="35dp">
@@ -149,6 +150,7 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginTop="2dp"
+            android:layout_marginBottom="4dp"
             android:id="@+id/type_long"
             android:layout_gravity="center"
             android:paddingTop="35dp">
