@@ -6,6 +6,8 @@
         android:name=".MainApplication"
         android:allowBackup="true"
         android:label="@string/app_name"
+        android:logo="@drawable/runrandom"
+        android:icon="@drawable/runrandom"
         android:supportsRtl="true"
         android:theme="@style/SplashTheme">
         <activity

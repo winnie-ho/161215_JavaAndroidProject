@@ -1,6 +1,7 @@
 package com.example.user.runtrack;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -11,6 +12,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.ValueDependentColor;
+import com.jjoe64.graphview.series.BarGraphSeries;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import org.w3c.dom.Text;
 
@@ -31,6 +38,7 @@ public class ShowRun extends AppCompatActivity{
     TextView showCommentTextView;
     Button editButton;
     Button deleteButton;
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -91,6 +99,20 @@ public class ShowRun extends AppCompatActivity{
         showCommentTextView = (TextView) findViewById(R.id.show_run_comment);
         editButton = (Button) findViewById(R.id.button_editRun);
         deleteButton = (Button) findViewById(R.id.button_deleteRun);
+
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[] {
+                new DataPoint(0, -1),
+                new DataPoint(1, 5),
+                new DataPoint(2, 3),
+                new DataPoint(3, 2),
+                new DataPoint(4, 6)
+        });
+        graph.addSeries(series);
+
+
+
+
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
