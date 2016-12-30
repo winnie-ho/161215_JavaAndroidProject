@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:textSize="20dp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:gravity="center_horizontal"
             android:layout_marginLeft="20dp" />
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:textSize="20dp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:gravity="center_vertical" />
@@ -92,7 +92,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:textSize="18dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal" />
@@ -104,31 +104,80 @@
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal">
 
-        <Button
+        <RelativeLayout
+            android:clickable="true"
+            android:background="@color/colorPrimary"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="2dp"
             android:id="@+id/type_short"
-            android:text="@string/type_short"
-            android:background="@color/colorPrimary"
-            android:fontFamily="sans-serif-condensed"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_margin="4dp"
-            android:layout_gravity="center"
-            android:textSize="30dp"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold" />
+            android:layout_gravity="center">
 
-        <Button
-            android:id="@+id/type_long"
-            android:text="@string/type_long"
+            <ImageView
+                android:id="@+id/short_button_image"
+                android:src="@drawable/icon_short"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/short_button_text"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/short_button_text"
+                android:textAppearance="?android:attr/textAppearanceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type_short"
+                android:textSize="30dp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:background="@color/colorPrimary"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:clickable="true"
             android:background="@color/colorPrimary"
-            android:fontFamily="sans-serif-condensed"
             android:layout_width="180dp"
             android:layout_height="180dp"
-            android:layout_margin="4dp"
-            android:layout_gravity="center"
-            android:textSize="30dp"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold"/>
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="2dp"
+            android:id="@+id/type_long"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/long_button_image"
+                android:src="@drawable/icon_long"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/long_button_text"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/long_button_text"
+                android:textAppearance="?android:attr/textAppearanceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type_long"
+                android:textSize="30dp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:background="@color/colorPrimary"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
 
     </LinearLayout>
 

@@ -10,16 +10,16 @@
         android:layout_width="match_parent"
         android:text="RANDOM MESSAGE"
         android:layout_height="70dp"
-        android:layout_marginTop="12dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-condensed"
         android:textSize="25dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
         android:background="@color/colorWhite"
-        android:padding="5dp"
-        android:paddingTop="5dp"
+
         android:layout_gravity="center"
         android:gravity="center_vertical" />
 
@@ -46,7 +46,7 @@
         <TextView
             android:id="@+id/total_runs"
             android:layout_width="130dp"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="4dp"
             android:text="@string/total_runs"
             android:textSize="18dp"
@@ -60,7 +60,7 @@
         <TextView
             android:id="@+id/total_distance"
             android:layout_width="130dp"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:textSize="18dp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -73,7 +73,7 @@
         <TextView
             android:id="@+id/total_time"
             android:layout_width="132dp"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:layout_marginRight="4dp"
             android:text="@string/total_time"
             android:textSize="18dp"
@@ -106,10 +106,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+         <TextView
             android:id="@+id/played"
             android:layout_width="130dp"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="4dp"
             android:text="@string/challenges_played"
             android:textSize="18dp"
@@ -123,7 +123,7 @@
         <TextView
             android:id="@+id/complete"
             android:layout_width="130dp"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:textSize="18dp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -136,7 +136,7 @@
         <TextView
             android:id="@+id/failed"
             android:layout_width="132dp"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:layout_marginRight="4dp"
             android:text="@string/challenges_failed"
             android:textSize="18dp"
@@ -148,36 +148,83 @@
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/challenges"
-        android:layout_width="match_parent"
-        android:layout_height="113dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="3dp"
-        android:text="@string/challenges"
-        android:textSize="30dp"
-        android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:background="@color/colorPrimary"
-        android:padding="30dp"
-        android:layout_gravity="center_horizontal" />
 
-    <Button
-        android:id="@+id/all_runs"
-        android:layout_width="match_parent"
-        android:layout_height="113dp"
+
+    <RelativeLayout
+        android:clickable="true"
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="2dp"
-        android:text="@string/all_runs"
-        android:textSize="30dp"
-        android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:background="@color/colorPrimary"
-        android:padding="30dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_marginBottom="2dp"
+        android:layout_gravity="center"
+        android:id="@+id/challenges">
 
+        <ImageView
+            android:id="@+id/challenge_button_image"
+            android:layout_alignParentLeft="false"
+            android:src="@drawable/icon_runner"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="80dp"
+            android:textAlignment="gravity" />
+
+        <TextView
+            android:id="@+id/challenge_button_text"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:text="@string/challenges"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:background="@color/colorPrimary"
+            android:padding="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/challenge_button_image"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:clickable="true"
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="2dp"
+        android:id="@+id/all_runs"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/runlog_button_image"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_runlog"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="110dp" />
+
+        <TextView
+            android:id="@+id/runlog_button_text"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:text="@string/all_runs"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:background="@color/colorPrimary"
+            android:padding="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:gravity="left|center_vertical"
+            android:layout_toRightOf="@+id/runlog_button_image" />
+    </RelativeLayout>
 
 </LinearLayout>

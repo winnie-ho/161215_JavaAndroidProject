@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,6 +70,17 @@ public class ShowRun extends AppCompatActivity{
         final DBHandler db = ((MainApplication) getApplication()).db;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_run);
+
+        //Logo in action bar
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        View mCustomView = getSupportActionBar().getCustomView();
+        TextView actionBarTitle = (TextView) mCustomView.findViewById(R.id.action_bar_title);
+        ImageView actionBarIcon = (ImageView) mCustomView.findViewById(R.id.action_bar_icon);
+        actionBarTitle.setText(R.string.show_run);
+        actionBarIcon.setImageResource(R.drawable.icon_runner);
 
         showTitleTextView = (TextView) findViewById(R.id.show_run_title);
         showDateTextView = (TextView) findViewById(R.id.show_run_date);

@@ -2,11 +2,13 @@ package com.example.user.runtrack;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -23,9 +25,8 @@ public class MainActivity extends AppCompatActivity {
     TextView playedTextView;
     TextView completeTextView;
     TextView failedTextView;
-    Button allRunButton;
-    Button challengesButton;
-
+    RelativeLayout challengesButton;
+    RelativeLayout allRunButton;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -62,6 +63,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        //Logo in action bar
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        View mCustomView = getSupportActionBar().getCustomView();
+        TextView actionBarTitle = (TextView) mCustomView.findViewById(R.id.action_bar_title);
+        actionBarTitle.setText(R.string.app_name);
+
         //Creating database
         final DBHandler db = ((MainApplication) getApplication()).db;
         //Creating messages array list
@@ -75,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
         playedTextView = (TextView)findViewById(R.id.played);
         completeTextView = (TextView)findViewById(R.id.complete);
         failedTextView = (TextView)findViewById(R.id.failed);
-        allRunButton = (Button)findViewById(R.id.all_runs);
-        challengesButton = (Button)findViewById(R.id.challenges);
+        allRunButton = (RelativeLayout)findViewById(R.id.all_runs);
+        challengesButton = (RelativeLayout) findViewById(R.id.challenges);
 
         int savedScoreFromPreferences = SavedScorePreferences.getStoredScore(this);
         final int score = savedScoreFromPreferences;

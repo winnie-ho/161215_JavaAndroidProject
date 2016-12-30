@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -17,8 +18,8 @@ import org.w3c.dom.Text;
  * Created by user on 20/12/2016.
  */
 public class ChallengeSelect extends AppCompatActivity {
-    Button shortButton;
-    Button longButton;
+    RelativeLayout shortButton;
+    RelativeLayout longButton;
     Button intervalsButton;
     Button hillButton;
     TextView pointsTextView;
@@ -64,8 +65,8 @@ public class ChallengeSelect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.challenge_select);
 
-        shortButton = (Button)findViewById(R.id.type_short);
-        longButton = (Button)findViewById(R.id.type_long);
+        shortButton = (RelativeLayout) findViewById(R.id.type_short);
+        longButton = (RelativeLayout)findViewById(R.id.type_long);
         intervalsButton = (Button)findViewById(R.id.type_intervals);
         hillButton = (Button)findViewById(R.id.type_hills);
         pointsTextView = (TextView)findViewById(R.id.points);
@@ -73,7 +74,7 @@ public class ChallengeSelect extends AppCompatActivity {
         playedTextView = (TextView)findViewById(R.id.played);
         completeTextView = (TextView)findViewById(R.id.complete);
         failedTextView = (TextView)findViewById(R.id.failed);
-        challengeTitleTextView = (TextView)findViewById(R.id.challenges);
+        challengeTitleTextView = (TextView)findViewById(R.id.challenge_select);
 
         int savedScoreFromPreferences = SavedScorePreferences.getStoredScore(this);
         final int score = savedScoreFromPreferences;

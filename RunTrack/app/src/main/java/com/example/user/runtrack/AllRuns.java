@@ -3,6 +3,7 @@ package com.example.user.runtrack;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -67,6 +69,17 @@ public class AllRuns extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_runs);
+
+        //Logo in action bar
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        View mCustomView = getSupportActionBar().getCustomView();
+        TextView actionBarTitle = (TextView) mCustomView.findViewById(R.id.action_bar_title);
+        ImageView actionBarIcon = (ImageView) mCustomView.findViewById(R.id.action_bar_icon);
+        actionBarTitle.setText(R.string.all_runs);
+        actionBarIcon.setImageResource(R.drawable.icon_runlog);
 
         //Creating database
         final DBHandler db = ((MainApplication) getApplication()).db;
