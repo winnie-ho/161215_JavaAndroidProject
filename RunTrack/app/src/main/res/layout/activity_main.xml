@@ -148,8 +148,6 @@
                 android:background="@color/colorWhite"
                 android:padding="5dp"
                 android:layout_gravity="center_horizontal" />
-
-
         </LinearLayout>
 
 

@@ -28,6 +28,7 @@ public class AllRuns extends AppCompatActivity {
     //Activity Items
     ListView allRunList;
     Button addRun;
+    Button statsButton;
     EditText titleEditText;
     EditText distanceEditText;
     TextView totalRunTextView;
@@ -87,6 +88,7 @@ public class AllRuns extends AppCompatActivity {
         //Allocating Activity Items an ID from all_runs
         allRunList = (ListView) findViewById(R.id.run_list);
         addRun = (Button) findViewById(R.id.button_newRun);
+        statsButton = (Button)findViewById(R.id.button_stats);
         titleEditText = (EditText) findViewById(R.id.run_title);
         distanceEditText = (EditText) findViewById(R.id.distance);
         totalRunTextView = (TextView) findViewById(R.id.total_runs);
@@ -115,6 +117,16 @@ public class AllRuns extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("Runs: ", "New Run button clicked");
                 Intent intent = new Intent(AllRuns.this, NewRun.class);
+                startActivity(intent);
+            }
+        });
+
+        //Stats Button
+        statsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                Log.d("Stats:", "Stats button clicked");
+                Intent intent = new Intent(AllRuns.this, Stats.class);
                 startActivity(intent);
             }
         });

@@ -107,22 +107,43 @@
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         android:background="@color/colorPrimary"/>
-    <Button
-        android:id="@+id/button_newRun"
-        android:text="@string/add_run"
-        android:background="@drawable/button"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_width="80dp"
-        android:layout_height="25dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_gravity="right"
-        android:textIsSelectable="true"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <Button
+            android:id="@+id/button_newRun"
+            android:text="@string/add_run"
+            android:background="@drawable/button"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textIsSelectable="true"/>
+        <Button
+            android:id="@+id/button_stats"
+            android:text="@string/stats"
+            android:background="@drawable/button"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textIsSelectable="true"/>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/run_list"

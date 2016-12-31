@@ -13,8 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.ValueDependentColor;
+import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -100,20 +102,6 @@ public class ShowRun extends AppCompatActivity{
         editButton = (Button) findViewById(R.id.button_editRun);
         deleteButton = (Button) findViewById(R.id.button_deleteRun);
 
-        GraphView graph = (GraphView) findViewById(R.id.graph);
-        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[] {
-                new DataPoint(0, -1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6)
-        });
-        graph.addSeries(series);
-
-
-
-
-
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
@@ -133,12 +121,12 @@ public class ShowRun extends AppCompatActivity{
 
 
         showTitleTextView.setText(Title.toUpperCase());
-        showDateTextView.setText("Date: " + Day + "/" + Month + "/" + Year);
-        showDistanceTextView.setText("Distance: " + Distance + " km");
-        showTimeTextView.setText("Time: " + Time);
-        showPaceTextView.setText("Pace: " + String.format("%.2f", Pace) + "min/km");
-        showTypeTextView.setText("Type: " + Type);
-        showCommentTextView.setText("Comment: " + Comment);
+        showDateTextView.setText(Day + "/" + Month + "/" + Year);
+        showDistanceTextView.setText("DISTANCE\n" + Distance + " km");
+        showTimeTextView.setText("TIME\n" + Time);
+        showPaceTextView.setText("PACE\n" + String.format("%.2f", Pace) + "min/km");
+        showTypeTextView.setText("TYPE: " + Type);
+        showCommentTextView.setText("COMMENT: " + Comment);
 
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override

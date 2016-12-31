@@ -80,6 +80,13 @@
             android:theme="@style/AppTheme">
         </activity>
 
+        <activity
+            android:name=".Stats"
+            android:label="@string/stats"
+            android:parentActivityName=".AllRuns"
+            android:theme="@style/AppTheme">
+        </activity>
+
     </application>
 
 </manifest>
