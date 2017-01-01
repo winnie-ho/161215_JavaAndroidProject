@@ -26,6 +26,7 @@ public class Challenges extends AppCompatActivity {
     Button declineButton;
 
     ChallengeSet challengeSet = new ChallengeSet();
+    ShortChallenge shortChallenge = new ShortChallenge();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +102,7 @@ public class Challenges extends AppCompatActivity {
     public Challenge getSelectedChallenge(String selectedType){
         Challenge selectedChallenge = null;
         if (selectedType.equals("Short")) {
-            selectedChallenge = challengeSet.getShortChallenge();
+            selectedChallenge = shortChallenge.getShortChallenge();
         } else if (selectedType.equals("Long")) {
             selectedChallenge = challengeSet.getLongChallenge();
         } else if (selectedType.equals("Intervals")) {

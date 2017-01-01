@@ -9,14 +9,13 @@ import java.util.Random;
  * Created by user on 20/12/2016.
  */
 public class ChallengeSet {
-    private ArrayList<Challenge>shortChallenges;
+
     private ArrayList<Challenge>longChallenges;
     private ArrayList<Challenge>intervalChallenges;
     private ArrayList<Challenge>hillChallenges;
 
     //Constructor
     public ChallengeSet(){
-        this.shortChallenges = new ArrayList<Challenge>();
         this.longChallenges = new ArrayList<Challenge>();
         this.intervalChallenges = new ArrayList<Challenge>();
         this.hillChallenges = new ArrayList<Challenge>();
@@ -24,16 +23,6 @@ public class ChallengeSet {
     }
 
     //Raw Data
-    Challenge cS1 = new Challenge("Casual on the Canal",5, "5km along the canal to Meggetland and back via Colinton Road and Bruntsfield.",
-            "casual_canal","Short");
-
-    Challenge cS2 = new Challenge("Tortoise",8, "8km around Edinburgh's New Town to draw out a tortoise", "tortoise", "Short");
-
-    Challenge cS3 = new Challenge("On yer Bike",3, "3km mini bike run in Edinburgh's West End Crescents", "bike", "Short");
-
-    Challenge cS4 = new Challenge("Horse sprints in the Colonies", 3 , "3.5km horsing up and down the colonies by the Water of Leith.", "horse", "Short");
-
-    Challenge cS5 = new Challenge("Sausage Dog",3, "A quick sausage dog run in the city centre.", "sausage_dog", "Short");
 
     Challenge cL1 = new Challenge("Dragon Half Marathon",21, "21.2km to draw a fire breathing dragon around the city streets of Edinburgh. This is a toughy! Accept at your peril!", "dragon", "Long");
 
@@ -56,9 +45,6 @@ public class ChallengeSet {
 
 
     //Getters
-    public ArrayList getShortChallenges(){
-        return this.shortChallenges;
-    }
 
     public ArrayList getLongChallenges(){
         return this.longChallenges;
@@ -74,9 +60,6 @@ public class ChallengeSet {
 
 
     //Methods
-    public int shortChallengeSize(){
-        return shortChallenges.size();
-    }
     public int longChallengeSize(){
         return longChallenges.size();
     }
@@ -87,9 +70,6 @@ public class ChallengeSet {
         return hillChallenges.size();
     }
 
-    public Challenge retrieveShortChallenge(int index){
-        return shortChallenges.get(index);
-    }
 
     public Challenge retrieveLongChallenge(int index){
         return longChallenges.get(index);
@@ -105,11 +85,6 @@ public class ChallengeSet {
 
 
     private void populateMain(){
-        shortChallenges.add(cS1);
-        shortChallenges.add(cS2);
-        shortChallenges.add(cS3);
-        shortChallenges.add(cS4);
-        shortChallenges.add(cS5);
         longChallenges.add(cL1);
         longChallenges.add(cL2);
         longChallenges.add(cL3);
@@ -119,17 +94,6 @@ public class ChallengeSet {
         hillChallenges.add(cH2);
     }
 
-    public Challenge getShortChallenge() {
-        Random rand = new Random();
-
-        Challenge randomShort = null;
-        int randomIndex = rand.nextInt(shortChallengeSize());
-        for (Challenge c:shortChallenges) {
-            randomShort = shortChallenges.get(randomIndex);
-            return randomShort;
-        }
-        return randomShort;
-    }
 
     public Challenge getLongChallenge() {
         Random rand = new Random();
