@@ -3,17 +3,12 @@ package com.example.user.runtrack;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.sax.RootElement;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by user on 20/12/2016.
@@ -95,7 +90,7 @@ public class ChallengeSelect extends AppCompatActivity {
             failedTextView.setText("FAILED\n" + savedFailedFromPreferences);
 
 
-        final ChallengeSet challengeSet = new ChallengeSet();
+        final HillChallenge challengeSet = new HillChallenge();
 
         shortButton.setOnClickListener(new View.OnClickListener(){
             @Override

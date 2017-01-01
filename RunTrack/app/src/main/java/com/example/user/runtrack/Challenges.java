@@ -25,8 +25,10 @@ public class Challenges extends AppCompatActivity {
     Button acceptButton;
     Button declineButton;
 
-    ChallengeSet challengeSet = new ChallengeSet();
     ShortChallenge shortChallenge = new ShortChallenge();
+    LongChallenge longChallenge = new LongChallenge();
+    IntervalChallenge intervalChallenge = new IntervalChallenge();
+    HillChallenge hillChallenge = new HillChallenge();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +68,6 @@ public class Challenges extends AppCompatActivity {
 
                 SavedCompletePreferences.setStoredComplete(context, complete + 1);
 
-
                 Intent intent = new Intent(Challenges.this, ChallengeAccepted.class);
 
                 SavedScorePreferences.setStoredScore(context, newScore);
@@ -104,11 +105,11 @@ public class Challenges extends AppCompatActivity {
         if (selectedType.equals("Short")) {
             selectedChallenge = shortChallenge.getShortChallenge();
         } else if (selectedType.equals("Long")) {
-            selectedChallenge = challengeSet.getLongChallenge();
+            selectedChallenge = longChallenge.getLongChallenge();
         } else if (selectedType.equals("Intervals")) {
-            selectedChallenge = challengeSet.getIntervalChallenge();
+            selectedChallenge = intervalChallenge.getIntervalChallenge();
         } else if (selectedType.equals("Hills")) {
-            selectedChallenge = challengeSet.getHillChallenge();
+            selectedChallenge = hillChallenge.getHillChallenge();
         }
         return selectedChallenge ;
     }

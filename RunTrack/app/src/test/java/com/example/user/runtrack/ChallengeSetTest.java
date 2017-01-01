@@ -1,32 +1,38 @@
 package com.example.user.runtrack;
 import static org.junit.Assert.*;
 import org.junit.*;
-import java.util.*;
+
 /**
  * Created by user on 20/12/2016.
  */
 public class ChallengeSetTest {
 
-        ChallengeSet challengeSet;
+        ShortChallenge shortChallenge;
+        LongChallenge longChallenge;
+        IntervalChallenge intervalChallenge;
+        HillChallenge hillChallenge;
 
 
         @Before
         public void before() {
-            challengeSet = new ChallengeSet();
+            shortChallenge = new ShortChallenge();
+            longChallenge = new LongChallenge();
+            intervalChallenge = new IntervalChallenge();
+            hillChallenge = new HillChallenge();
         }
 
         @Test
         public void challengeSetsArePopulated(){
-            assertEquals(2, challengeSet.shortChallengeSize());
-            assertEquals(2, challengeSet.longChallengeSize());
-            assertEquals(2, challengeSet.intervalChallengeSize());
-            assertEquals(2, challengeSet.hillChallengeSize());
+            assertEquals(5, shortChallenge.shortChallengeSize());
+            assertEquals(3, longChallenge.longChallengeSize());
+            assertEquals(2, intervalChallenge.intervalChallengeSize());
+            assertEquals(2, hillChallenge.hillChallengeSize());
         }
 
         @Test
         public void challengeSetHasParticularChallenge(){
-            assertEquals("Suicide Runs", challengeSet.retrieveIntervalChallenge(0).getTitle());
-            assertEquals("Johnston Terrace Hills", challengeSet.retrieveHillChallenge(0).getTitle());
+            assertEquals("Suicide Runs", intervalChallenge.retrieveIntervalChallenge(0).getTitle());
+            assertEquals("Johnston Terrace Hills", hillChallenge.retrieveHillChallenge(0).getTitle());
         }
 
 }
