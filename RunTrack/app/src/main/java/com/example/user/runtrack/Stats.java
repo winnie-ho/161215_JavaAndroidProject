@@ -2,6 +2,7 @@ package com.example.user.runtrack;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,13 +15,17 @@ import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
+
+import java.sql.Array;
+import java.util.ArrayList;
 
 /**
  * Created by user on 30/12/2016.
  */
 public class Stats extends AppCompatActivity {
     TextView statTitleTextView;
-
+    LineGraphSeries<DataPoint> series;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -71,19 +76,28 @@ public class Stats extends AppCompatActivity {
 
 
         statTitleTextView = (TextView) findViewById(R.id.stat_title);
+
+
+
+        ArrayList<Run> allRuns = db.getAllRuns();
+
+        double y, x;
+        //x starts at zero
+        x = 0;
+        //y starts at zero;
+        y = 0;
+
         GraphView stats_graph = (GraphView) findViewById(R.id.stats_graph);
+        series = new LineGraphSeries<DataPoint>();
 
-        Intent intent = getIntent();
+        for (Run run : allRuns) {
+            x = x + run.getId();
+            y = run.getDistance();
+            series.appendData(new DataPoint(x, y), true, 100);
+        }
 
-        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[]{
-                new DataPoint(0, 1),
-                new DataPoint(1, 2),
-                new DataPoint(2, 3),
-
-
-        });
         stats_graph.addSeries(series);
-        stats_graph.setTitle("Runs over time");
+        stats_graph.setTitle("Distance");
 
 
         stats_graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
@@ -99,6 +113,7 @@ public class Stats extends AppCompatActivity {
             }
         });
 
+        }
 
-    }
+
 }

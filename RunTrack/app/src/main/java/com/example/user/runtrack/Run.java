@@ -82,6 +82,10 @@ public class Run {
         return this.year;
     }
 
+    public String getDate(){
+        return this.day + "/" + this.month + "/" + this.year;
+    }
+
     public float getDistance(){
         return this.distance;
     }
