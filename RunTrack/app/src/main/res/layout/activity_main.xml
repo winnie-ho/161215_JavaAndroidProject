@@ -18,15 +18,19 @@
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        android:background="@color/colorWhite"
-
         android:layout_gravity="center"
         android:gravity="center_vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary">
+    </LinearLayout>
 
     <TextView
         android:id="@+id/totals"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:text="@string/totals"
@@ -34,7 +38,6 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:background="@color/colorWhite"
         android:layout_gravity="center"
         android:gravity="bottom" />
 
@@ -49,11 +52,9 @@
             android:layout_height="60dp"
             android:layout_marginLeft="4dp"
             android:text="@string/total_runs"
-            android:textSize="18dp"
+            android:textSize="16dp"
             android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
             android:textAlignment="center"
-            android:background="@color/colorWhite"
             android:padding="5dp"
             android:layout_gravity="center_horizontal" />
 
@@ -61,11 +62,9 @@
             android:id="@+id/total_distance"
             android:layout_width="130dp"
             android:layout_height="60dp"
-            android:textSize="18dp"
+            android:textSize="16dp"
             android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
             android:textAlignment="center"
-            android:background="@color/colorWhite"
             android:padding="5dp"
             android:text="DISTANCE"
             android:layout_gravity="center_horizontal" />
@@ -76,16 +75,18 @@
             android:layout_height="60dp"
             android:layout_marginRight="4dp"
             android:text="@string/total_time"
-            android:textSize="18dp"
+            android:textSize="16dp"
             android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
             android:textAlignment="center"
-            android:background="@color/colorWhite"
             android:padding="5dp"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary">
+    </LinearLayout>
 
     <TextView
         android:id="@+id/points_score"
@@ -99,7 +100,6 @@
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:background="@color/colorWhite"
         android:layout_gravity="center_horizontal"
         android:gravity="bottom" />
 
@@ -115,11 +115,9 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="4dp"
                 android:text="@string/challenges_played"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
                 android:textAlignment="center"
-                android:background="@color/colorWhite"
                 android:padding="5dp"
                 android:layout_gravity="center_horizontal" />
 
@@ -127,13 +125,12 @@
                 android:id="@+id/complete"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
                 android:textAlignment="center"
-                android:background="@color/colorWhite"
-                android:padding="5dp"
-                android:text="@string/challenges_complete" />
+                android:text="@string/challenges_complete"
+                android:layout_gravity="center_horizontal"
+                android:padding="5dp" />
 
             <TextView
                 android:id="@+id/failed"
@@ -141,14 +138,13 @@
                 android:layout_height="60dp"
                 android:layout_marginRight="4dp"
                 android:text="@string/challenges_failed"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
                 android:textAlignment="center"
-                android:background="@color/colorWhite"
-                android:padding="5dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:padding="5dp" />
         </LinearLayout>
+
 
 
     <RelativeLayout
