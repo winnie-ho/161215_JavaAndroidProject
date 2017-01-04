@@ -25,6 +25,11 @@ public class ChallengeSelect extends AppCompatActivity {
     TextView completeTextView;
     TextView failedTextView;
     TextView challengeTitleTextView;
+    ImageView challengesButton;
+    ImageView allRunButton;
+    ImageView homeButton;
+    ImageView addRunButton;
+
 
 
     @Override
@@ -82,6 +87,12 @@ public class ChallengeSelect extends AppCompatActivity {
         completeTextView = (TextView)findViewById(R.id.complete);
         failedTextView = (TextView)findViewById(R.id.failed);
         challengeTitleTextView = (TextView)findViewById(R.id.challenge_select);
+
+        allRunButton = (ImageView)findViewById(R.id.all_runs);
+        challengesButton = (ImageView) findViewById(R.id.challenges);
+        homeButton = (ImageView)findViewById(R.id.home_button);
+        addRunButton = (ImageView)findViewById(R.id.addrun_button);
+
 
         int savedScoreFromPreferences = SavedScorePreferences.getStoredScore(this);
         final int score = savedScoreFromPreferences;
@@ -162,5 +173,38 @@ public class ChallengeSelect extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        allRunButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(ChallengeSelect.this, AllRuns.class);
+                startActivity(intent);
+            }
+        });
+
+        challengesButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(ChallengeSelect.this, ChallengeSelect.class);
+                startActivity(intent);
+            }
+        });
+
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(ChallengeSelect.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        addRunButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(ChallengeSelect.this, NewRun.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
