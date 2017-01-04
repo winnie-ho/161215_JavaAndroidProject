@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -60,6 +61,16 @@ public class ChallengeSelect extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.challenge_select);
+
+        //Logo in action bar
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        View mCustomView = getSupportActionBar().getCustomView();
+        TextView actionBarTitle = (TextView) mCustomView.findViewById(R.id.action_bar_title);
+        ImageView actionBarIcon = (ImageView) mCustomView.findViewById(R.id.action_bar_icon);
+        actionBarTitle.setText(R.string.challenge_select);
+        actionBarIcon.setImageResource(R.drawable.icon_runrandom);
 
         shortButton = (RelativeLayout) findViewById(R.id.type_short);
         longButton = (RelativeLayout)findViewById(R.id.type_long);

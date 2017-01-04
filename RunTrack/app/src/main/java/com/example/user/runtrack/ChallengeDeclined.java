@@ -31,14 +31,14 @@ public class ChallengeDeclined extends AppCompatActivity{
         challengeTitleTextView = (TextView) findViewById(R.id.challenge_title);
         pointsAvailableTextView = (TextView) findViewById(R.id.points_available);
 
-        challengeTitleTextView.setText(challengeTitle);
-        pointsAvailableTextView.setText(pointsAvailable + " points deducted!");
+        challengeTitleTextView.setText("You have rejected the " + challengeTitle + " challenge!");
+        pointsAvailableTextView.setText(pointsAvailable + " points have been deducted!");
 
         Thread myThread = new Thread() {
             @Override
             public void run() {
                 try {
-                    sleep(5000);
+                    sleep(4500);
                     Intent intent = new Intent(getApplicationContext(), ChallengeSelect.class);
                     startActivity(intent);
                     finish();

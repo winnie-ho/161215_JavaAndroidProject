@@ -93,6 +93,9 @@ public class Challenges extends AppCompatActivity {
 
                 SavedScorePreferences.setStoredScore(context, newScore);
                 intent.putExtra("newScore", newScore);
+                intent.putExtra("challengeTitle", selectedChallenge.getTitle());
+                intent.putExtra("challengeDistance",selectedChallenge.getDistance());
+                intent.putExtra("challengeType",selectedChallenge.getType());
                 intent.putExtra("pointsAvailable", distancePoints);
                 startActivity(intent);
             }

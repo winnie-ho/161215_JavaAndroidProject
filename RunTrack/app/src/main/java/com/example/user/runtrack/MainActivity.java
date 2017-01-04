@@ -68,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Logo in action bar
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar_main);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        View mCustomView = getSupportActionBar().getCustomView();
 
         //Creating database
         final DBHandler db = ((MainApplication) getApplication()).db;

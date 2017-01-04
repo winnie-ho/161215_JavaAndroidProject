@@ -23,12 +23,13 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
         android:src="@drawable/icon_decline"/>
 
     <TextView
         android:id="@+id/challenge_title"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_marginTop="4dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"

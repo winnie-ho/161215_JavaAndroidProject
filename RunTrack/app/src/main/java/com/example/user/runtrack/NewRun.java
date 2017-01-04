@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -70,6 +71,16 @@ public class NewRun extends AppCompatActivity {
         final DBHandler db = ((MainApplication)getApplication()).db;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_run);
+
+        //Logo in action bar
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.action_bar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        View mCustomView = getSupportActionBar().getCustomView();
+        TextView actionBarTitle = (TextView) mCustomView.findViewById(R.id.action_bar_title);
+        ImageView actionBarIcon = (ImageView) mCustomView.findViewById(R.id.action_bar_icon);
+        actionBarTitle.setText(R.string.add_run);
+        actionBarIcon.setImageResource(R.drawable.icon_addrun);
 
 
         titleEditText = (EditText)findViewById(R.id.run_title);

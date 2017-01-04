@@ -31,7 +31,7 @@
     <string name="type_hills">HILLS</string>
 
     <string name="yea">YOU\'RE ON!</string>
-    <string name="wimp">NAH!</string>
+    <string name="wimp">NO WAY!</string>
 
     <string-array name="month_array">
         <item>ALL</item>
