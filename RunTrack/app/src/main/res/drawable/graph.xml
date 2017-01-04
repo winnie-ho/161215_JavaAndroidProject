@@ -6,8 +6,8 @@
                 android:startColor="@color/colorWhite"
                 android:endColor="@color/colorPrimary"
                 android:centerX="0.5"
-                android:gradientRadius="500dp"
-                android:type="radial" />
+                android:angle="270"
+                android:type="linear" />
         </shape>
     </item>
 </selector>

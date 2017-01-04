@@ -5,37 +5,25 @@
     android:background="@color/colorWhite"
     android:fontFamily="sans-serif-condensed"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_margin="4dp"
-            android:text="@string/totals"
-            android:textSize="15dp"
-            android:textAlignment="center"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold"
-            android:background="@color/colorPrimary"
-            android:layout_gravity="center"
-            android:gravity="center" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
 
         <TextView
             android:layout_width="200dp"
             android:layout_height="30dp"
-            android:layout_marginTop="4dp"
             android:layout_marginLeft="4dp"
             android:text="@string/filter"
             android:textSize="15dp"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
-            android:background="@color/colorPrimary"
             android:gravity="center|right"
             android:layout_gravity="right"
             android:paddingRight="5dp" />
@@ -44,11 +32,9 @@
             android:id="@+id/month_spinner"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginTop="6dp"
             android:layout_marginRight="4dp"
             android:layout_gravity="right"
             android:dropDownSelector="@android:drawable/btn_dropdown">
-
         </Spinner>
 
 </LinearLayout>
@@ -148,9 +134,10 @@
         android:id="@+id/run_list"
         android:fontFamily="sans-serif-condensed"
         android:layout_width="match_parent"
-        android:layout_height="288dp"
+        android:layout_height="318dp"
         android:textSize="10dp"
-        android:background="@color/colorWhite" />
+        android:background="@color/colorWhite"
+        android:layout_weight="0.36" />
 
     <LinearLayout
         android:layout_width="match_parent"

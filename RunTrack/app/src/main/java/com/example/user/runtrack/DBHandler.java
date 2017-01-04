@@ -302,6 +302,13 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
 
+    public String getTotalPace(){
+        float totalTimeInMins = (getTotalSeconds()/60) + getTotalMinutes() + (getTotalHours()*60) ;
+        float totalPace = totalTimeInMins/getTotalDistance();
+        return String.format("%.2f",totalPace) + "min/km";
+
+    }
+
     public Run getRun(int id){
             String sql = "SELECT * FROM " + TABLE_RUNS + " WHERE " + KEY_ID + " = " + id;
 

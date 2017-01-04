@@ -22,8 +22,11 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
     TextView progressMessageTextView;
     TextView totalRunTextView;
+    TextView totalNormalRunTextView;
+    TextView totalChallengesTextView;
     TextView totalDistanceTextView;
     TextView totalTimeTextView;
+    TextView totalPaceTextView;
     TextView scoreTextView;
     TextView playedTextView;
     TextView completeTextView;
@@ -81,8 +84,11 @@ public class MainActivity extends AppCompatActivity {
 
         progressMessageTextView = (TextView)findViewById(R.id.progress_message);
         totalRunTextView = (TextView)findViewById(R.id.total_runs);
+        totalNormalRunTextView = (TextView)findViewById(R.id.total_normal_runs);
+        totalChallengesTextView = (TextView)findViewById(R.id.total_challenges);
         totalDistanceTextView = (TextView)findViewById(R.id.total_distance);
         totalTimeTextView = (TextView)findViewById(R.id.total_time);
+        totalPaceTextView = (TextView)findViewById(R.id.total_pace);
         scoreTextView = (TextView)findViewById(R.id.points_score);
         playedTextView = (TextView)findViewById(R.id.played);
         completeTextView = (TextView)findViewById(R.id.complete);
@@ -106,8 +112,11 @@ public class MainActivity extends AppCompatActivity {
 
         progressMessageTextView.setText(message.getMessage());
         totalRunTextView.setText("RUNS \n" + db.getTotalRun());
+        totalNormalRunTextView.setText("NORMAL \n" + (db.getTotalRun() - savedCompleteFromPreferences));
+        totalChallengesTextView.setText("CHALLENGES\n" + savedCompleteFromPreferences);
         totalDistanceTextView.setText("DISTANCE \n" + db.getTotalDistance()+ " km");
         totalTimeTextView.setText("TIME \n" + db.getTotalTime());
+        totalPaceTextView.setText("AVG. PACE\n" + db.getTotalPace());
         scoreTextView.setText("CHALLENGE POINTS: " + savedScoreFromPreferences);
         playedTextView.setText("PLAYED \n" + savedPlayedFromPreferences);
         completeTextView.setText("COMPLETE \n" + savedCompleteFromPreferences);
