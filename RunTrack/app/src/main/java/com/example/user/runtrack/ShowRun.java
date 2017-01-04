@@ -40,6 +40,10 @@ public class ShowRun extends AppCompatActivity{
     TextView showCommentTextView;
     Button editButton;
     Button deleteButton;
+    ImageView challengesButton;
+    ImageView allRunButton;
+    ImageView homeButton;
+    ImageView addRunButton;
 
 
     @Override
@@ -101,6 +105,11 @@ public class ShowRun extends AppCompatActivity{
         showCommentTextView = (TextView) findViewById(R.id.show_run_comment);
         editButton = (Button) findViewById(R.id.button_editRun);
         deleteButton = (Button) findViewById(R.id.button_deleteRun);
+        allRunButton = (ImageView)findViewById(R.id.all_runs);
+        challengesButton = (ImageView) findViewById(R.id.challenges);
+        homeButton = (ImageView)findViewById(R.id.home_button);
+        addRunButton = (ImageView)findViewById(R.id.addrun_button);
+
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -164,5 +173,38 @@ public class ShowRun extends AppCompatActivity{
                 Toast.makeText(ShowRun.this, "Run Deleted!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        allRunButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(ShowRun.this, AllRuns.class);
+                startActivity(intent);
+            }
+        });
+
+        challengesButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(ShowRun.this, ChallengeSelect.class);
+                startActivity(intent);
+            }
+        });
+
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(ShowRun.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        addRunButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(ShowRun.this, NewRun.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
