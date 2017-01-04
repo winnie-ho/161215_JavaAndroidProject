@@ -89,11 +89,11 @@ public class Challenges extends AppCompatActivity {
 
                 SavedFailedPreferences.setStoredFailed(context, failed + 1);
 
-                Intent intent = new Intent(Challenges.this, ChallengeSelect.class);
+                Intent intent = new Intent(Challenges.this, ChallengeDeclined.class);
 
                 SavedScorePreferences.setStoredScore(context, newScore);
                 intent.putExtra("newScore", newScore);
-                Toast.makeText(Challenges.this, "Challenge Declined! Score deducted " + distancePoints + " points!", Toast.LENGTH_LONG).show();
+                intent.putExtra("pointsAvailable", distancePoints);
                 startActivity(intent);
             }
         });
