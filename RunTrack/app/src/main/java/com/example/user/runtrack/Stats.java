@@ -71,8 +71,8 @@ public class Stats extends AppCompatActivity {
         View mCustomView = getSupportActionBar().getCustomView();
         TextView actionBarTitle = (TextView) mCustomView.findViewById(R.id.action_bar_title);
         ImageView actionBarIcon = (ImageView) mCustomView.findViewById(R.id.action_bar_icon);
-        actionBarTitle.setText(R.string.show_run);
-        actionBarIcon.setImageResource(R.drawable.icon_runner);
+        actionBarTitle.setText(R.string.stats);
+        actionBarIcon.setImageResource(R.drawable.icon_long);
 
 
         statTitleTextView = (TextView) findViewById(R.id.stat_title);
@@ -93,11 +93,10 @@ public class Stats extends AppCompatActivity {
         for (Run run : allRuns) {
             x = x + run.getId();
             y = run.getDistance();
-            series.appendData(new DataPoint(x, y), true, 100);
+            series.appendData(new DataPoint(x, y),true, 5);
         }
 
         stats_graph.addSeries(series);
-        stats_graph.setTitle("Distance");
 
 
         stats_graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {

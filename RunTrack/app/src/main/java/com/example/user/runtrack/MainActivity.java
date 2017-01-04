@@ -1,6 +1,7 @@
 package com.example.user.runtrack;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -26,8 +28,10 @@ public class MainActivity extends AppCompatActivity {
     TextView playedTextView;
     TextView completeTextView;
     TextView failedTextView;
-    RelativeLayout challengesButton;
-    RelativeLayout allRunButton;
+    ImageView challengesButton;
+    ImageView allRunButton;
+    ImageView homeButton;
+    ImageView addRunButton;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -65,15 +69,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //Logo in action bar
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        View mCustomView = getSupportActionBar().getCustomView();
-        TextView actionBarTitle = (TextView) mCustomView.findViewById(R.id.action_bar_title);
-        actionBarTitle.setText(R.string.app_name);
-
         //Creating database
         final DBHandler db = ((MainApplication) getApplication()).db;
         //Creating messages array list
@@ -87,8 +82,10 @@ public class MainActivity extends AppCompatActivity {
         playedTextView = (TextView)findViewById(R.id.played);
         completeTextView = (TextView)findViewById(R.id.complete);
         failedTextView = (TextView)findViewById(R.id.failed);
-        allRunButton = (RelativeLayout)findViewById(R.id.all_runs);
-        challengesButton = (RelativeLayout) findViewById(R.id.challenges);
+        allRunButton = (ImageView)findViewById(R.id.all_runs);
+        challengesButton = (ImageView) findViewById(R.id.challenges);
+        homeButton = (ImageView)findViewById(R.id.home_button);
+        addRunButton = (ImageView)findViewById(R.id.addrun_button);
 
         int savedScoreFromPreferences = SavedScorePreferences.getStoredScore(this);
         final int score = savedScoreFromPreferences;
@@ -127,6 +124,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        addRunButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, NewRun.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
