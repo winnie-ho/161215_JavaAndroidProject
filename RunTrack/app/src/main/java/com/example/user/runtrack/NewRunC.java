@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 /**
@@ -25,7 +26,11 @@ public class NewRunC extends AppCompatActivity {
     EditText secondsEditText;
     EditText typeEditText;
     EditText commentEditText;
-    Button addRunButton;
+    Button addButton;
+    ImageView challengesButton;
+    ImageView allRunButton;
+    ImageView homeButton;
+    ImageView addRunButton;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -76,7 +81,12 @@ public class NewRunC extends AppCompatActivity {
         secondsEditText = (EditText)findViewById(R.id.timeSecs);
         typeEditText = (EditText)findViewById(R.id.type);
         commentEditText = (EditText)findViewById(R.id.comment);
-        addRunButton = (Button)findViewById(R.id.button_add_run);
+        addButton = (Button)findViewById(R.id.button_add_run);
+
+        allRunButton = (ImageView)findViewById(R.id.all_runs);
+        challengesButton = (ImageView) findViewById(R.id.challenges);
+        homeButton = (ImageView)findViewById(R.id.home_button);
+        addRunButton = (ImageView)findViewById(R.id.addrun_button);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -90,7 +100,7 @@ public class NewRunC extends AppCompatActivity {
         distanceEditText.setText("" + challengeDistance);
         typeEditText.setText(challengeType);
 
-        addRunButton.setOnClickListener(new View.OnClickListener() {
+        addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String title = titleEditText.getText().toString();
@@ -111,6 +121,38 @@ public class NewRunC extends AppCompatActivity {
                 Toast.makeText(NewRunC.this, "You Gained " + pointsAvailable +  " Points!", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(NewRunC.this, AllRuns.class);
+                startActivity(intent);
+            }
+        });
+
+        allRunButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(NewRunC.this, AllRuns.class);
+                startActivity(intent);
+            }
+        });
+
+        challengesButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(NewRunC.this, ChallengeSelect.class);
+                startActivity(intent);
+            }
+        });
+
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(NewRunC.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        addRunButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(NewRunC.this, NewRun.class);
                 startActivity(intent);
             }
         });
