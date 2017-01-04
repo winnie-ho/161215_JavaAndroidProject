@@ -36,6 +36,10 @@ public class AllRuns extends AppCompatActivity {
     TextView totalTimeTextView;
     Spinner monthSpinner;
     ArrayAdapter<CharSequence> adapterSpinner;
+    ImageView challengesButton;
+    ImageView allRunButton;
+    ImageView homeButton;
+    ImageView addRunButton;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -94,6 +98,11 @@ public class AllRuns extends AppCompatActivity {
         totalRunTextView = (TextView) findViewById(R.id.total_runs);
         totalDistanceTextView = (TextView) findViewById(R.id.total_distance);
         totalTimeTextView = (TextView) findViewById(R.id.total_time);
+        allRunButton = (ImageView)findViewById(R.id.all_runs);
+        challengesButton = (ImageView) findViewById(R.id.challenges);
+        homeButton = (ImageView)findViewById(R.id.home_button);
+        addRunButton = (ImageView)findViewById(R.id.addrun_button);
+
         monthSpinner = (Spinner) findViewById(R.id.month_spinner);
 
         adapterSpinner = ArrayAdapter.createFromResource(this,R.array.month_array,android.R.layout.simple_spinner_item );
@@ -130,6 +139,39 @@ public class AllRuns extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        allRunButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(AllRuns.this, AllRuns.class);
+                startActivity(intent);
+            }
+        });
+
+        challengesButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(AllRuns.this, ChallengeSelect.class);
+                startActivity(intent);
+            }
+        });
+
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(AllRuns.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        addRunButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(AllRuns.this, NewRun.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

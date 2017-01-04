@@ -34,8 +34,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textSize="25dp"
+        android:text="text"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal" />
