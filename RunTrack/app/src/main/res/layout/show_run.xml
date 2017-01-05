@@ -36,9 +36,15 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="5dp">
+    </LinearLayout>
+
     <RelativeLayout
         android:clickable="true"
-        android:background="@drawable/graph"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="4dp"
@@ -54,7 +60,7 @@
             android:text="DISTANCE: "
             android:fontFamily="sans-serif-condensed"
             android:layout_marginTop="3dp"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="120dp"
             android:layout_height="match_parent"
@@ -68,7 +74,7 @@
             android:text="TIME: "
             android:fontFamily="sans-serif-condensed"
             android:layout_marginTop="3dp"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="120dp"
             android:layout_height="match_parent"
@@ -82,7 +88,7 @@
             android:text="PACE: "
             android:fontFamily="sans-serif-condensed"
             android:layout_marginTop="3dp"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="120dp"
             android:layout_height="match_parent"
@@ -91,12 +97,19 @@
             android:gravity="center" />
         </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="5dp">
+    </LinearLayout>
+
     <TextView
         android:id="@+id/show_run_type"
         android:text="TYPE: "
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="3dp"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -108,7 +121,7 @@
         android:text="COMMENT: "
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="5dp"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -117,7 +130,7 @@
     
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="233dp" />
+        android:layout_height="222dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
