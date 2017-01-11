@@ -9,7 +9,7 @@
             android:id="@+id/progress_message"
             android:layout_width="match_parent"
             android:text="RANDOM MESSAGE"
-            android:layout_height="138dp"
+            android:layout_height="70dp"
             android:fontFamily="sans-serif-condensed"
             android:textSize="25dp"
             android:textAlignment="center"
@@ -19,43 +19,98 @@
             android:gravity="center_vertical"
             android:layout_margin="2dp" />
 
-    <RelativeLayout
-        android:clickable="true"
-        android:background="@drawable/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/recents"
+        android:text="RECENT"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="5dp"
-        android:layout_gravity="center"
-        android:id="@+id/challenges1">
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:gravity="bottom" />
 
-        <ImageView
-            android:id="@+id/runrandom_image"
-            android:layout_alignParentLeft="false"
-            android:src="@drawable/icon_runrandom"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:textAlignment="gravity" />
 
         <TextView
-            android:id="@+id/runrandom_button_text"
-            android:fontFamily="sans-serif-condensed"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="@string/app_name"
-            android:textSize="15dp"
+            android:id="@+id/recent_run"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:text="LAST RUN:"
+            android:textSize="16dp"
             android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_centerInParent="true"
-            android:layout_toRightOf="@+id/runrandom_image"
-            android:gravity="center_vertical" />
-    </RelativeLayout>
+            android:padding="5dp"
+            android:layout_gravity="left" />
+
+        <TextView
+            android:id="@+id/recent_points"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:textSize="16dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="POINTS:"
+            android:layout_gravity="left"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/recent_run_details"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:text="RUN DETAILS:"
+            android:textSize="16dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_gravity="left"
+            android:padding="5dp" />
+
+
+        <RelativeLayout
+            android:clickable="true"
+            android:background="@drawable/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/challenges1"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/runrandom_image"
+                android:layout_alignParentLeft="false"
+                android:src="@drawable/icon_runrandom"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textAlignment="gravity" />
+
+            <TextView
+                android:id="@+id/runrandom_button_text"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/app_name"
+                android:textSize="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/runrandom_image"
+                android:gravity="center_vertical" />
+        </RelativeLayout>
 
 
     <LinearLayout
@@ -185,6 +240,7 @@
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:gravity="bottom" />
+
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

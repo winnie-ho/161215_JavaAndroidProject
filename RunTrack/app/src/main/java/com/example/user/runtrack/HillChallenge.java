@@ -36,6 +36,8 @@ public class HillChallenge {
             "Hills");
 
 
+
+
     //Getters
     public ArrayList getHillChallenges(){
         return this.hillChallenges;

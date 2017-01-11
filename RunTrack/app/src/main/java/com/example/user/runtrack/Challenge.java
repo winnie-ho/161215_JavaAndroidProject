@@ -4,11 +4,11 @@ package com.example.user.runtrack;
  * Created by user on 20/12/2016.
  */
 public class Challenge {
-    String title;
-    int distance;
-    String description;
-    String image;
-    String type;
+    private String title;
+    private int distance;
+    private String description;
+    private String image;
+    private String type;
 
     //Constructor
     public Challenge(String title,int distance, String description, String image, String type){
