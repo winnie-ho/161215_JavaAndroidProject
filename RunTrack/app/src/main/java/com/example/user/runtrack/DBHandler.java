@@ -341,7 +341,7 @@ public class DBHandler extends SQLiteOpenHelper {
         public ArrayList<Run> getAllRuns() {
             ArrayList<Run> runList = new ArrayList<Run>();
 
-            String sql = "SELECT * FROM " + TABLE_RUNS + " ORDER BY " + KEY_YEAR + " ASC, " + KEY_MONTH + " ASC, " + KEY_DAY + " ASC";
+            String sql = "SELECT * FROM " + TABLE_RUNS + " ORDER BY " + KEY_YEAR + " DESC, " + KEY_MONTH + " DESC, " + KEY_DAY + " DESC";
 
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(sql, null);
@@ -370,6 +370,20 @@ public class DBHandler extends SQLiteOpenHelper {
                 } while(cursor.moveToNext());
             }
             return runList;
+        }
+
+        public Run getLastRun(){
+            String sql = "SELECT * FROM " + TABLE_RUNS + " ORDER BY " + KEY_YEAR + " DESC, " + KEY_MONTH + " DESC, " + KEY_DAY + " DESC LIMIT 1";
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(sql, null);
+            if (cursor != null) {
+                cursor.moveToFirst();
+
+                Run run = getRunFromDBCursor(cursor);
+                return run;
+            }
+            return null;
         }
 
         public void deleteRun(Run run){

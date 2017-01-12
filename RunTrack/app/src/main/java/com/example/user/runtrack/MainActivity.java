@@ -21,6 +21,9 @@ import org.w3c.dom.Text;
  */
 public class MainActivity extends AppCompatActivity {
     TextView progressMessageTextView;
+    TextView recentRunTextView;
+    TextView recentPointsTextView;
+    TextView recentDetailTextView;
     TextView totalRunTextView;
     TextView totalNormalRunTextView;
     TextView totalChallengesTextView;
@@ -83,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
         Message message = new Message();
 
         progressMessageTextView = (TextView)findViewById(R.id.progress_message);
+        recentRunTextView = (TextView)findViewById(R.id.recent_run);
+        recentPointsTextView = (TextView)findViewById(R.id.recent_points);
+        recentDetailTextView = (TextView)findViewById(R.id.recent_run_details);
         totalRunTextView = (TextView)findViewById(R.id.total_runs);
         totalNormalRunTextView = (TextView)findViewById(R.id.total_normal_runs);
         totalChallengesTextView = (TextView)findViewById(R.id.total_challenges);
@@ -111,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
         final int failed = savedFailedFromPreferences;
 
         progressMessageTextView.setText(message.getMessage());
+        recentRunTextView.setText("LAST RUN: " + db.getLastRun().getRunTitle());
+
         totalRunTextView.setText("RUNS \n" + db.getTotalRun());
         totalNormalRunTextView.setText("NORMAL \n" + (db.getTotalRun() - savedCompleteFromPreferences));
         totalChallengesTextView.setText("CHALLENGES\n" + savedCompleteFromPreferences);
