@@ -1,25 +1,13 @@
 package com.example.user.runtrack;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by user on 17/12/2016.
@@ -122,44 +110,10 @@ public class MainActivity extends AppCompatActivity {
         final int failed = savedFailedFromPreferences;
 
 
-        Date date = new Date();
-        DateFormat yearFormat = new SimpleDateFormat("yyyy");
-        DateFormat monthFormat = new SimpleDateFormat("MM");
-        DateFormat dayFormat = new SimpleDateFormat("dd");
-
-
-        String yearNow = yearFormat.format(date);
-        int year = Integer.parseInt(yearNow);
-
-        String monthNow = monthFormat.format(date);
-        int month = Integer.parseInt(monthNow);
-
-        String dayNow = dayFormat.format(date);
-        int day = Integer.parseInt(dayNow);
-
-
-        int lastRunYear = db.getLastRun().getYear();
-        int lastRunMonth = db.getLastRun().getMonth();
-        int lastRunDay = db.getLastRun().getDay();
-
-
-        int yearDiff = year - lastRunYear;
-        String yearDiffStr = Integer.toString(yearDiff);
-
-        int monthDiff = month - lastRunMonth;
-        String monthDiffStr = Integer.toString(monthDiff);
-
-        int dayDiff = day - lastRunDay;
-        String dayDiffStr = Integer.toString(dayDiff);
-
-
-        int daysSinceLast = (yearDiff * 365)+(monthDiff*30)+dayDiff;
-
-
 
         progressMessageTextView.setText(message.getMessage());
         recentRunTextView.setText("LAST RUN: " + db.getLastRun().getRunTitle());
-        recentDateTextView.setText("LAST RAN: " + daysSinceLast + " days");
+        recentDateTextView.setText("LAST RAN: " + daysSinceLast(db) + " days");
         recentDetailTextView.setText("TIME: " + db.getLastRun().getTime());
 
         totalRunTextView.setText("RUNS \n" + db.getTotalRun());
@@ -205,5 +159,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    public int daysSinceLast(DBHandler db) {
+        DateNow dateNow = new DateNow();
+        int lastRunYear = db.getLastRun().getYear();
+        int lastRunMonth = db.getLastRun().getMonth();
+        int lastRunDay = db.getLastRun().getDay();
+
+        int yearDiff = dateNow.getYearNow() - lastRunYear;
+        int monthDiff = dateNow.getMonthNow() - lastRunMonth;
+        int dayDiff = dateNow.getDayNow() - lastRunDay;
+
+        int daysSinceLast = (yearDiff * 365) + (monthDiff * 30) + dayDiff;
+        return daysSinceLast;
     }
 }
