@@ -45,7 +45,7 @@
 
         <TextView
             android:id="@+id/recent_run"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="LAST RUN:"
             android:textSize="16dp"
@@ -54,12 +54,12 @@
             android:layout_gravity="left" />
 
         <TextView
-            android:id="@+id/recent_points"
-            android:layout_width="130dp"
+            android:id="@+id/recent_date"
+            android:layout_width="match_parent"
             android:layout_height="30dp"
             android:textSize="16dp"
             android:textColor="@color/colorPrimaryDark"
-            android:text="POINTS:"
+            android:text="DATE:"
             android:layout_gravity="left"
             android:padding="5dp" />
 

@@ -16,13 +16,18 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by user on 17/12/2016.
  */
 public class MainActivity extends AppCompatActivity {
     TextView progressMessageTextView;
     TextView recentRunTextView;
-    TextView recentPointsTextView;
+    TextView recentDateTextView;
     TextView recentDetailTextView;
     TextView totalRunTextView;
     TextView totalNormalRunTextView;
@@ -87,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         progressMessageTextView = (TextView)findViewById(R.id.progress_message);
         recentRunTextView = (TextView)findViewById(R.id.recent_run);
-        recentPointsTextView = (TextView)findViewById(R.id.recent_points);
+        recentDateTextView = (TextView)findViewById(R.id.recent_date);
         recentDetailTextView = (TextView)findViewById(R.id.recent_run_details);
         totalRunTextView = (TextView)findViewById(R.id.total_runs);
         totalNormalRunTextView = (TextView)findViewById(R.id.total_normal_runs);
@@ -116,8 +121,46 @@ public class MainActivity extends AppCompatActivity {
         int savedFailedFromPreferences = SavedFailedPreferences.getStoredFailed(this);
         final int failed = savedFailedFromPreferences;
 
+
+        Date date = new Date();
+        DateFormat yearFormat = new SimpleDateFormat("yyyy");
+        DateFormat monthFormat = new SimpleDateFormat("MM");
+        DateFormat dayFormat = new SimpleDateFormat("dd");
+
+
+        String yearNow = yearFormat.format(date);
+        int year = Integer.parseInt(yearNow);
+
+        String monthNow = monthFormat.format(date);
+        int month = Integer.parseInt(monthNow);
+
+        String dayNow = dayFormat.format(date);
+        int day = Integer.parseInt(dayNow);
+
+
+        int lastRunYear = db.getLastRun().getYear();
+        int lastRunMonth = db.getLastRun().getMonth();
+        int lastRunDay = db.getLastRun().getDay();
+
+
+        int yearDiff = year - lastRunYear;
+        String yearDiffStr = Integer.toString(yearDiff);
+
+        int monthDiff = month - lastRunMonth;
+        String monthDiffStr = Integer.toString(monthDiff);
+
+        int dayDiff = day - lastRunDay;
+        String dayDiffStr = Integer.toString(dayDiff);
+
+
+        int daysSinceLast = (yearDiff * 365)+(monthDiff*30)+dayDiff;
+
+
+
         progressMessageTextView.setText(message.getMessage());
         recentRunTextView.setText("LAST RUN: " + db.getLastRun().getRunTitle());
+        recentDateTextView.setText("LAST RAN: " + daysSinceLast + " days");
+        recentDetailTextView.setText("TIME: " + db.getLastRun().getTime());
 
         totalRunTextView.setText("RUNS \n" + db.getTotalRun());
         totalNormalRunTextView.setText("NORMAL \n" + (db.getTotalRun() - savedCompleteFromPreferences));

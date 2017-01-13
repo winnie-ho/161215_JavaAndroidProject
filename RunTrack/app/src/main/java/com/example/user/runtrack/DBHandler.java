@@ -373,7 +373,7 @@ public class DBHandler extends SQLiteOpenHelper {
         }
 
         public Run getLastRun(){
-            String sql = "SELECT * FROM " + TABLE_RUNS + " ORDER BY " + KEY_YEAR + " DESC, " + KEY_MONTH + " DESC, " + KEY_DAY + " DESC LIMIT 1";
+            String sql = "SELECT * FROM " + TABLE_RUNS + " ORDER BY " + KEY_YEAR + " DESC, " + KEY_MONTH + " DESC, " + KEY_DAY + " DESC";
 
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(sql, null);
