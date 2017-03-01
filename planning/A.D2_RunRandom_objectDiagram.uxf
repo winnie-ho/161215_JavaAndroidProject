@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>500</y>
+      <w>210</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class ShortChallenge&gt;&gt;
+--
+-shortChallenges: ArrayList&lt;
+	cS1,
+	cS2,
+	cS3,
+	cS4,
+	cS5
+	&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>70</y>
+      <w>210</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Database Diagram - runs&gt;&gt;
+--
+-id: 1
+-title: "Arthurs Seat"
+-distance: 10.3
+-time: 49.03
+-pace: 4.45
+-comment: "Hard going"
+-type: "Long"
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>70</y>
+      <w>210</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class Run&gt;&gt;
+--
+-id: 1
+-title: "Arthurs Seat"
+-day: 01
+-month: 01
+-year: 2017
+-distance: 10.3
+-time: 49:03
+-pace: 4:45
+-comment: "Hard going"
+-type: "Long"
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>280</y>
+      <w>250</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class Challenge&gt;&gt;
+--
+-title: Dragon Half Marathon
+-distance: 21.2
+-description: "21.2km to draw a fire
+   breathing dragon around the city 
+   streets of Edinburgh. This is a 
+   toughy! Accept at your peril!"
+-image: "dragon"
+-type: "Long"
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>500</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class HillChallenge&gt;&gt;
+--
+-hillChallenges: ArrayList&lt;
+	cH1,
+	cH2
+&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>500</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class IntervalChallenge&gt;&gt;
+--
+-intervalChallenges: ArrayList&lt;
+cI1,
+cI2
+&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>500</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class LongChallenge&gt;&gt;
+--
+-longChallenges: ArrayList&lt;
+	cL1,
+	cL2,
+	cL3
+&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>80</y>
+      <w>270</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class Message&gt;&gt;
+--
+-Messages: ArrayList&lt;
+ "SO MANY MILES, SO LITTLE TIME!",
+ "THOSE TRAINERS AIN'T GONNA RUN
+  THEMSELVES!",
+ "IT'S MEANT TO HURT!"
+&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>430</y>
+      <w>430</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;410.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>430</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>430</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>430</y>
+      <w>350</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>330.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>170</y>
+      <w>70</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>20</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Object Diagram</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
