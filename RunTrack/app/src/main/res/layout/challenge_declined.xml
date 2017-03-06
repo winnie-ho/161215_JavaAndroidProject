@@ -11,8 +11,8 @@
         android:text="@string/challenge_declined"
         android:fontFamily="sans-serif-condensed"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:textSize="50dp"
+        android:layout_height="400dp"
+        android:textSize="80dp"
         android:layout_margin="4dp"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"
@@ -22,7 +22,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_marginBottom="10dp"
         android:src="@drawable/icon_decline"/>
 
@@ -33,7 +33,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:text="text"
         android:textColor="@color/colorPrimaryDark"
         android:fontFamily="sans-serif-condensed"
@@ -45,11 +45,11 @@
         android:text="points lost"
         android:fontFamily="sans-serif-condensed"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_marginTop="4dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"

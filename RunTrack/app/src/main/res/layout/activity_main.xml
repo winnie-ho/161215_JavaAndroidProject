@@ -9,9 +9,9 @@
             android:id="@+id/progress_message"
             android:layout_width="match_parent"
             android:text="RANDOM MESSAGE"
-            android:layout_height="70dp"
+            android:layout_height="130dp"
             android:fontFamily="sans-serif-condensed"
-            android:textSize="25dp"
+            android:textSize="35dp"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -31,23 +31,23 @@
         android:id="@+id/recents"
         android:text="RECENT"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="70dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:gravity="bottom" />
+        android:gravity="center_vertical" />
 
 
         <TextView
             android:id="@+id/recent_run"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             android:text="LAST RUN:"
-            android:textSize="16dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:padding="5dp"
             android:layout_gravity="center" />
@@ -55,8 +55,8 @@
         <TextView
             android:id="@+id/recent_date"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:textSize="16dp"
+            android:layout_height="50dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:text="DATE:"
             android:padding="5dp"
@@ -65,10 +65,10 @@
 
         <TextView
             android:id="@+id/recent_run_details"
-            android:layout_width="130dp"
-            android:layout_height="30dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:text="RUN DETAILS:"
-            android:textSize="16dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_gravity="center"
             android:padding="5dp" />
@@ -124,16 +124,16 @@
     <TextView
         android:id="@+id/totals"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="70dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:text="@string/totals"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_gravity="center"
-        android:gravity="bottom" />
+        android:gravity="center_vertical" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
@@ -142,11 +142,11 @@
 
         <TextView
             android:id="@+id/total_runs"
-            android:layout_width="125dp"
-            android:layout_height="60dp"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
             android:layout_marginLeft="4dp"
             android:text="@string/total_runs"
-            android:textSize="16dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:textAlignment="center"
             android:padding="5dp"
@@ -154,9 +154,9 @@
 
         <TextView
             android:id="@+id/total_normal_runs"
-            android:layout_width="132dp"
-            android:layout_height="60dp"
-            android:textSize="16dp"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:textAlignment="center"
             android:padding="5dp"
@@ -165,11 +165,11 @@
 
         <TextView
             android:id="@+id/total_challenges"
-            android:layout_width="132dp"
-            android:layout_height="60dp"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
             android:layout_marginRight="4dp"
             android:text="@string/totals_challenges"
-            android:textSize="16dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:textAlignment="center"
             android:padding="5dp"
@@ -184,9 +184,9 @@
 
         <TextView
             android:id="@+id/total_distance"
-            android:layout_width="132dp"
-            android:layout_height="60dp"
-            android:textSize="16dp"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:textAlignment="center"
             android:padding="5dp"
@@ -195,11 +195,11 @@
 
         <TextView
             android:id="@+id/total_time"
-            android:layout_width="132dp"
-            android:layout_height="60dp"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
             android:layout_marginRight="4dp"
             android:text="@string/total_time"
-            android:textSize="16dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:textAlignment="center"
             android:padding="5dp"
@@ -207,11 +207,11 @@
 
         <TextView
             android:id="@+id/total_pace"
-            android:layout_width="132dp"
-            android:layout_height="60dp"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
             android:layout_marginRight="4dp"
             android:text="@string/total_pace"
-            android:textSize="16dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:textAlignment="center"
             android:padding="5dp"
@@ -230,15 +230,15 @@
         android:id="@+id/points_score"
         android:text="CHALLENGE TOTALS"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="70dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:gravity="bottom" />
+        android:gravity="center_vertical" />
 
 
 
@@ -249,11 +249,11 @@
 
              <TextView
                 android:id="@+id/played"
-                android:layout_width="130dp"
-                android:layout_height="60dp"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
                 android:layout_marginLeft="4dp"
                 android:text="@string/challenges_played"
-                android:textSize="16dp"
+                android:textSize="25dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textAlignment="center"
                 android:padding="5dp"
@@ -261,9 +261,9 @@
 
             <TextView
                 android:id="@+id/complete"
-                android:layout_width="130dp"
-                android:layout_height="60dp"
-                android:textSize="16dp"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:textSize="25dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textAlignment="center"
                 android:text="@string/challenges_complete"
@@ -272,11 +272,11 @@
 
             <TextView
                 android:id="@+id/failed"
-                android:layout_width="130dp"
-                android:layout_height="60dp"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
                 android:layout_marginRight="4dp"
                 android:text="@string/challenges_failed"
-                android:textSize="16dp"
+                android:textSize="25dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
@@ -294,13 +294,13 @@
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <ImageView
                 android:id="@+id/home_button"
                 android:src="@drawable/icon_home"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -310,8 +310,8 @@
             <ImageView
                 android:id="@+id/addrun_button"
                 android:src="@drawable/icon_addrun"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -321,8 +321,8 @@
             <ImageView
                 android:id="@+id/challenges"
                 android:src="@drawable/icon_runrandom"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -334,8 +334,8 @@
                 android:id="@+id/all_runs"
                 android:layout_centerVertical="true"
                 android:src="@drawable/icon_runlog"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
                 android:layout_margin="10dp"
                 android:padding="5dp"
                 android:layout_gravity="bottom"

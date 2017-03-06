@@ -12,16 +12,16 @@
         android:id="@+id/challenge_select"
         android:text="@string/challenge_select_title"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="65dp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="10dp"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal" />
+        android:gravity="center_vertical|center_horizontal" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -33,8 +33,8 @@
         <RelativeLayout
             android:clickable="true"
             android:background="@drawable/button"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginTop="2dp"
@@ -46,8 +46,8 @@
             <ImageView
                 android:id="@+id/short_button_image"
                 android:src="@drawable/icon_short"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/short_button_text"
                 android:layout_centerHorizontal="true" />
 
@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/type_short"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:padding="10dp"
@@ -71,8 +71,8 @@
         <RelativeLayout
             android:clickable="true"
             android:background="@drawable/button"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginTop="2dp"
@@ -84,8 +84,8 @@
             <ImageView
                 android:id="@+id/long_button_image"
                 android:src="@drawable/icon_long"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/long_button_text"
                 android:layout_centerHorizontal="true" />
 
@@ -95,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/type_long"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:padding="10dp"
@@ -118,8 +118,8 @@
         <RelativeLayout
             android:clickable="true"
             android:background="@drawable/button"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginTop="2dp"
@@ -130,8 +130,8 @@
             <ImageView
                 android:id="@+id/intervals_button_image"
                 android:src="@drawable/icon_intervals"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_below="@+id/intervals_button_text"
                 android:layout_centerHorizontal="true" />
 
@@ -141,7 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/type_intervals"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:padding="10dp"
@@ -155,8 +155,8 @@
         <RelativeLayout
             android:clickable="true"
             android:background="@drawable/button"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginTop="2dp"
@@ -167,8 +167,8 @@
             <ImageView
                 android:id="@+id/hills_button_image"
                 android:src="@drawable/icon_hills"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/hills_button_text"
                 android:layout_centerHorizontal="true" />
 
@@ -178,7 +178,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/type_hills"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:padding="10dp"
@@ -202,7 +202,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:gravity="center_vertical">
@@ -211,8 +211,8 @@
             android:id="@+id/points"
             android:text="CHALLENGE POINTS: "
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:textSize="20dp"
+            android:layout_height="50dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:gravity="center_vertical"
@@ -223,8 +223,8 @@
         <TextView
             android:id="@+id/points_score"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:textSize="20dp"
+            android:layout_height="50dp"
+            android:textSize="30dp"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:gravity="center_vertical"
@@ -240,11 +240,11 @@
 
         <TextView
             android:id="@+id/played"
-            android:layout_width="130dp"
-            android:layout_height="55dp"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
             android:layout_marginLeft="4dp"
             android:text="@string/challenges_played"
-            android:textSize="15dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:textAlignment="center"
             android:background="@color/colorWhite"
@@ -253,9 +253,9 @@
 
         <TextView
             android:id="@+id/complete"
-            android:layout_width="130dp"
-            android:layout_height="55dp"
-            android:textSize="15dp"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:textAlignment="center"
             android:background="@color/colorWhite"
@@ -265,11 +265,11 @@
 
         <TextView
             android:id="@+id/failed"
-            android:layout_width="132dp"
-            android:layout_height="55dp"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
             android:layout_marginRight="4dp"
             android:text="@string/challenges_failed"
-            android:textSize="15dp"
+            android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"
             android:textAlignment="center"
             android:background="@color/colorWhite"
@@ -288,13 +288,13 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="80dp">
 
         <ImageView
             android:id="@+id/home_button"
             android:src="@drawable/icon_home"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
             android:layout_centerVertical="true"
             android:layout_margin="10dp"
             android:padding="5dp"
@@ -304,8 +304,8 @@
         <ImageView
             android:id="@+id/addrun_button"
             android:src="@drawable/icon_addrun"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
             android:layout_centerVertical="true"
             android:layout_margin="10dp"
             android:padding="5dp"
@@ -315,8 +315,8 @@
         <ImageView
             android:id="@+id/challenges"
             android:src="@drawable/icon_runrandom"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
             android:layout_centerVertical="true"
             android:layout_margin="10dp"
             android:padding="5dp"
@@ -328,8 +328,8 @@
             android:id="@+id/all_runs"
             android:layout_centerVertical="true"
             android:src="@drawable/icon_runlog"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
             android:layout_margin="10dp"
             android:padding="5dp"
             android:layout_gravity="bottom"
