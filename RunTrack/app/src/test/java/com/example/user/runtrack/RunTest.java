@@ -39,4 +39,11 @@ public class RunTest {
         assertEquals("1:23:12", run3.getTime());
     }
 
+    @Test public void getTypeTest(){
+        assertEquals("Long", run3.getType());
+    }
+
+    @Test public void getCommentTest(){
+        assertEquals("Hard work", run3.getComment());
+    }
 }
